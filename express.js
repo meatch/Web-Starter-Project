@@ -75,8 +75,6 @@ if (process.env.NODE_ENV === 'development') {
 ---------------------------*/
 const routes = require('./src/Express/routes/index.js');
 app.use('/api/staff', routes.staff);
-app.use('/api/services', routes.services);
-app.use('/api/slides', routes.slides);
 app.use('/api/email', routes.email);
 app.use('/api/user', routes.user);
 
