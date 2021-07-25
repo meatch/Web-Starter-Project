@@ -1,7 +1,7 @@
 /*===================================
-|| 
+||
 || NodeJS Server with Express Framework
-|| 
+||
 ===================================*/
 /*---------------------------
 | Environment Vars
@@ -46,9 +46,9 @@ const app = express();
 app.use(express.json());
 
 /* Server Session support user access. ---------------------------*/
-// initialize cookie-parser to allow us access the cookies stored in the browser. 
+// initialize cookie-parser to allow us access the cookies stored in the browser.
 app.use(cookieParser());
-app.use(session({ 
+app.use(session({
     secret: "Secret Unique Value",
     resave: false,
     saveUninitialized: true,
@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 | !IMPORTANT :: Should not be done in Production
 | Bypassing CORS so Node Express can be on NODE_PORT 5000 and react can be on 3000
 ---------------------------*/
-if (process.env.NODE_ENV === 'local') {
+if (process.env.NODE_ENV === 'development') {
     console.log('Bypassing CORS for Local Development.');
     app.use((request, response, next) => {
         response.header("Access-Control-Allow-Origin", "*");
@@ -96,6 +96,6 @@ const FINAL_PORT = (PORT) ? PORT : 5000; // In case none are provided fall back 
 /*---------------------------
 | Start the Server
 ---------------------------*/
-app.listen(FINAL_PORT, () => { 
-    console.log('Express Server is up and running. Currently listening on port: ' + FINAL_PORT ); 
+app.listen(FINAL_PORT, () => {
+    console.log('Express Server is up and running. Currently listening on port: ' + FINAL_PORT );
 });
