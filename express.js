@@ -73,7 +73,7 @@ if (process.env.NODE_ENV === 'development') {
 /*---------------------------
 | Route Collections
 ---------------------------*/
-const routes = require('./express/routes/index.js');
+const routes = require('./src/Express/routes/index.js');
 app.use('/api/staff', routes.staff);
 app.use('/api/services', routes.services);
 app.use('/api/slides', routes.slides);
