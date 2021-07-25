@@ -18,8 +18,8 @@ import Main from './React/Main.jsx';
 /*---------------------------
 | Global Styles
 ---------------------------*/
-import './css/normalize.css';
-import './css/global.scss';
+import 'React/common/styles/normalize.css';
+import 'React/common/styles/global.scss';
 
 /*---------------------------
 | Render to DOM

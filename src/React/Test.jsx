@@ -20,7 +20,7 @@ const Test = () => {
 
     return (
         <TestStyled className='Test'>
-            Test
+            <h1>Test</h1>
         </TestStyled>
     );
 }
