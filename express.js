@@ -73,15 +73,8 @@ if (process.env.NODE_ENV === 'development') {
 /*---------------------------
 | Route Collections
 ---------------------------*/
-const routes = require('./src/Express/routes/index.js');
-app.use('/api/staff', routes.staff);
-app.use('/api/email', routes.email);
-app.use('/api/user', routes.user);
-
-// Catchall for requests that do not match our routing
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+const renderRoutes = require('./src/Express/routes/index.js');
+renderRoutes(app);
 
 /*---------------------------
 | Port Management
