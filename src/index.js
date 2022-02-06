@@ -16,12 +16,6 @@ import ReactDOM from 'react-dom';
 import Main from './React/Main.jsx';
 
 /*---------------------------
-| Global Styles
----------------------------*/
-import 'React/common/styles/normalize.css';
-import 'React/common/styles/global.scss';
-
-/*---------------------------
 | Render to DOM
 ---------------------------*/
 ReactDOM.render(<Main />, document.getElementById('root'));
