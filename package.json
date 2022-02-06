@@ -33,7 +33,7 @@
     },
     "devDependencies": {
         "concurrently": "^6.2.0",
-        "nodemon": "^2.0.2"
+        "nodemon": "^2.0.15"
     },
     "homepage": "https://your-project-name.herokuapp.com",
     "heroku-run-build-script": true,
