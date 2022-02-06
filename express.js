@@ -25,7 +25,7 @@ const mongoConn = process.env.MONGO_DB_CONN;
 /* Connecting to Mongo ---------------------------*/
 if (mongoConn) {
     mongoose
-        .connect(mongoConn,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+        .connect(mongoConn)
         .then((res) => {
             console.log('Mongo: Connection made.');
         })
@@ -33,7 +33,7 @@ if (mongoConn) {
             console.log(`Mongoose Connection Error: ${err}`);
         });
 } else {
-    console.log('Missing MONGO_DB_CONN env var for Mongo connection');
+    console.log('Missing MONGO_DB_CONN .env var for Mongo connection');
 }
 
 /*---------------------------
