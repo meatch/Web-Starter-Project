@@ -17,11 +17,19 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
+    margin: 0px 0px 20px;
 }
 
 h1, h2 { font-weight: 700; }
 h3, h4 { font-weight: 500; }
 h5, h6 { font-weight: 200; }
+
+h1 { font-size: 40px; }
+h2 { font-size: 30px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+h5 { font-size: 12px; }
+h6 { font-size: 11px; }
 
 .sr-only {
     position: absolute;
@@ -32,4 +40,12 @@ h5, h6 { font-weight: 200; }
     overflow: hidden;
     clip: rect(0,0,0,0);
     border: 0;
+}
+
+.inset {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 600px;
 }
