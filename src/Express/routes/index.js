@@ -1,13 +1,9 @@
 const path = require('path');
 
-const staff = require('./staff/staff.js');
-const email = require('./email/email.js');
-const user = require('./user/user.js');
+const sample = require('./sample/sample.js');
 
 const renderRoutes = (app) => {
-    app.use('/api/staff', staff);
-    app.use('/api/email', email);
-    app.use('/api/user', user);
+    app.use('/api/sample', sample);
 
     // Catchall for requests that do not match our routing
     app.get('*', (req, res) => {
