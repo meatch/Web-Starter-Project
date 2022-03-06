@@ -12,9 +12,10 @@ import Feedback from './Feedback.jsx';
 /* Exposed Components ---------------------------*/
 export { default as Input } from './Controls/Input.jsx';
 export { default as Textarea } from './Controls/Textarea.jsx';
+export { default as SelectMenu } from './Controls/SelectMenu.jsx';
 export { default as SubmitButton } from './Controls/SubmitButton.jsx';
 
-const UniversalForm = ({children, apiUrl, onSubmit}) => {
+const UniversalForm = ({children, apiUrl, onSubmit, displayName='Universal Form'}) => {
 
     const defaultFormData = {
         apiUrl: apiUrl,
@@ -31,7 +32,7 @@ const UniversalForm = ({children, apiUrl, onSubmit}) => {
     const [state, dispatch] = useReducer(reducer, defaultFormData);
 
     return (
-        <Context.Provider value={ {state, dispatch} } displayName='Universal Form'>
+        <Context.Provider value={ {state, dispatch} } displayName={ displayName }>
             <UniversalFormStyled className='UniversalForm'>
                 <Feedback />
                 <Form>

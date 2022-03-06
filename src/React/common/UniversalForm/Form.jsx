@@ -16,7 +16,7 @@ const Form = ({children}) => {
 
     return (
         <FormStyled className='Form'>
-            <form novalidate="novalidate" onSubmit={ handleSubmit }>
+            <form noValidate onSubmit={ handleSubmit }>
                 { children } 
             </form>
         </FormStyled>
@@ -25,6 +25,6 @@ const Form = ({children}) => {
 
 export default Form;
 
-const FormStyled = styled.form`
+const FormStyled = styled.div`
     
 `;
