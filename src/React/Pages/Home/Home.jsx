@@ -8,7 +8,7 @@ import Staff from './Staff/Staff.jsx';
 const Welcome = () => {
     return (
         <WelcomeStyled className='Welcome'>
-            <h1>Welcome</h1>
+            <h1>Welcome to a New You</h1>
             <Slideshow />
             <Tabbed />
             <Staff />
@@ -19,5 +19,5 @@ const Welcome = () => {
 export default Welcome;
 
 const WelcomeStyled = styled.div`
-    
+    h1 { display: none; }
 `;

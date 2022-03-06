@@ -31,6 +31,7 @@ const HamburgerStyled = styled.div`
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 1;
 
     font-size: 30px;
     color: white;

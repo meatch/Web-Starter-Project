@@ -1,46 +1,44 @@
-import React from 'react';
+import React, { useReducer, useEffect } from 'react';
 import styled from 'styled-components';
 
-import Logo from './Logo.jsx';
-import Navigation from './Navigation/Navigation.jsx';
+/* Scripts ---------------------------*/
+import { useMediaQuery } from 'React/common/useMediaQuery.js';
+
+/* Context ---------------------------*/
+import Context from './Context/index.js';
+import reducer from './Context/reducer.js';
+import { updateIsSmall } from './Context/actions.js';
+
+/* Components ---------------------------*/
+import MediaQuery from './MediaQuery/MediaQuery.jsx';
 
 const Header = () => {
+
+    const { media: { mdUp } } = useMediaQuery();
+
+    const defaultState = {
+        showMenu: false,
+        isSmall: false,
+    };
+
+    const [ state, dispatch ] = useReducer(reducer, defaultState);
+
+    useEffect(() => {
+        dispatch(updateIsSmall(!mdUp));
+    }, [mdUp]);
+
     return (
-        <HeaderStyled className='Header'>
-            <div className="inset row">
-                <div className="col-logo">
-                    <Logo />
-                </div>
-                <div className="col-nav">
-                    <Navigation />
-                </div>
-            </div>
-        </HeaderStyled>
+        <Context.Provider value={ { state, dispatch } } displayName='Header'>
+            <HeaderStyled className='Header'>
+                <MediaQuery />
+            </HeaderStyled>
+        </Context.Provider>
     );
 }
 
 export default Header;
 
-const HeaderStyled = styled.header`
-    background-color: #0a4643;
-    padding: 20px 0px;
-
-    .row {
-        display: flex;
-        align-items: flex-end;
-
-        .col-logo {
-            flex: 1;
-        }
-        .col-nav {
-            flex: 5;
-        }
-    }
-
-    .Logo {
-        display: flex;
-        align-items: center;
-        width: 250px;
-    }
-
+const HeaderStyled = styled.div`
+    background-color: rgb(1, 68, 68);
+    color: white;
 `;

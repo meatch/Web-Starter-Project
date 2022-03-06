@@ -7,7 +7,7 @@ const Logo = () => {
 
     return (
         <LogoStyled className='Logo'>
-            <SiteLogo />  
+            <SiteLogo />
         </LogoStyled>
     );
 }
@@ -16,5 +16,5 @@ export default Logo;
 
 const LogoStyled = styled.div`
     width: 100%;
-    height: 100%;
+    padding: 20px 70px;
 `;

@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 const UserMenu = () => {
     return (
         <UserMenuStyled className='UserMenu'>
-            <h2>UserMenu Menu</h2>
-            <NavLink to={ '/login' } exact>Login</NavLink>
+            <h2>User Menu</h2>
+            <NavLink to={ '/user/login' } exact>Login</NavLink>
         </UserMenuStyled>
     );
 }

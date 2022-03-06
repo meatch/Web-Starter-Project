@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const MainMenu = () => {
     return (
         <MainMenuStyled className='MainMenu'>
-            <h2>MainMenu Menu</h2>
+            <h2>Main Menu</h2>
             <NavLink to={ '/' } exact>Home</NavLink>
             <NavLink to={ '/merch' }>Merch</NavLink>
             <NavLink to={ '/cart' }>Cart</NavLink>

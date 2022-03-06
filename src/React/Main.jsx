@@ -8,6 +8,7 @@ import Merch from './Pages/Merch/Merch.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
 import Play from './Pages/Play/Play.jsx';
+import User from './Pages/User/User.jsx';
 import Homework from './Pages/Homework/Homework.jsx';
 
 const Main = () => {
@@ -30,6 +31,9 @@ const Main = () => {
                     <Route path='/play'>
                         <Play />
                     </Route>
+                    <Route path='/user'>
+                        <User />
+                    </Route>
                     <Route path='/homework'>
                         <Homework />
                     </Route>
@@ -42,6 +46,7 @@ const Main = () => {
 export default Main;
 
 const MainStyled = styled.main`
+    padding: 50px 0px;
     .inset {
         min-height: 500px;
     }

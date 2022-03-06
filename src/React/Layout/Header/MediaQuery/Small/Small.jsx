@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import Context from '../../Context/index.js';
 
 /* Components ---------------------------*/
-import Hamburger from './Hamburger.jsx';
-import Menus from '../Menus/Menus.jsx';
+import Closed from './Closed.jsx';
+import Open from './Open.jsx';
 
 const Small = () => {
 
@@ -14,12 +14,8 @@ const Small = () => {
 
     return (
         <SmallStyled className='Small'>
-            Mobile Menu (Small)
-            <Hamburger />
-            {
-                state.showMenu &&
-                <Menus />
-            }
+            <Closed />
+            { state.showMenu && <Open /> }
         </SmallStyled>
     );
 }
