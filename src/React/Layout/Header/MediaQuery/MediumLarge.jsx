@@ -25,15 +25,14 @@ const MediumLargeStyled = styled.div`
         position: relative;
 
         .Logo {
-            flex: 0 0 250px;
+            flex: 1;
         }
 
         .Menus {
-
             display: flex;
             justify-content: flex-end;
 
-            flex: 1;
+            flex: 4;
 
             h2 { display: none; }
 
@@ -90,7 +89,6 @@ const MediumLargeStyled = styled.div`
                     font-size: 12px;
                 }
             }
-
         }
     }
 `;

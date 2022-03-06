@@ -23,5 +23,13 @@ const Small = () => {
 export default Small;
 
 const SmallStyled = styled.div`
+    .Logo {
+        outline: solid 1px white;
+        display: flex;
+        justify-content: center;
 
+        .SiteLogo {
+            max-width: 300px;
+        }
+    }
 `;
