@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 /* Components ---------------------------*/
 import Login from './Login/Login.jsx';
 import Update from './Update/Update.jsx';
+import Cart from './Cart/Cart.jsx';
 
 const User = () => {
     return (
@@ -15,6 +16,7 @@ const User = () => {
             <ul>
                 <li><NavLink to="/user/login">Login</NavLink></li>
                 <li><NavLink to="/user/update">Update</NavLink></li>
+                <li><NavLink to="/user/cart">Cart</NavLink></li>
             </ul>
 
             <Switch>
@@ -23,6 +25,9 @@ const User = () => {
                 </Route>
                 <Route path='/user/update' exact>
                     <Update />
+                </Route>
+                <Route path='/user/cart'>
+                    <Cart />
                 </Route>
             </Switch>
         </UserStyled>

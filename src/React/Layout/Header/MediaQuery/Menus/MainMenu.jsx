@@ -7,11 +7,9 @@ const MainMenu = () => {
         <MainMenuStyled className='MainMenu'>
             <h2>Main Menu</h2>
             <NavLink to={ '/' } exact>Home</NavLink>
-            <NavLink to={ '/merch' }>Merch</NavLink>
-            <NavLink to={ '/cart' }>Cart</NavLink>
+            <NavLink to={ '/staff' }>Staff</NavLink>
             <NavLink to={ '/contact' }>Contact</NavLink>
-            <NavLink to={ '/play' }>Play</NavLink>
-            <NavLink to={ '/homework' }>Homework</NavLink>
+            <NavLink to={ '/merch' }>Merch</NavLink>
         </MainMenuStyled>
     );
 }

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Slideshow from './Slideshow/Slideshow.jsx';
 import Tabbed from './Tabbed/Tabbed.jsx';
-import Staff from './Staff/Staff.jsx';
 
 const Welcome = () => {
     return (
@@ -11,7 +10,6 @@ const Welcome = () => {
             <h1>Welcome to a New You</h1>
             <Slideshow />
             <Tabbed />
-            <Staff />
         </WelcomeStyled>
     );
 }

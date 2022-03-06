@@ -4,12 +4,12 @@ import { Switch, Route } from 'react-router-dom';
 
 /* Components ---------------------------*/
 import Home from './Pages/Home/Home.jsx';
-import Merch from './Pages/Merch/Merch.jsx';
-import Cart from './Pages/Cart/Cart.jsx';
+import Staff from './Pages/Staff/Staff.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
-import Play from './Pages/Play/Play.jsx';
+import Merch from './Pages/Merch/Merch.jsx';
+
 import User from './Pages/User/User.jsx';
-import Homework from './Pages/Homework/Homework.jsx';
+import ClassWork from './Pages/ClassWork/ClassWork.jsx';
 
 const Main = () => {
     return (
@@ -19,23 +19,24 @@ const Main = () => {
                     <Route path='/' exact>
                         <Home />
                     </Route>
-                    <Route path='/merch'>
-                        <Merch />
-                    </Route>
-                    <Route path='/cart'>
-                        <Cart />
+                    <Route path='/staff'>
+                        <Staff />
                     </Route>
                     <Route path='/contact'>
                         <Contact />
                     </Route>
-                    <Route path='/play'>
-                        <Play />
+                    <Route path='/merch'>
+                        <Merch />
                     </Route>
+
+                    {/* Authenticated */}
                     <Route path='/user'>
                         <User />
                     </Route>
-                    <Route path='/homework'>
-                        <Homework />
+
+                    {/* Course Work */}
+                    <Route path='/class'>
+                        <ClassWork />
                     </Route>
                 </Switch>
             </div>

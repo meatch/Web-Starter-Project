@@ -25,7 +25,7 @@ const MediumLargeStyled = styled.div`
         position: relative;
 
         .Logo {
-            flex: 1;
+            flex: 0 0 250px;
         }
 
         .Menus {
@@ -33,7 +33,8 @@ const MediumLargeStyled = styled.div`
             display: flex;
             justify-content: flex-end;
 
-            flex: 5;
+            flex: 1;
+
             h2 { display: none; }
 
             a {
@@ -46,7 +47,6 @@ const MediumLargeStyled = styled.div`
                 &:hover, &.active {
                     opacity: 1;
                 }
-
             }
 
             .MainMenu {
@@ -56,15 +56,13 @@ const MediumLargeStyled = styled.div`
                 justify-content: flex-end;
 
                 a {
-                    width: 105px;
+                    width: 80px;
                     line-height: 30px;
                     text-align: center;
-                    margin: 0px 0px 0px 10px;
-                    font-size: 14px;
+                    margin: 0px 0px 0px 5px;
+                    font-size: 12px;
 
                     border-bottom: solid 3px #84d4d4;
-
-                    &:hover { }
 
                     &.active {
                         color: #fff;
@@ -72,10 +70,21 @@ const MediumLargeStyled = styled.div`
                     }
                 }
             }
+
             .UserMenu {
                 position: absolute;
                 right: 10px;
                 top: 10px;
+
+                a {
+                    font-size: 12px;
+                }
+            }
+
+            .ClassMenu {
+                position: absolute;
+                right: 10px;
+                top: 40px;
 
                 a {
                     font-size: 12px;

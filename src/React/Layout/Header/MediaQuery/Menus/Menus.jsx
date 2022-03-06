@@ -8,10 +8,11 @@ import { updateShowMenu } from '../../Context/actions.js';
 /* Components ---------------------------*/
 import MainMenu from './MainMenu.jsx';
 import UserMenu from './UserMenu.jsx';
+import ClassMenu from './ClassMenu.jsx';
 
 const Menus = () => {
 
-    const { dispatch, state } = useContext(Context);
+    const { dispatch } = useContext(Context);
 
     const handleOnClick = () => {
         dispatch(updateShowMenu(false))
@@ -21,6 +22,7 @@ const Menus = () => {
         <MenusStyled className='Menus' onClick={ handleOnClick }>
             <MainMenu />
             <UserMenu />
+            <ClassMenu />
         </MenusStyled>
     );
 }
