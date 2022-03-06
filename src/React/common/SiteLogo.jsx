@@ -1,17 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faHotTub,
-} from '@fortawesome/free-solid-svg-icons';
-
-
 const SiteLogo = () => {
-
     return (
         <SiteLogoStyled className='SiteLogo'>
-            <FontAwesomeIcon icon={ faHotTub } className='hot-tub-icon' /> 
+            <img src='/assets/img/crossfit-decimate-logo.png' alt='CrossFit Decimate Logo' />
         </SiteLogoStyled>
     );
 }
@@ -23,8 +16,8 @@ const SiteLogoStyled = styled.div`
     width: 100%;
     height: 100%;
 
-    svg.hot-tub-icon {
-        width: 100px;
+    img {
+        width: 100%;
         height: auto;
     }
 `;

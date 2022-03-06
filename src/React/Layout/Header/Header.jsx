@@ -2,15 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo.jsx';
-import SiteTitle from './SiteTitle.jsx';
 
 const Header = () => {
-
     return (
         <HeaderStyled className='Header'>
             <div className="row">
                 <Logo/>
-                <SiteTitle />
             </div>
         </HeaderStyled>
     );
@@ -19,7 +16,7 @@ const Header = () => {
 export default Header;
 
 const HeaderStyled = styled.header`
-    background-color: teal;
+    background-color: #0a4643;
     padding: 20px 0px;
     display: flex;
     justify-content: center;
@@ -27,17 +24,13 @@ const HeaderStyled = styled.header`
     .row {
         display: flex;
         width: 420px;
+        justify-content: center;
         align-items: center;
 
         .Logo {
-            flex: 1;
-            padding-right: 20px;
             display: flex;
             align-items: center;
-        }
-
-        .SiteTitle {
-            flex: 3;
+            width: 250px;
         }
     }
 `;

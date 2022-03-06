@@ -7,7 +7,7 @@ const Logo = () => {
 
     return (
         <LogoStyled className='Logo'>
-            <SiteLogo /> 
+            <SiteLogo />
         </LogoStyled>
     );
 }
@@ -15,7 +15,12 @@ const Logo = () => {
 export default Logo;
 
 const LogoStyled = styled.div`
-    svg.hot-tub-icon {
-        width: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    .SiteLogo {
+        width: 150px;
+        margin-bottom: 10px;
     }
 `;

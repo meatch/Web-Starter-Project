@@ -8,8 +8,8 @@ const Footer = () => {
 
     return (
         <FooterStyled className='Footer'>
-            <Logo /> 
-            <SiteTitle /> 
+            <Logo />
+            <SiteTitle />
         </FooterStyled>
     );
 }
@@ -17,7 +17,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterStyled = styled.footer`
-    background-color: teal;
+    background-color: #0a4643;
     text-align: center;
-    padding: 20px 0px; 
+    padding: 20px 0px;
 `;
