@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
     faBars,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Hamburger = ({showMenu, showMenuUpdate}) => {
+/* Context ---------------------------*/
+import Context from '../../Context/index.js';
+import { updateShowMenu } from '../../Context/actions.js';
+
+
+const Hamburger = () => {
+
+    const { dispatch, state } = useContext(Context);
 
     const clickHandler = () => {
-        showMenuUpdate(!showMenu);
+        dispatch(updateShowMenu(!state.showMenu));
     }
 
     return (
         <HamburgerStyled className='Hamburger' onClick={ clickHandler }>
-            <FontAwesomeIcon icon={ faBars } /> 
+            <FontAwesomeIcon icon={ faBars } />
         </HamburgerStyled>
     );
 }

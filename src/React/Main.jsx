@@ -33,7 +33,7 @@ const Main = () => {
                     <Route path='/homework'>
                         <Homework />
                     </Route>
-                </Switch> 
+                </Switch>
             </div>
         </MainStyled>
     );
@@ -42,5 +42,7 @@ const Main = () => {
 export default Main;
 
 const MainStyled = styled.main`
-
+    .inset {
+        min-height: 500px;
+    }
 `;
