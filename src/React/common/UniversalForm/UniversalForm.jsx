@@ -14,6 +14,7 @@ export { default as Input } from './Controls/Input.jsx';
 export { default as Textarea } from './Controls/Textarea.jsx';
 export { default as SelectMenu } from './Controls/SelectMenu.jsx';
 export { default as Checkbox } from './Controls/Checkbox.jsx';
+export { default as RadioGroup } from './Controls/RadioGroup.jsx';
 export { default as SubmitButton } from './Controls/SubmitButton.jsx';
 
 const UniversalForm = ({children, apiUrl, onSubmit, displayName='Universal Form'}) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Universal Form ---------------------------*/
-import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
+import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, RadioGroup, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
 
 const Forms = () => {
 
@@ -74,6 +74,17 @@ const Forms = () => {
                     rules={ [ 'required' ] }
                     displayText='Join Our Mailing List'
                     defaultValue={ true }
+                />
+                <RadioGroup
+                    label='Favorite Color'
+                    id='favColor'
+                    defaultValue='blue'
+                    options={ [
+                        { value: 'red',     display: 'Red' },
+                        { value: 'green',   display: 'Green' },
+                        { value: 'blue',    display: 'Blue' },
+                    ] }
+                    rules={ [ 'required' ] }
                 />
                 <SubmitButton>Send</SubmitButton>
             </UniversalForm>

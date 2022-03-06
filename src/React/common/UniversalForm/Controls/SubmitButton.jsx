@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SubmitButton = ({children}) => {
-
     return (
         <SubmitButtonStyled className='SubmitButton'>
             <button type="submit">
                 { children }
-            </button> 
+            </button>
         </SubmitButtonStyled>
     );
 }
