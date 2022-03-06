@@ -13,6 +13,7 @@ import Feedback from './Feedback.jsx';
 export { default as Input } from './Controls/Input.jsx';
 export { default as Textarea } from './Controls/Textarea.jsx';
 export { default as SelectMenu } from './Controls/SelectMenu.jsx';
+export { default as Checkbox } from './Controls/Checkbox.jsx';
 export { default as SubmitButton } from './Controls/SubmitButton.jsx';
 
 const UniversalForm = ({children, apiUrl, onSubmit, displayName='Universal Form'}) => {
@@ -47,7 +48,7 @@ export default UniversalForm;
 
 const UniversalFormStyled = styled.div`
     max-width: 700px;
-    margin: 50px auto; 
+    margin: 50px auto;
     padding: 25px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 `;

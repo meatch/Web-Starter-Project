@@ -4,15 +4,20 @@ import styled from 'styled-components';
 /* Components ---------------------------*/
 import ControlHOC from './ControlHOC.jsx';
 
-const Input = ({thisField, onChange, id, placeholder, defaultValue='', type='text'}) => {
+const Input = ({onChange, id, placeholder, value='', type='text'}) => {
+
+    const handleOnchange = (e) => {
+        onChange({ newValue: e.target.value, e: e });
+    }
+
     return (
         <InputStyled className='Input'>
-            <input 
+            <input
                 id={ id }
                 type={ type }
                 placeholder={ placeholder }
-                value={ thisField ? thisField.value : defaultValue }
-                onChange={ onChange }
+                value={ value }
+                onChange={ handleOnchange }
             />
         </InputStyled>
     );
@@ -21,5 +26,19 @@ const Input = ({thisField, onChange, id, placeholder, defaultValue='', type='tex
 export default ControlHOC(Input);
 
 const InputStyled = styled.div`
+    input {
+        width: 100%;
+        font-size: 20px;
+        padding: 10px;
+        border: solid 2px #ccc;
+        outline: none;
 
+        &:focus {
+            background-color: #eee;
+            border-color: #999;
+        }
+        &.error {
+            border: solid 2px red;
+        }
+    }
 `;

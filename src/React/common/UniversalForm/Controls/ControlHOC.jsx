@@ -22,6 +22,8 @@ const ControlHOC = WrappedComponent => (props) => {
 
     const thisField = state.fields.find((field) => field.id === id);
 
+    const renderedValue = thisField ? thisField.value : defaultValue;
+
     /* Component Did Mount ---------------------------*/
     useEffect(() => {
         const theField = {
@@ -32,14 +34,14 @@ const ControlHOC = WrappedComponent => (props) => {
         dispatch(addField(theField, state));
     }, []);
 
-    const handleOnChange = (e) => {
-        dispatch(updateField(id, e.target.value, state));
+    const handleOnChange = ({newValue, e}) => {
+        dispatch(updateField(id, newValue, state));
     }
 
     return (
         <ControlHOCStyled className='ControlHOC'>
             <ControlGroup id={ id } label={ label }>
-                <WrappedComponent onChange={ handleOnChange } thisField={ thisField } {...props} />
+                <WrappedComponent value={ renderedValue } onChange={ handleOnChange } {...props} />
             </ControlGroup>
         </ControlHOCStyled>
     );
@@ -48,20 +50,5 @@ const ControlHOC = WrappedComponent => (props) => {
 export default ControlHOC;
 
 const ControlHOCStyled = styled.div`
-    input, textarea {
-        width: 100%;
-        font-size: 20px;
-        padding: 10px;
-        border: solid 2px #ccc;
-        outline: none;
 
-        &:focus {
-            background-color: #eee;
-            border-color: #999;
-        }
-        &.error {
-            border: solid 2px red;
-        }
-    }
-    
 `;

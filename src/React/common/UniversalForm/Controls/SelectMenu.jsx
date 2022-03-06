@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
     faAngleDown,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,17 +10,22 @@ import {
 /* Components ---------------------------*/
 import ControlHOC from './ControlHOC.jsx';
 
-const SelectMenu = ({thisField, onChange, id, value='', options=[]}) => {
+const SelectMenu = ({onChange, id, value='', options=[]}) => {
+
+    const handleOnchange = (e) => {
+        onChange({ newValue: e.target.value, e: e });
+    }
+
     return (
         <SelectMenuStyled className='SelectMenu'>
-            <select 
+            <select
                 id={ id }
-                value={ thisField ? thisField.value : value }
-                onChange={ onChange }
+                value={ value }
+                onChange={ handleOnchange }
             >
                 {
                     options.map((o,idx) => {
-                        return  <option key={ idx } value={ o.value }>{ o.display }</option>    
+                        return  <option key={ idx } value={ o.value }>{ o.display }</option>
                     })
                 }
             </select>

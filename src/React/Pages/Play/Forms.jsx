@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Universal Form ---------------------------*/
-import UniversalForm, { Input, Textarea, SelectMenu, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
+import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
 
 const Forms = () => {
 
@@ -68,6 +68,13 @@ const Forms = () => {
                     placeholder='Your Name'
                     rules={ [ 'required' ] }
                 />
+                <Checkbox
+                    label='Email Subscription'
+                    id='subscribe'
+                    rules={ [ 'required' ] }
+                    displayText='Join Our Mailing List'
+                    defaultValue={ true }
+                />
                 <SubmitButton>Send</SubmitButton>
             </UniversalForm>
 
@@ -78,5 +85,5 @@ const Forms = () => {
 export default Forms;
 
 const FormsStyled = styled.div`
-    
+
 `;
