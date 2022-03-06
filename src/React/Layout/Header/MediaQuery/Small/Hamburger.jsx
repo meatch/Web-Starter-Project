@@ -7,7 +7,7 @@ import {
 
 /* Context ---------------------------*/
 import Context from '../../Context/index.js';
-import { updateShowMenu } from '../../Context/actions.js';
+import { updateShowMobileMenu } from '../../Context/actions.js';
 
 
 const Hamburger = () => {
@@ -15,7 +15,7 @@ const Hamburger = () => {
     const { dispatch, state } = useContext(Context);
 
     const clickHandler = () => {
-        dispatch(updateShowMenu(!state.showMenu));
+        dispatch(updateShowMobileMenu(!state.showMobileMenu));
     }
 
     return (

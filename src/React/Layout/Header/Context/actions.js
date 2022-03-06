@@ -9,9 +9,9 @@ export const updateIsSmall = (isSmall) => {
         isSmall: isSmall,
     };
 }
-export const updateShowMenu = (showMenu) => {
+export const updateShowMobileMenu = (showMobileMenu) => {
     return {
-        type: actionTypes.NAV_UPDATE_SHOW_MENU,
-        showMenu: showMenu,
+        type: actionTypes.NAV_UPDATE_SHOW_MOBILE_MENU,
+        showMobileMenu: showMobileMenu,
     };
 }

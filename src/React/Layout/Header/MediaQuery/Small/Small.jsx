@@ -15,7 +15,7 @@ const Small = () => {
     return (
         <SmallStyled className='Small'>
             <Closed />
-            { state.showMenu && <Open /> }
+            { state.showMobileMenu && <Open /> }
         </SmallStyled>
     );
 }

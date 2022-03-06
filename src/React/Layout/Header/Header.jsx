@@ -17,7 +17,7 @@ const Header = () => {
     const { media: { mdUp } } = useMediaQuery();
 
     const defaultState = {
-        showMenu: false,
+        showMobileMenu: false,
         isSmall: false,
     };
 

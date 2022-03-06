@@ -12,10 +12,10 @@ const reducer = (state, action) => {
                 isSmall: action.isSmall,
             };
         }
-        case actionTypes.NAV_UPDATE_SHOW_MENU: {
+        case actionTypes.NAV_UPDATE_SHOW_MOBILE_MENU: {
             return {
                 ...state,
-                showMenu: action.showMenu,
+                showMobileMenu: action.showMobileMenu,
             };
         }
         default: {
