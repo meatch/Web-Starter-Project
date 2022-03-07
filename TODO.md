@@ -4,14 +4,14 @@
 
 - [x] Reskin and Populate CrossFit Decimate
 
-- [ ] Build Course App as Feature branch
+- [ ] Build Course App as Feature Branch
 
-        - [ ] Sun And Moon
-        - [ ] UniversalForm handle API calls
-        - [ ] Context Lightbox
+        - [x] Sun And Moon
+        - [x] Context Lightbox
         - [ ] Redux State
         - [ ] PostgreSQL (see below)
         - [ ] Authentication
+        - [ ] UniversalForm handle API calls
         - [ ] Order Flow
         - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests

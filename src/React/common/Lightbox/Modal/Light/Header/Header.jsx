@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import Title from './Title.jsx';
 import CloseButton from './CloseButton.jsx';
 
-const Header = ({title, closeModal}) => {
-
+const Header = () => {
     return (
         <HeaderStyled className='Header'>
-            <Title title={ title } />
-            <CloseButton closeModal={ closeModal }/>
+            <Title />
+            <CloseButton/>
         </HeaderStyled>
     );
 }
@@ -18,10 +17,10 @@ export default Header;
 
 const HeaderStyled = styled.div`
     display: flex;
-    background-color: teal;
-    color: white;
+    background-color: #014444;
 
     h4 {
+        color: white;
         flex: 1;
     }
 

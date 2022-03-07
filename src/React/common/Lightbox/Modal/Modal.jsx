@@ -1,10 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
+/* Context ---------------------------*/
+import Context from '../Context/index.js';
+import { showModalUpdate } from '../Context/actions.js';
+
+/* Components ---------------------------*/
 import Dark from './Dark.jsx';
 import Light from './Light/Light.jsx';
 
-const Modal = ({title, modalContent, showModalUpdate}) => {
+const Modal = ({children}) => {
+
+    const {dispatch, state} = useContext(Context);
 
     // Component Did Mount
     useEffect(() => {
@@ -13,12 +20,12 @@ const Modal = ({title, modalContent, showModalUpdate}) => {
             console.log('What Key Was Pressed', e.keyCode);
 
             if (e.keyCode === 27) {
-                closeModal();
+                dispatch(showModalUpdate(false));
             }
         }
 
         document.addEventListener("keydown", handleOnKeyDown);
-        
+
         // dismounts
         return () => {
             document.removeEventListener("keydown", handleOnKeyDown);
@@ -27,14 +34,14 @@ const Modal = ({title, modalContent, showModalUpdate}) => {
     }, []);
 
 
-    const closeModal = () => {
-        showModalUpdate(false);
-    }
+    if (!state.showModal) { return ''; }
 
     return (
         <ModalStyled className='Modal'>
-            <Dark closeModal={ closeModal } />
-            <Light closeModal={ closeModal } title={ title } modalContent={ modalContent } />
+            <Dark />
+            <Light>
+                { children }
+            </Light>
         </ModalStyled>
     );
 }

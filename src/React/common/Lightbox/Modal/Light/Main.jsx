@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Main = ({modalContent}) => {
-
+const Main = ({children}) => {
     return (
         <MainStyled className='Main'>
-            { modalContent }
+            { children }
         </MainStyled>
     );
 }

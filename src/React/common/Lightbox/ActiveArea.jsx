@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-const ActiveArea = ({activeContent, showModalUpdate}) => {
+/* Context ---------------------------*/
+import Context from './Context/index.js';
+import { showModalUpdate } from './Context/actions.js';
+
+const ActiveArea = ({children}) => {
+
+    const { dispatch } = useContext(Context);
 
     const clickHandler = () => {
-        showModalUpdate(true);
+        dispatch(showModalUpdate(true));
     }
 
     return (
         <ActiveAreaStyled className='ActiveArea' onClick={ clickHandler }>
-            { activeContent } 
+            { children }
         </ActiveAreaStyled>
     );
 }

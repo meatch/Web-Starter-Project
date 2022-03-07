@@ -1,26 +1,35 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
 
-import ActiveArea from './ActiveArea.jsx';
-import Modal from './Modal/Modal.jsx';
+/* Context ---------------------------*/
+import Context from './Context/index.js';
+import reducer from './Context/reducer.js';
 
-const Lightbox = ({title, activeContent, modalContent}) => {
+/* Exposed Components ---------------------------*/
+export { default as ActiveArea } from './ActiveArea.jsx';
+export { default as Modal } from './Modal/Modal.jsx';
 
-    const [showModal, showModalUpdate] = useState(false);
+
+const Lightbox = ({children, title, displayName='Universal Lightbox'}) => {
+
+    const defaultFormData = {
+        showModal: false,
+        title: title,
+    };
+
+    const [state, dispatch] = useReducer(reducer, defaultFormData);
 
     return (
-        <LightboxStyled className='Lightbox'>
-            <ActiveArea activeContent={ activeContent } showModalUpdate={ showModalUpdate } />
-            {
-                showModal &&
-                <Modal title={ title } modalContent={ modalContent }  showModalUpdate={ showModalUpdate } />
-            }
-        </LightboxStyled>
+        <Context.Provider value={ {state, dispatch} } displayName={ `${displayName}: ${title}` }>
+            <LightboxStyled className='Lightbox'>
+                { children }
+            </LightboxStyled>
+        </Context.Provider>
     );
 }
 
 export default Lightbox;
 
 const LightboxStyled = styled.div`
-    
+
 `;

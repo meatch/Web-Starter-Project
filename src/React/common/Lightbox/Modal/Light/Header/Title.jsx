@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-const Title = ({title}) => {
+/* Context ---------------------------*/
+import Context from '../../../Context/index.js';
+
+const Title = () => {
+
+    const { state } = useContext(Context);
 
     return (
         <TitleStyled className='Title'>
-            { title } 
+            { state.title }
         </TitleStyled>
     );
 }

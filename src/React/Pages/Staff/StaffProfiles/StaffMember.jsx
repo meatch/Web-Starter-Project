@@ -5,29 +5,23 @@ import styled from 'styled-components';
 import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 /* Components ---------------------------*/
-import Lightbox from 'React/common/Lightbox/Lightbox.jsx';
+import Lightbox, { ActiveArea, Modal } from 'React/common/Lightbox/Lightbox.jsx';
 
 const StaffMember = ({member}) => {
-
-    const ActiveContent = () => {
-        return (
-            <>
-                <img src={ member.image } alt={ member.name } />
-                <h3>{ member.name }</h3>
-            </>
-        )
-    }
-    const ModalContent = () => {
-        return <img src={ member.image } alt={ member.name } />;
-    }
-
     return (
         <StaffMemberStyled className='StaffMember'>
             <Lightbox
+                displayName='Staff Member Lightbox'
                 title={ member.name }
-                activeContent={ <ActiveContent /> }
-                modalContent={ <ModalContent /> }
-            />
+            >
+                <ActiveArea>
+                    <img src={ member.image } alt={ member.name } />
+                    <h3>{ member.name }</h3>
+                </ActiveArea>
+                <Modal>
+                    <img src={ member.image } alt={ member.name } />
+                </Modal>
+            </Lightbox>
         </StaffMemberStyled>
     );
 }

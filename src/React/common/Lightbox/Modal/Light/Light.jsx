@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/* Components ---------------------------*/
 import Header from './Header/Header.jsx';
 import Main from './Main.jsx';
 
-
-const Light = ({title, modalContent, closeModal}) => {
-
+const Light = ({children}) => {
     return (
         <LightStyled className='Light'>
-            <Header title={ title } closeModal={ closeModal }/>
-            <Main modalContent={ modalContent } />
+            <Header/>
+            <Main>
+                {children}
+            </Main>
         </LightStyled>
     );
 }

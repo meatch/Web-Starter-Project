@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
     faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-const CloseButton = ({closeModal}) => {
+/* Context ---------------------------*/
+import Context from '../../../Context/index.js';
+import { showModalUpdate } from '../../../Context/actions.js';
+
+const CloseButton = () => {
+
+    const { dispatch } = useContext(Context);
+
+    const handleOnClick = () => {
+        dispatch(showModalUpdate(false));
+    }
 
     return (
-        <CloseButtonStyled className='CloseButton' onClick={ closeModal }>
+        <CloseButtonStyled className='CloseButton' onClick={ handleOnClick }>
             <FontAwesomeIcon icon={ faTimes } />
         </CloseButtonStyled>
     );

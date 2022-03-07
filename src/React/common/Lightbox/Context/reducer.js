@@ -6,19 +6,10 @@ import { actionTypes } from './actionTypes.js';
 const reducer = (state, action) => {
 
     switch(action.type) {
-        case actionTypes.UF_ADD_FIELD: {
+        case actionTypes.LB_SHOW_MODAL_UPDATE: {
             return {
-                ...action.newState
-            };
-        }
-        case actionTypes.UF_UPDATE_FIELD: {
-            return {
-                ...action.newState
-            };
-        }
-        case actionTypes.UF_SUBMIT_FORM: {
-            return {
-                ...action.newState
+                ...state,
+                showModal: action.showModal,
             };
         }
 
