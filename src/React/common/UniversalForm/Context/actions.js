@@ -1,5 +1,6 @@
 import { actionTypes } from './actionTypes.js';
 import { isValidEmail } from 'React/common/utilities.js';
+import api from 'React/common/api.js';
 
 /*---------------------------
 | Actions (Action Creators)
@@ -47,17 +48,17 @@ export const updateField = (id, value, state) => {
     };
 }
 
-export const submitForm = (state, dispatch) => {
-    
+export const submitForm = async (state, dispatch) => {
+
     // 1. Clone existing state
     let newState = { ...state };
 
     // 2. Validate
     newState = validateForm(newState);
-    
+
     // 3. Post Data to server
     if (!newState.feedback.show) {
-        newState = serverRequest(newState);
+        return serverRequest(newState, dispatch);
     }
 
     // 4. Update State
@@ -75,11 +76,11 @@ const validateForm = (newState) => {
     newState.feedback.message = '';
 
     newState.fields = newState.fields.map((field) => {
-        
+
         // Reset field evaluations
         field.isValid = true;
         field.messages = [];
-        
+
         // Validate against all rules provided
         field.rules.forEach((rule) => {
             switch(rule) {
@@ -114,27 +115,32 @@ const validateForm = (newState) => {
     return newState;
 }
 
-const serverRequest = (newState) => {
+const serverRequest = (newState, dispatch) => {
 
     // 1. Make API call to server...
+    api.post(newState.apiUrl, newState.fields).then((resp) => {
 
-    // Create sample API payload
-    const payload = { 
-        status: 'success',
-        data: 'Data from server response',
-    };
+        console.log('resp', resp);
 
-    // Expose results to UF Consumer
-    newState.onSubmit({
-        fields: newState.fields,
-        payload: payload,
+        // Create sample API payload
+        const payload = resp;
+
+        // Expose results to UF Consumer
+        newState.onSubmit({
+            fields: newState.fields,
+            payload: payload,
+        });
+
+        newState.payload = payload;
+
+        newState.feedback.show = true;
+        newState.feedback.type = 'success';
+        newState.feedback.message = 'Form submitted successfully.';
+
+        dispatch({
+            type: actionTypes.UF_SUBMIT_FORM,
+            newState: newState,
+        });
+
     });
-
-    newState.payload = payload;
-
-    newState.feedback.show = true;
-    newState.feedback.type = 'success';
-    newState.feedback.message = 'Form submitted successfully.';
-
-    return newState;
 }

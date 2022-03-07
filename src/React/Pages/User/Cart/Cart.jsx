@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Cart = () => {
     return (
         <CartStyled className='Cart'>
-            <h1>Cart</h1> 
+            <h2>Cart</h2>
         </CartStyled>
     );
 }
@@ -12,5 +12,5 @@ const Cart = () => {
 export default Cart;
 
 const CartStyled = styled.div`
-    
+
 `;
