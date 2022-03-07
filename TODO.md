@@ -7,8 +7,8 @@
 - [ ] Build Course App as Feature Branch
 
         - [x] Sun And Moon
-        - [x] Context Lightbox
-        - [ ] Redux State
+        - [x] Lightbox Using Context
+        - [x] Adding Redux State
         - [ ] PostgreSQL (see below)
         - [ ] Authentication
         - [ ] UniversalForm handle API calls
