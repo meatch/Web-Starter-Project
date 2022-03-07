@@ -1,17 +1,17 @@
 export const tabbedData = [
     {
-        image: '/assets/img/MissionVision/about.jpg',
+        image: '/assets/img/tabbed/tabbed-assets/Alex-Esqueda-Box-Jump.jpg',
         title: 'About',
-        text: '<p><b>About</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit!</p> <p>About Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit!</p>',
+        text: '<p>Join a community of people working hard every day to live a better quality of life, and have fun doing it!  At CrossFit Decimate, we provide inclusive programming, individualized modifications, and top-trained coaches to give you the best fitness journey  to fit your lifestyle.</p>',
     },
     {
-        image: '/assets/img/MissionVision/mission.jpg',
+        image: '/assets/img/tabbed/tabbed-assets/Tire-Flip.jpg',
         title: 'Mission',
-        text: '<p><b>Mission</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit!</p>',
+        text: '<p>At Decimate, we believe that just like your fitness journey, nutrition is not a “one size fits all”.  Our highly trained nutrition coaches work alongside you to help you achieve your optimal health and fitness goals.  Through one-on-one coaching and personalized nutrition programming, our coaches are able to determine the best nutrition plan for you.</p>',
     },
     {
-        image: '/assets/img/MissionVision/vision.jpg',
+        image: '/assets/img/tabbed/tabbed-assets/Kids.jpg',
         title: 'Vision',
-        text: '<p><b>Vision</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, totam. Assumenda saepe fugit qui officiis ducimus libero incidunt consequatur deleniti, iste quod velit quaerat? Reprehenderit, exercitationem sint. Illum, molestias odit!</p>',
+        text: '<p>With our highly qualified and trained coach, Kara Smith, CrossFit Decimate is able to provide adaptive and inclusive workouts for each individual athlete, whether you are injured or working with a disability.  At CrossFit Decimate we believe that all people can workout and want to workout, they just need to be guided on how to achieve their goals.  Coach Kara offers modifications to each workout to help each athlete achieve their own level of success.  </p>',
     },
 ];
