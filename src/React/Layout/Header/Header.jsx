@@ -38,7 +38,7 @@ const Header = () => {
 
 export default Header;
 
-const HeaderStyled = styled.div`
+const HeaderStyled = styled.header`
     background-color: rgb(1, 68, 68);
     color: white;
 `;
