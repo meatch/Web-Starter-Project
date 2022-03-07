@@ -51,11 +51,12 @@ const StaffMemberStyled = styled.div`
     img {
         width: 100%;
         display: block;
+        min-height: 150px;
     }
 
     h3 {
         color: white;
-        background-color: maroon;
+        background-color: #014444;
         margin: 0px;
         padding: 5px 10px;
     }

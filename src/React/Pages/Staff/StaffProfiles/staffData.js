@@ -1,34 +1,46 @@
 export const staffData = [
     {
-        image: '/assets/img/Staff/staff-1.jpeg',
-        name: 'George',
+        image: '/assets/img/staff/Alex-Esqueda.jpg',
+        name: 'Alex-Esqueda',
     },
     {
-        image: '/assets/img/Staff/staff-2.jpeg',
-        name: 'Sherry',
+        image: '/assets/img/staff/Silvie-Esqueda.jpeg',
+        name: 'Silvie-Esqueda',
     },
     {
-        image: '/assets/img/Staff/staff-3.jpeg',
-        name: 'Laura',
+        image: '/assets/img/staff/Kara-Smith.jpg',
+        name: 'Kara-Smith',
     },
     {
-        image: '/assets/img/Staff/staff-4.jpeg',
-        name: 'Jan',
+        image: '/assets/img/staff/Brook.jpg',
+        name: 'Brook',
     },
     {
-        image: '/assets/img/Staff/staff-5.jpeg',
-        name: 'Susan',
+        image: '/assets/img/staff/Amber-Dyett.jpg',
+        name: 'Amber-Dyett',
     },
     {
-        image: '/assets/img/Staff/staff-6.jpeg',
-        name: 'Claire',
+        image: '/assets/img/staff/Dr-Skyler-Harms.jpg',
+        name: 'Dr-Skyler-Harms',
     },
     {
-        image: '/assets/img/Staff/staff-7.jpeg',
-        name: 'Steph',
+        image: '/assets/img/staff/Elisa-Eastwood.jpg',
+        name: 'Elisa-Eastwood',
     },
     {
-        image: '/assets/img/Staff/staff-8.jpeg',
-        name: 'Tracy',
+        image: '/assets/img/staff/Jaque-Ong.jpg',
+        name: 'Jaque-Ong',
+    },
+    {
+        image: '/assets/img/staff/John-Giron.jpg',
+        name: 'John-Giron',
+    },
+    {
+        image: '/assets/img/staff/Karlie-Goretski.jpg',
+        name: 'Karlie-Goretski',
+    },
+    {
+        image: '/assets/img/staff/Shana-Millspaugh.jpg',
+        name: 'Shana-Millspaugh',
     },
 ];
