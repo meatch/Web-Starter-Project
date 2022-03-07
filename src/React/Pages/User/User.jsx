@@ -13,11 +13,11 @@ const User = () => {
         <UserStyled className='User inset'>
             <h1>Access</h1>
 
-            <ul>
-                <li><NavLink to="/user/login">Login</NavLink></li>
-                <li><NavLink to="/user/update">Update</NavLink></li>
-                <li><NavLink to="/user/cart">Cart</NavLink></li>
-            </ul>
+            <nav className='sublinks'>
+                <NavLink to="/user/login">Login</NavLink>
+                <NavLink to="/user/update">Update</NavLink>
+                <NavLink to="/user/cart">Cart</NavLink>
+            </nav>
 
             <Switch>
                 <Route path='/user/login' exact>

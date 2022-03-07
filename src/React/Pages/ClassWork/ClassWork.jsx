@@ -11,7 +11,7 @@ const ClassWork = () => {
         <ClassWorkStyled className='ClassWork inset'>
             <h1>Class Work</h1>
 
-            <nav>
+            <nav className='sublinks'>
                 <NavLink to='/class' exact>Homework</NavLink>
                 <NavLink to='/class/play'>Play</NavLink>
             </nav>

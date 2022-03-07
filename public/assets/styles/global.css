@@ -63,3 +63,26 @@ h6 { font-size: 11px; }
     min-height: 500px;
     padding-top: 50px;
 }
+
+nav.sublinks {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0px;
+}
+
+nav.sublinks a {
+    margin-right: 5px;
+    display: block;
+    line-height: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    background-color: #027272;
+}
+
+nav.sublinks a:hover,
+nav.sublinks a.active {
+    background-color: #014444;
+}
