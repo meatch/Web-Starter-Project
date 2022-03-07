@@ -12,9 +12,9 @@ const Forms = () => {
 
     return (
         <FormsStyled className='Forms'>
-            <h2>Playground Forms</h2>
+            <h3>Playground Forms</h3>
 
-            <h3>Form 1</h3>
+            <h4>Form 1</h4>
             <UniversalForm
                 displayName='First Form'
                 apiURL='/resource/action'
@@ -55,7 +55,7 @@ const Forms = () => {
                 <SubmitButton>Send</SubmitButton>
             </UniversalForm>
 
-            <h3>Form 2</h3>
+            <h4>Form 2</h4>
             <UniversalForm
                 displayName='Another Form'
                 apiURL='/resource/action'

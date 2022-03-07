@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Contact = () => {
     return (
-        <ContactStyled className='Contact'>
+        <ContactStyled className='Contact inset'>
             <h1>Contact</h1>
         </ContactStyled>
     );
@@ -12,5 +12,5 @@ const Contact = () => {
 export default Contact;
 
 const ContactStyled = styled.div`
-    
+
 `;

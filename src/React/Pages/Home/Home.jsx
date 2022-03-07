@@ -9,7 +9,9 @@ const Welcome = () => {
         <WelcomeStyled className='Welcome'>
             <h1>Welcome to a New You</h1>
             <Slideshow />
-            <Tabbed />
+            <div className="inset">
+                <Tabbed />
+            </div>
         </WelcomeStyled>
     );
 }

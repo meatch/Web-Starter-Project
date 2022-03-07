@@ -21,7 +21,7 @@ const EssayStyled = styled.div`
 
     h3 {
         margin: 0px;
-        background-color: teal;
+        background-color: #014444;
         padding: 10px 20px;
         color: white;
     }
@@ -29,7 +29,7 @@ const EssayStyled = styled.div`
     .answer {
         background-color: white;
         padding: 20px;
-        /* 
+        /*
         background-image: url('/assets/img/sun.png');
         background-repeat: no-repeat;
         background-position: center center; */

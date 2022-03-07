@@ -10,7 +10,7 @@ import Cart from './Cart/Cart.jsx';
 
 const User = () => {
     return (
-        <UserStyled className='User'>
+        <UserStyled className='User inset'>
             <h1>Access</h1>
 
             <ul>

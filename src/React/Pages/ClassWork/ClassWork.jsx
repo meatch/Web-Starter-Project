@@ -8,7 +8,7 @@ import Play from './Play/Play.jsx';
 
 const ClassWork = () => {
     return (
-        <ClassWorkStyled className='ClassWork'>
+        <ClassWorkStyled className='ClassWork inset'>
             <h1>Class Work</h1>
 
             <nav>

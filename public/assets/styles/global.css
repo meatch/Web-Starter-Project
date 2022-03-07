@@ -27,6 +27,7 @@ body.modal-open {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
     margin: 0px 0px 20px;
+    color: #014444;
 }
 
 h1, h2 { font-weight: 700; }
@@ -52,8 +53,13 @@ h6 { font-size: 11px; }
 }
 
 .inset {
+    padding: 0px 10px;
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0px 10px;
+}
+
+.Main .inset {
+    min-height: 500px;
+    padding-top: 50px;
 }

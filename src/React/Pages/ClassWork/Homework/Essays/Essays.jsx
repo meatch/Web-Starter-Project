@@ -6,8 +6,11 @@ import Essay from './Essay.jsx';
 const Essays = () => {
     return (
         <EssaysStyled>
-            <h2>Essays</h2>
-            <Essay q='S2. What are Single Page Apps (SPAs)? How do they differ from traditional multi-page Web Sites?'>
+            <h3>Essays</h3>
+            <Essay q='S2. Question?'>
+                <p>Answer goes here...</p>
+            </Essay>
+            <Essay q='S3. Question?'>
                 <p>Answer goes here...</p>
             </Essay>
         </EssaysStyled>
@@ -17,6 +20,5 @@ const Essays = () => {
 export default Essays;
 
 const EssaysStyled = styled.div`
-    background-color: white;
-    padding: 20px;
+
 `;

@@ -14,32 +14,30 @@ import ClassWork from './Pages/ClassWork/ClassWork.jsx';
 const Main = () => {
     return (
         <MainStyled className='Main'>
-            <div className="inset">
-                <Switch>
-                    <Route path='/' exact>
-                        <Home />
-                    </Route>
-                    <Route path='/staff'>
-                        <Staff />
-                    </Route>
-                    <Route path='/contact'>
-                        <Contact />
-                    </Route>
-                    <Route path='/merch'>
-                        <Merch />
-                    </Route>
+            <Switch>
+                <Route path='/' exact>
+                    <Home />
+                </Route>
+                <Route path='/staff'>
+                    <Staff />
+                </Route>
+                <Route path='/contact'>
+                    <Contact />
+                </Route>
+                <Route path='/merch'>
+                    <Merch />
+                </Route>
 
-                    {/* Authenticated */}
-                    <Route path='/user'>
-                        <User />
-                    </Route>
+                {/* Authenticated */}
+                <Route path='/user'>
+                    <User />
+                </Route>
 
-                    {/* Course Work */}
-                    <Route path='/class'>
-                        <ClassWork />
-                    </Route>
-                </Switch>
-            </div>
+                {/* Course Work */}
+                <Route path='/class'>
+                    <ClassWork />
+                </Route>
+            </Switch>
         </MainStyled>
     );
 }
@@ -47,8 +45,5 @@ const Main = () => {
 export default Main;
 
 const MainStyled = styled.main`
-    padding: 50px 0px;
-    .inset {
-        min-height: 500px;
-    }
+
 `;

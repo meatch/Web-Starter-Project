@@ -4,7 +4,7 @@ import StaffProfiles from './StaffProfiles/StaffProfiles.jsx';
 
 const Staff = () => {
     return (
-        <StaffStyled className='Staff'>
+        <StaffStyled className='Staff inset'>
             <h1>Staff</h1>
             <StaffProfiles />
         </StaffStyled>

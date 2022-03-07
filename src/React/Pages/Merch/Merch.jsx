@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Merch = () => {
     return (
-        <MerchStyled className='Merch'>
-            <h1>Merch</h1> 
+        <MerchStyled className='Merch inset'>
+            <h1>Merch</h1>
         </MerchStyled>
     );
 }
@@ -12,5 +12,5 @@ const Merch = () => {
 export default Merch;
 
 const MerchStyled = styled.div`
-    
+
 `;
