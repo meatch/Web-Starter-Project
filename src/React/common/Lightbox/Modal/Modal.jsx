@@ -16,9 +16,6 @@ const Modal = ({children}) => {
     // Component Did Mount
     useEffect(() => {
         const handleOnKeyDown = (e) => {
-
-            console.log('What Key Was Pressed', e.keyCode);
-
             if (e.keyCode === 27) {
                 dispatch(showModalUpdate(false));
             }
@@ -30,9 +27,7 @@ const Modal = ({children}) => {
         return () => {
             document.removeEventListener("keydown", handleOnKeyDown);
         }
-
     }, []);
-
 
     if (!state.showModal) { return ''; }
 
