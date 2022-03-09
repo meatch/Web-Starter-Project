@@ -27,13 +27,13 @@ if (mongoConn) {
     mongoose
         .connect(mongoConn)
         .then((res) => {
-            console.log('Mongo: Connection made.');
+            console.log('Mongoose: Connection made.');
         })
         .catch((err) => {
             console.log(`Mongoose Connection Error: ${err}`);
         });
 } else {
-    console.log('Missing MONGO_DB_CONN .env var for Mongo connection');
+    console.log('Missing MONGO_DB_CONN .env var for Mongoose connection');
 }
 
 /*---------------------------
@@ -48,10 +48,12 @@ app.use(express.json());
 /* Server Session support user access. ---------------------------*/
 // initialize cookie-parser to allow us access the cookies stored in the browser.
 app.use(cookieParser());
+const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({
-    secret: "Secret Unique Value",
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
+    cookie: { maxAge: oneDay },
 }));
 
 /* Serve the static files from the React app ---------------------------*/
@@ -73,7 +75,7 @@ if (process.env.NODE_ENV === 'development') {
 /*---------------------------
 | Route Collections
 ---------------------------*/
-const renderRoutes = require('./src/Express/routes/index.js');
+const renderRoutes = require('./src/Express/routes/renderRoutes.js');
 renderRoutes(app);
 
 /*---------------------------

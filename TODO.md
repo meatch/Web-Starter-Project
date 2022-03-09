@@ -9,7 +9,7 @@
         - [x] Sun And Moon
         - [x] Lightbox Using Context
         - [x] Adding Redux State
-        - [ ] PostgreSQL (see below)
+        - [ ] MongoDB
         - [ ] Authentication
         - [ ] UniversalForm handle API calls
         - [ ] Order Flow
@@ -17,14 +17,3 @@
         - [ ] Unit Tests
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
-
-
-## PostgreSQL Database
-
-Heroku Supports a free version - probably perfect for our eductaional needs.
-
-1gb limit
-10000 rows
-Up to 20 connections
-
-https://elements.heroku.com/addons/heroku-postgresql
