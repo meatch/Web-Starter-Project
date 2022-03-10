@@ -1,5 +1,4 @@
 const path = require('path');
-
 const routes = require('./routes.js');
 
 const renderRoutes = (app) => {
