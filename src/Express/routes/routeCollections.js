@@ -35,6 +35,14 @@ const routeCollections = {
                 { method: "patch",   handler: "updatePassword",         path: `/:id/password`,     },
             ],
         },
+        {
+            resource: '/products',
+            controller: Controllers.ProductController,
+            routes: [
+                { method: "get",     handler: "all",                    path: `/`,                 },
+                { method: "get",     handler: "byID",                   path: `/:id`,              },
+            ],
+        },
     ],
 }
 
