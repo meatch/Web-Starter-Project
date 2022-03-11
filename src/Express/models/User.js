@@ -27,6 +27,15 @@ const UserSchema = new mongoose.Schema({
     },
 });
 
+// Remove sensitive data in responses.
+UserSchema.set('toJSON', {
+    transform: (doc, ret, opt) => {
+        delete ret['password']
+        delete ret['__v']
+        return ret;
+    }
+});
+
 // cannot use fat arrow due to this binding issues.
 UserSchema.pre('save', function(next) {
     var user = this;

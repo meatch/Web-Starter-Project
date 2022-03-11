@@ -1,110 +1,106 @@
-require('../connections/mongoose.js');
+require('../common/mongoose.conn.js');
 const User = require('../models/User.js');
+const reqResp = require('../common/reqResp.js');
 
 const UserController = () => {
 
-    /* Users: Get All ---------------------------*/
-    const all = (req,res) => {
-        console.log('Users: All');
+    /* User: All ---------------------------*/
+    const all = reqResp(({handleResponse, handleError}) => {
         User.find({},(err, users) => {
-            if (err) throw err;
-            res.json(users);
+            if (err) handleError(err);
+            handleResponse(users, 'All users retrieved.');
         });
-    };
+    });
+
+    /* User: byID ---------------------------*/
+    const byID = reqResp(({reqParams, handleResponse, handleError}) => {
+        if (reqParams.id) {
+            // Make sure account exists
+            User.findOne({ "_id": reqParams.id },(err, dbUser) => {
+                if (err) handleError(err);
+                handleResponse(dbUser, 'User retrieved.');
+            });
+        } else {
+            handleResponse({_id: expReq.params.id, body: reqUser}, 'Unable to locate account by userID.', false);
+        }
+    });
 
     /* User: Create ---------------------------*/
-    const create = (req,res) => {
-        console.log('Users: Create User');
-
-        const reqUser = req.body;
-
-        if (reqUser.username && reqUser.password) {
+    const create = reqResp(({reqBody, handleResponse, handleError}) => {
+        if (reqBody.username && reqBody.password) {
             // Make sure account does not already exist
-            User.findOne({ username: reqUser.username },(err, user) => {
-                if (err) throw err;
+            User.findOne({ username: reqBody.username },(err, dbUser) => {
+                if (err) handleError(err);
 
-                if (!user) {
-                    const newUser = new User(reqUser);
-                    newUser.save((err, resp) => {
-                        if (err) throw err;
-                        res.json(resp);
+                if (!dbUser) {
+                    const newUser = new User(reqBody);
+                    newUser.save((err, payload) => {
+                        if (err) handleError(err);
+                        handleResponse(payload, 'Account created.');
                     });
                 } else {
-                    res.json('User already exists.');
+                    handleResponse(dbUser, 'Account already exists.', false);
                 }
             });
         } else {
-            res.json('Username and Password are required to create an account.');
+            handleResponse(reqBody, 'Username and password are required to create an account.', false);
         }
-    };
+    });
 
     /* Users: Get All ---------------------------*/
-    const update = (req,res) => {
-        console.log('Users: Update User');
-
-        const reqUser = req.body;
-
-        if (req.params.id) {
+    const update = reqResp(({reqBody, reqParams, handleResponse, handleError}) => {
+        if (reqParams.id) {
             // Make sure account exists
-            User.findOne({ "_id": req.params.id },(err, user) => {
-                if (err) throw err;
+            User.findOne({ "_id": reqParams.id },(err, dbUser) => {
+                if (err) handleError(err);
 
-                if (user) {
+                if (dbUser) {
+                    dbUser.first = reqBody.first;
+                    dbUser.last = reqBody.last;
+                    dbUser.username = reqBody.username;
 
-                    console.log('user', user);
-
-                    user.first = reqUser.first;
-                    user.last = reqUser.last;
-                    user.username = reqUser.username;
-
-                    user.save((err, resp) => {
-                        if (err) throw err;
-                        res.json(resp);
+                    dbUser.save((err, resp) => {
+                        if (err) handleError(err);
+                        handleResponse(resp, 'Account updated.');
                     });
 
                 } else {
-                    res.json('Could not find user in our records.');
+                    handleResponse(dbUser, 'Account Update Failed: Could not find account in our records.', false);
                 }
             });
         } else {
-            res.json('User ID is required to update an account.');
+            handleResponse({_id: expReq.params.id, body: reqUser}, 'Account Update Failed: User ID is required to update an account.', false);
         }
-    };
+    });
 
     /* Users: Update User Password ---------------------------*/
-    const updatePassword = (req,res) => {
-        console.log('Users: Update User Password');
-
-        const reqUser = req.body;
-
-        if (req.params.id) {
+    const updatePassword = reqResp(({reqBody, reqParams, handleResponse, handleError}) => {
+        if (reqParams.id) {
             // Make sure account exists
-            User.findOne({ "_id": req.params.id },(err, user) => {
-                if (err) throw err;
+            User.findOne({ "_id": reqParams.id },(err, dbUser) => {
+                if (err) handleError(err);
 
-                if (user) {
-
-                    console.log('user', user);
-
+                if (dbUser) {
                     // Modified password - will trigger middleware and hash the password for us - pretty cool.
-                    user.password = reqUser.password;
+                    dbUser.password = reqBody.password;
 
-                    user.save((err, resp) => {
-                        if (err) throw err;
-                        res.json(resp);
+                    dbUser.save((err, resp) => {
+                        if (err) handleError(err);
+                        handleResponse(resp, 'Account password updated.');
                     });
 
                 } else {
-                    res.json('Could not find user in our records.');
+                    handleResponse(dbUser, 'Password Update Failed: Could not find user in our records.', false);
                 }
             });
         } else {
-            res.json('User ID is required to update an account.');
+            handleResponse({ _id: expReq.params.id, body: reqBody }, 'Password Update Failed: User ID is required to update an account.', false);
         }
-    };
+    });
 
     return {
         all: all,
+        byID: byID,
         create: create,
         update: update,
         updatePassword: updatePassword,

@@ -21,7 +21,7 @@ const routeCollections = {
             routes: [
                 { method: "post",     handler: "login",                 path: `/`,                  },
             ],
-        }
+        },
     ],
     authenticated: [
         {
@@ -30,6 +30,7 @@ const routeCollections = {
             routes: [
                 { method: "get",     handler: "all",                    path: `/`,                 },
                 { method: "post",    handler: "create",                 path: `/`,                 },
+                { method: "get",     handler: "byID",                   path: `/:id`,              },
                 { method: "patch",   handler: "update",                 path: `/:id`,              },
                 { method: "patch",   handler: "updatePassword",         path: `/:id/password`,     },
             ],
