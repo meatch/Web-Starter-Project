@@ -1,35 +1,44 @@
-const express = require('express');
-const router = express.Router();
 require('../connections/mongoose.js');
 const User = require('../models/User.js');
 
-/* Login ---------------------------*/
-router.post('/', (req,res) => {
-    console.log('User: Log In');
+const LoginController = () => {
 
-    const user = req.body;
+    /* Login ---------------------------*/
+    const login = (req,res) => {
+        console.log('User: Log In');
 
-    User.findOne({"username": user.username},(err, dbUser) => {
-        if (err) throw err;
+        const user = req.body;
 
-        // test a matching password
-        dbUser.comparePassword(user.password, dbUser.password, (err, isMatch) => {
+        User.findOne({"username": user.username},(err, dbUser) => {
             if (err) throw err;
-            if (isMatch) {
-                res.json({
-                    access: 'granted',
-                    user: user,
-                    isMatch: isMatch,
+
+            if (dbUser) {
+                // test a matching password
+                dbUser.comparePassword(user.password, dbUser.password, (err, isMatch) => {
+                    if (err) throw err;
+                    if (isMatch) {
+                        res.json({
+                            access: 'granted',
+                            user: user,
+                            isMatch: isMatch,
+                        });
+                    } else {
+                        res.json({
+                            access: 'denied',
+                            user: user,
+                            isMatch: isMatch,
+                        });
+                    }
                 });
             } else {
-                res.json({
-                    access: 'denied',
-                    user: user,
-                    isMatch: isMatch,
-                });
+                res.json('Unable to Locate User in our records.');
             }
         });
-    });
-});
+    };
 
-module.exports = router;
+    return {
+        login: login
+    }
+}
+
+module.exports = LoginController();
