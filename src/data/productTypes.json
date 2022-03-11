@@ -1,0 +1,14 @@
+[
+    {
+        "prodTypeID": 1,
+        "type": "Tops"
+    },
+    {
+        "prodTypeID": 2,
+        "type": "Hat"
+    },
+    {
+        "prodTypeID": 3,
+        "type": "Decal"
+    }
+]
