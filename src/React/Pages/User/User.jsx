@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 /* Components ---------------------------*/
 import Login from './Login/Login.jsx';
+import Create from './Create/Create.jsx';
 import Update from './Update/Update.jsx';
 import Cart from './Cart/Cart.jsx';
 
@@ -14,16 +15,20 @@ const User = () => {
             <h1>Access</h1>
 
             <nav className='sublinks'>
-                <NavLink to="/user/login">Login</NavLink>
+                <NavLink to="/user/" exact>Login</NavLink>
+                <NavLink to="/user/create">Create</NavLink>
                 <NavLink to="/user/update">Update</NavLink>
                 <NavLink to="/user/cart">Cart</NavLink>
             </nav>
 
             <Switch>
-                <Route path='/user/login' exact>
+                <Route path='/user/' exact>
                     <Login />
                 </Route>
-                <Route path='/user/update' exact>
+                <Route path='/user/create'>
+                    <Create />
+                </Route>
+                <Route path='/user/update'>
                     <Update />
                 </Route>
                 <Route path='/user/cart'>
