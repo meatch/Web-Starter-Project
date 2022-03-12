@@ -1,48 +1,48 @@
 [
     {
-        "prodTypeID": 1,
+        "prodType": "Tops",
         "title": "Red Hoodie",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/red-hoody.jpg",
         "price": 4500
     },
     {
-        "prodTypeID": 1,
+        "prodType": "Tops",
         "title": "Gray T-Shirt",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/gray-t-shirt.jpg",
         "price": 3500
     },
     {
-        "prodTypeID": 1,
+        "prodType": "Tops",
         "title": "Sports Jacket",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/sports-jacket.jpg",
         "price": 5500
     },
     {
-        "prodTypeID": 2,
+        "prodType": "Hat",
         "title": "Red Baseball Cap",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/red-baseball-cap.jpg",
         "price": 2500
     },
     {
-        "prodTypeID": 2,
+        "prodType": "Hat",
         "title": "Black Baseball Cap",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/black-baseball-cap.jpg",
         "price": 2500
     },
     {
-        "prodTypeID": 3,
+        "prodType": "Decal",
         "title": "Black Logo Decal",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/black-logo-decal.jpg",
         "price": 1000
     },
     {
-        "prodTypeID": 3,
+        "prodType": "Decal",
         "title": "Red Logo Decal",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
         "image": "/assets/img/merch/tops/red-logo-decal.jpg",
