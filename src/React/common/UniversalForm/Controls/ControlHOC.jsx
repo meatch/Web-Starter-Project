@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
 /* Context ---------------------------*/
 import Context from '../Context/index.js';
@@ -28,6 +29,7 @@ const ControlHOC = WrappedComponent => (props) => {
     useEffect(() => {
         const theField = {
             id: id,
+            label: label,
             value: defaultValue,
             rules: rules,
         }
@@ -38,8 +40,13 @@ const ControlHOC = WrappedComponent => (props) => {
         dispatch(updateField(id, newValue, state));
     }
 
+    const theClassName = classnames({
+        'ControlHOC': true,
+        'error': thisField && !thisField.isValid,
+    });
+
     return (
-        <ControlHOCStyled className='ControlHOC'>
+        <ControlHOCStyled className={ theClassName }>
             <ControlGroup id={ id } label={ label }>
                 <WrappedComponent value={ renderedValue } onChange={ handleOnChange } {...props} />
             </ControlGroup>
@@ -50,5 +57,9 @@ const ControlHOC = WrappedComponent => (props) => {
 export default ControlHOC;
 
 const ControlHOCStyled = styled.div`
-
+    &.error {
+        input, textarea, select {
+            border: solid 2px red;
+        }
+    }
 `;

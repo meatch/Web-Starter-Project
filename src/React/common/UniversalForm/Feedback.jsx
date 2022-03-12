@@ -18,7 +18,7 @@ const Feedback = () => {
 
     return (
         <FeedbackStyled className={ theClassName }>
-            { state.feedback.message } 
+            { state.feedback.message }
         </FeedbackStyled>
     );
 }
@@ -27,9 +27,9 @@ export default Feedback;
 
 const FeedbackStyled = styled.div`
     padding: 20px;
-    margin-bottom: 30px;
 
     &.error {
+        margin-bottom: 30px;
         background-color: #f9c76b;
     }
     &.success {

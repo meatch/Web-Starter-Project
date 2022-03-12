@@ -17,9 +17,10 @@ export { default as Checkbox } from './Controls/Checkbox.jsx';
 export { default as RadioGroup } from './Controls/RadioGroup.jsx';
 export { default as SubmitButton } from './Controls/SubmitButton.jsx';
 
-const UniversalForm = ({children, apiUrl, onSubmit, displayName='Universal Form'}) => {
+const UniversalForm = ({children, method='post', apiUrl, onSubmit=() => {}, displayName='Universal Form'}) => {
 
     const defaultFormData = {
+        method: method,
         apiUrl: apiUrl,
         onSubmit: onSubmit,
         payload: {},

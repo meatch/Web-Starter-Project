@@ -13,11 +13,12 @@ const Form = ({children}) => {
         e.preventDefault();
         submitForm(state, dispatch);
     }
+    if (state.feedback.show && state.feedback.type === 'success') { return ''; }
 
     return (
         <FormStyled className='Form'>
             <form noValidate onSubmit={ handleSubmit }>
-                { children } 
+                { children }
             </form>
         </FormStyled>
     );
@@ -26,5 +27,5 @@ const Form = ({children}) => {
 export default Form;
 
 const FormStyled = styled.div`
-    
+
 `;

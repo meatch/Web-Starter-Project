@@ -83,7 +83,10 @@ const validateForm = (newState) => {
 
         // Validate against all rules provided
         field.rules.forEach((rule) => {
-            switch(rule) {
+
+            const [ruleName, ruleOption] = rule.split(":");
+
+            switch(ruleName) {
                 case 'required':
                     if (field.value.length === 0) {
                         newState.feedback.show = true;
@@ -98,6 +101,20 @@ const validateForm = (newState) => {
                         field.messages.push('This field does not appear to be a valid email.');
                     }
                     break;
+                case 'match':
+
+                    const fieldToMatch = newState.fields.find((f) => {
+                        return f.id === ruleOption
+                    });
+
+                    console.log('fieldToMatch', fieldToMatch);
+
+                    if (fieldToMatch.value !== field.value) {
+                        newState.feedback.show = true;
+                        field.isValid = false;
+                        field.messages.push(`This field does not appear to match ${fieldToMatch.label}`);
+                    }
+                    break;
                 default:
                     // do nothing;
                     break;
@@ -109,7 +126,7 @@ const validateForm = (newState) => {
 
     if (newState.feedback.show) {
         newState.feedback.type = 'error';
-        newState.feedback.message = 'There was an error in validating the fields below, please check the form and try again.';
+        newState.feedback.message = 'There was an error in processing your request. Please check the form and try again.';
     }
 
     return newState;
@@ -117,25 +134,30 @@ const validateForm = (newState) => {
 
 const serverRequest = (newState, dispatch) => {
 
-    // 1. Make API call to server...
-    api.post(newState.apiUrl, newState.fields).then((resp) => {
+    let requestObject = {};
 
-        console.log('resp', resp);
+    newState.fields.forEach((field) => {
+        requestObject[field.id] = field.value;
+    });
+
+    // 1. Make API call to server...
+    api[newState.method](newState.apiUrl, requestObject).then((resp) => {
 
         // Create sample API payload
-        const payload = resp;
+        const payload = resp.data;
 
         // Expose results to UF Consumer
         newState.onSubmit({
             fields: newState.fields,
-            payload: payload,
+            request: requestObject,
+            response: payload,
         });
 
         newState.payload = payload;
 
         newState.feedback.show = true;
-        newState.feedback.type = 'success';
-        newState.feedback.message = 'Form submitted successfully.';
+        newState.feedback.type = payload.success ? 'success':'error';
+        newState.feedback.message = payload.message;
 
         dispatch({
             type: actionTypes.UF_SUBMIT_FORM,
