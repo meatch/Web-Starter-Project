@@ -6,5 +6,5 @@ module.exports = {
     LoginController: require('../controllers/LoginController.js'),
     UserController: require('../controllers/UserController.js'),
     ProductController: require('../controllers/ProductController.js'),
-    CartItemController: require('../controllers/CartItemController.js'),
+    OrderController: require('../controllers/OrderController.js'),
 };

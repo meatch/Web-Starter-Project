@@ -44,12 +44,12 @@ const routeCollections = {
             ],
         },
         {
-            resource: '/cartItems',
-            controller: Controllers.CartItemController,
+            resource: '/orders',
+            controller: Controllers.OrderController,
             routes: [
                 { method: "post",     handler: "create",                path: `/`,                 },
-                { method: "get",      handler: "byUserId",              path: `/:userID`,          },
-                { method: "delete",   handler: "remove",                path: `/`,                 },
+                { method: "get",      handler: "getCart",               path: `/:userID`,          },
+                { method: "patch",    handler: "purchase",              path: `/purchase/:userID`, },
             ],
         },
     ],
