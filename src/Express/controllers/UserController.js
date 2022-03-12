@@ -36,7 +36,7 @@ const UserController = () => {
                     const newUser = new User(reqBody);
                     newUser.save((err, payload) => {
                         if (err) handleError(err);
-                        handleResponse(payload, 'Account created.');
+                        handleResponse(payload, 'Account created, please log in.');
                     });
                 } else {
                     handleResponse(dbUser, 'Account already exists.', false);

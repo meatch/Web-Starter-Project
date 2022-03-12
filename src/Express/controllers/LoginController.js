@@ -14,7 +14,7 @@ const LoginController = () => {
                 dbUser.comparePassword(reqBody.password, dbUser.password, (err, isMatch) => {
                     if (err) handleError(err);
                     if (isMatch) {
-                        handleResponse(dbUser, 'Account exists and password is a match.');
+                        handleResponse(dbUser, 'Login Success.');
                     } else {
                         handleResponse(dbUser, 'Login Failed: Account exists, but password is incorrect.', false);
                     }
