@@ -15,21 +15,24 @@ const Login = () => {
             <h2>Login</h2>
 
             <UniversalForm
-                displayName='First Form'
-                apiUrl='/api/user/auth'
+                displayName='Login Form'
+                method='post'
+                apiUrl='http://localhost:5099/login'
                 onSubmit={ handleOnSubmit }
             >
                 <Input
-                    label='Username'
+                    label='Email (Username)'
                     id='username'
                     type='text'
                     placeholder='email@somedomain.com'
+                    defaultValue='mitch@me.com'
                     rules={ [ 'required', 'email' ] }
                 />
                 <Input
                     label='Password'
                     id='password'
                     type='password'
+                    defaultValue='123456'
                     rules={ [ 'required' ] }
                 />
                 <SubmitButton>Log In</SubmitButton>
