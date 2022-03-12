@@ -43,6 +43,15 @@ const routeCollections = {
                 { method: "get",     handler: "byID",                   path: `/:id`,              },
             ],
         },
+        {
+            resource: '/cartItems',
+            controller: Controllers.CartItemController,
+            routes: [
+                { method: "post",     handler: "create",                path: `/`,                 },
+                { method: "get",      handler: "byUserId",              path: `/:userID`,          },
+                { method: "delete",   handler: "remove",                path: `/`,                 },
+            ],
+        },
     ],
 }
 

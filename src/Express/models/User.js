@@ -1,5 +1,5 @@
-//Require Mongoose
-const mongoose = require('mongoose');
+// Require Mongoose
+const { Schema, model } = require('mongoose');
 const validator = require('validator');
 
 // User Auth Example with bcrypt hashing
@@ -7,9 +7,8 @@ const validator = require('validator');
 const bcrypt = require('bcrypt');
 const SALT_WORK_FACTOR = 10;
 
-
-//Define a schema for our Model
-const UserSchema = new mongoose.Schema({
+// Define a schema for our Model
+const UserSchema = new Schema({
     first: { type: String, required: 'First Name address is required', },
     last: { type: String, required: 'Last Name address is required', },
     username: {
@@ -36,7 +35,7 @@ UserSchema.set('toJSON', {
     }
 });
 
-// cannot use fat arrow due to this binding issues.
+// Cannot use fat arrow due to this binding issues.
 UserSchema.pre('save', function(next) {
     var user = this;
 
@@ -65,4 +64,4 @@ UserSchema.methods.comparePassword = (candidatePassword, savedPassword, cb) => {
 };
 
 // Compile model from schema
-module.exports = mongoose.model('User', UserSchema);
+module.exports = model('User', UserSchema);

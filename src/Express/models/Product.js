@@ -1,8 +1,8 @@
-//Require Mongoose
-const mongoose = require('mongoose');
+// Require Mongoose
+const { Schema, model } = require('mongoose');
 
-//Define a schema for our Model
-const ProductSchema = new mongoose.Schema({
+// Define a schema for our Model
+const ProductSchema = new Schema({
     title: { type: String, required: 'Product title is required', },
     description: { type: String, },
     image: { type: String, required: 'Product image is required', },
@@ -19,4 +19,4 @@ ProductSchema.set('toJSON', {
 });
 
 // Compile model from schema
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = model('Product', ProductSchema);
