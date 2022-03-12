@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const routeCollections = require('./routeCollections.js');
+const sessionCheck = require("./sessionCheck.js");
 
 const renderRoutes = (app) => {
     /*---------------------------
@@ -26,7 +27,7 @@ const renderRoutes = (app) => {
         const router = express.Router();
 
         routeCollection.routes.forEach((route) => {
-            router[route.method](route.path, routeCollection.controller[route.handler]);
+            router[route.method](route.path, sessionCheck, routeCollection.controller[route.handler]);
         });
 
         app.use(routeCollection.resource, router);
