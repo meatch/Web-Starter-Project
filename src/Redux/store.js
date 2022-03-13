@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import thunk from 'redux-thunk';
 import reducers from './reducers/index';
 
@@ -14,8 +16,16 @@ const enhancers = composeEnhancers(
     // other store enhancers if any
 );
 
-const store = () => {
-    return createStore(reducers, enhancers);
-};
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: ['user'], // only navigation will be persisted
+}
 
-export default store;
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+export default () => {
+    const store = createStore(persistedReducer, enhancers);
+    const persistor = persistStore(store);
+    return { store, persistor }
+};
