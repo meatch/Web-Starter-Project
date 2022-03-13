@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
+
+/* Scripts ---------------------------*/
+import { userProfileUpdate, userLoggedInUpdate } from 'Redux/actions/userActions.js';
 
 /* Universal Form ---------------------------*/
 import UniversalForm, { Input, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
 
 const Login = () => {
 
-    const handleOnSubmit = (resp) => {
-        console.log('Handling resp', resp);
+    const [isLoggedIn, isLoggedInUpdate] = useState(false);
+
+    const { user } = useSelector((state) => state);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (user.loggedIn) {
+            isLoggedInUpdate(true);
+        }
+    }, [user]);
+
+    const handleOnSubmit = ({response}) => {
+        console.log('Handling resp', response);
+        if (response.success) {
+            dispatch(userProfileUpdate(response.payload));
+            dispatch(userLoggedInUpdate(true));
+        }
     }
+
+    if (isLoggedIn) { return <Redirect to="/user/update" /> }
 
     return (
         <LoginStyled className='Login'>

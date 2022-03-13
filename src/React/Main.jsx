@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home.jsx';
 import Staff from './Pages/Staff/Staff.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
 import Merch from './Pages/Merch/Merch.jsx';
+import Logout from './Pages/Logout.jsx';
 
 import User from './Pages/User/User.jsx';
 import ClassWork from './Pages/ClassWork/ClassWork.jsx';
@@ -26,6 +27,9 @@ const Main = () => {
                 </Route>
                 <Route path='/merch'>
                     <Merch />
+                </Route>
+                <Route path='/logout'>
+                    <Logout />
                 </Route>
 
                 {/* Authenticated */}

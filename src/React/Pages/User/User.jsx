@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -10,19 +11,29 @@ import Update from './Update/Update.jsx';
 import Cart from './Cart/Cart.jsx';
 
 const User = () => {
+
+    const { user } = useSelector((state) => state);
+
     return (
         <UserStyled className='User inset'>
             <h1>Access</h1>
 
             <nav className='sublinks'>
-                <NavLink to="/user/" exact>Login</NavLink>
-                <NavLink to="/user/create">Create</NavLink>
-                <NavLink to="/user/update">Update</NavLink>
-                <NavLink to="/user/cart">Cart</NavLink>
+                {
+                    !user.loggedIn
+                    ?   <>
+                            <NavLink to="/user/" exact>Login</NavLink>
+                            <NavLink to="/user/create">Create</NavLink>
+                        </>
+                    :   <>
+                            <NavLink to="/user/update">Update</NavLink>
+                            <NavLink to="/user/cart">Cart</NavLink>
+                        </>
+                }
             </nav>
 
             <Switch>
-                <Route path='/user/' exact>
+                <Route path='/user' exact>
                     <Login />
                 </Route>
                 <Route path='/user/create'>

@@ -17,3 +17,17 @@
         - [ ] Unit Tests
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
+
+
+
+
+Session Management
+
+1. User Logs in
+   * Session is updated with userID - giving access to authenticated api routes
+   * Redux store updates with `userLoggedIn: true` and populates `profile` with `user object`
+2. Interface updates based on Redux Store
+3. User Logs Out
+   * Session is destroyed
+   * Redux Store updates with `userLoggedIn: false` and empties `profile` object
+
