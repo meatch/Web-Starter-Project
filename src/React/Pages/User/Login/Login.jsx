@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
@@ -11,14 +11,14 @@ import UniversalForm, { Input, SubmitButton } from 'React/common/UniversalForm/U
 
 const Login = () => {
 
-    const [isLoggedIn, isLoggedInUpdate] = useState(false);
+    const history = useHistory();
 
     const { user } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (user.loggedIn) {
-            isLoggedInUpdate(true);
+            history.push("/user/update");
         }
     }, [user]);
 
@@ -29,8 +29,6 @@ const Login = () => {
             dispatch(userLoggedInUpdate(true));
         }
     }
-
-    if (isLoggedIn) { return <Redirect to="/user/update" /> }
 
     return (
         <LoginStyled className='Login'>
