@@ -22,6 +22,13 @@ const routeCollections = {
                 { method: "post",     handler: "login",                 path: `/`,                  },
             ],
         },
+        {
+            resource: '/logout',
+            controller: Controllers.LoginController,
+            routes: [
+                { method: "get",      handler: "logout",                path: `/`,                  },
+            ],
+        },
     ],
     authenticated: [
         {
