@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import user from './user/reducers.js';
-import products from './products/reducers.js';
-import orders from './orders/reducers.js';
+import user from '../state/user/reducers.js';
+import products from '../state/products/reducers.js';
+import orders from '../state/orders/reducers.js';
 
 // Combine All Reducers
 const combinedReducers = combineReducers({

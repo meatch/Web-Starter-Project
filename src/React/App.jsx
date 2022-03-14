@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
 /* Redux ---------------------------*/
-import configureStore from '../Redux/store.js';
+import configureStore from '../Redux/store/index.js';
 
 /* Scripts ---------------------------*/
 import { MediaQueryProvider } from 'React/common/useMediaQuery.js';
