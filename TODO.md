@@ -12,7 +12,7 @@
         - [x] MongoDB
         - [x] Authentication/Session
         - [x] UniversalForm handle API calls
-        - [ ] Redux Preloaded State
+        - [x] Redux Preloaded State
         - [ ] Order Flow
         - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests
