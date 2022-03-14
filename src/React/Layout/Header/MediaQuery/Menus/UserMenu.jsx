@@ -13,11 +13,11 @@ const UserMenu = () => {
             <h2>User Menu</h2>
                 {
                     !user.loggedIn
-                        ?   <NavLink to={ '/user' }>Login</NavLink>
+                        ?   <NavLink to={ '/access/login' }>Login</NavLink>
                         :   <>
-                                <NavLink to={ '/user/cart' }>Cart</NavLink>
-                                <NavLink to={ '/user/update' }>Account</NavLink>
-                                <NavLink to={ '/logout' }>Logout</NavLink>
+                                <NavLink to={ '/auth/cart' }>Cart</NavLink>
+                                <NavLink to={ '/auth/user/update' }>Account</NavLink>
+                                <NavLink to={ '/access/logout' }>Logout</NavLink>
                             </>
                 }
         </UserMenuStyled>

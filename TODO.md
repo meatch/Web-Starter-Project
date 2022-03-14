@@ -10,18 +10,15 @@
         - [x] Lightbox Using Context
         - [x] Adding Redux State
         - [x] MongoDB
-        - [ ] Authentication
-        - [ ] UniversalForm handle API calls
+        - [x] Authentication/Session
+        - [x] UniversalForm handle API calls
         - [ ] Order Flow
         - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
 
-
-
-
-Session Management
+## Session Management
 
 1. User Logs in
    * Session is updated with userID - giving access to authenticated api routes
