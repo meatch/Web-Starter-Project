@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -12,9 +11,7 @@ import { MediaQueryProvider } from 'React/common/useMediaQuery.js';
 
 /* Components ---------------------------*/
 import Loader from './common/Loader.jsx';
-import Header from './Layout/Header/Header.jsx';
-import Footer from './Layout/Footer/Footer.jsx';
-import Main from './Main.jsx';
+import Layout from './Layout/Layout.jsx';
 
 const App = () => {
 
@@ -25,11 +22,7 @@ const App = () => {
             <PersistGate loading={<Loader />} persistor={persistor}>
                 <MediaQueryProvider>
                     <BrowserRouter>
-                        <AppStyled className='App'>
-                            <Header />
-                            <Main />
-                            <Footer />
-                        </AppStyled>
+                        <Layout />
                     </BrowserRouter>
                 </MediaQueryProvider>
             </PersistGate>
@@ -38,7 +31,3 @@ const App = () => {
 }
 
 export default App;
-
-const AppStyled = styled.div`
-
-`;

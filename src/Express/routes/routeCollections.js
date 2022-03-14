@@ -9,6 +9,13 @@ const Controllers = require('../controllers/index.js');
 const routeCollections = {
     public: [
         {
+            resource: '/preloadState',
+            controller: Controllers.PreloadStateController,
+            routes: [
+                { method: "get",     handler: "preloadState",            path: `/`,                  },
+            ],
+        },
+        {
             resource: '/sample',
             controller: Controllers.SampleController,
             routes: [
@@ -29,6 +36,14 @@ const routeCollections = {
                 { method: "get",      handler: "logout",                path: `/`,                  },
             ],
         },
+        {
+            resource: '/products',
+            controller: Controllers.ProductController,
+            routes: [
+                { method: "get",     handler: "all",                    path: `/`,                 },
+                { method: "get",     handler: "byID",                   path: `/:id`,              },
+            ],
+        },
     ],
     authenticated: [
         {
@@ -40,14 +55,6 @@ const routeCollections = {
                 { method: "get",     handler: "byID",                   path: `/:id`,              },
                 { method: "patch",   handler: "update",                 path: `/:id`,              },
                 { method: "patch",   handler: "updatePassword",         path: `/:id/password`,     },
-            ],
-        },
-        {
-            resource: '/products',
-            controller: Controllers.ProductController,
-            routes: [
-                { method: "get",     handler: "all",                    path: `/`,                 },
-                { method: "get",     handler: "byID",                   path: `/:id`,              },
             ],
         },
         {
