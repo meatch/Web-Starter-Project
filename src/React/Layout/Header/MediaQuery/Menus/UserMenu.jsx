@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+/* Scripts ---------------------------*/
+import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 const UserMenu = () => {
 
@@ -27,12 +29,14 @@ const UserMenu = () => {
 export default UserMenu;
 
 const UserMenuStyled = styled.nav`
-    a {
-        display: inline-block;
-        margin-left: 10px;
+    @media ${defaultMediaQueries.mdUp} {
+        a {
+            display: inline-block;
+            margin-left: 10px;
 
-        &.active {
-            color: white;
+            &.active {
+                color: white;
+            }
         }
     }
 `;
