@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { userProfileUpdate, userLoggedInUpdate } from 'Redux/actions/userActions.js';
+import { userProfileUpdate, userLoggedInUpdate } from 'Redux/user/actions.js';
 
 /* Universal Form ---------------------------*/
 import UniversalForm, { Input, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';

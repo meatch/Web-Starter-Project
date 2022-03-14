@@ -1,6 +1,6 @@
 import api from 'React/common/api.js';
 
-import * as Products from './actions/productsActions.js';
+import * as Products from './products/actions.js';
 
 export const preloadState = () => {
     return async (dispatch) => {

@@ -1,31 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
-import thunk from 'redux-thunk';
-import reducers from './reducers/index';
+import { createStore } from 'redux';
+import { persistStore } from 'redux-persist';
 
-const composeEnhancers =
-    typeof window === 'object' &&
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-            name: 'CrossFit Decimate'
-        }) : compose;
-
-const enhancers = composeEnhancers(
-    applyMiddleware(thunk),
-    // other store enhancers if any
-);
-
-const persistConfig = {
-    key: 'root',
-    storage,
-    whitelist: ['user'], // only navigation will be persisted
-}
-
-const persistedReducer = persistReducer(persistConfig, reducers);
+// Setting Up Store
+import composeEnhancers from './composeEnhancers.js';
+import persistedReducer from './persistedReducer.js';
 
 export default () => {
-    const store = createStore(persistedReducer, enhancers);
+    const store = createStore(persistedReducer, composeEnhancers);
     const persistor = persistStore(store);
     return { store, persistor }
 };

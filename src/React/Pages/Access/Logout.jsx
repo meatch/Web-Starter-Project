@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import api from 'React/common/api.js';
 
 /* Scripts ---------------------------*/
-import { userProfileUpdate, userLoggedInUpdate } from 'Redux/actions/userActions.js';
+import { userProfileUpdate, userLoggedInUpdate } from 'Redux/user/actions.js';
 
 const Logout = () => {
     const [isLoggedOut, isLoggedOutUpdate] = useState(false);
