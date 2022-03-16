@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
-import Products from './Products/Products.jsx';
+import Products from 'React/Products/Products.jsx';
 
 const Merch = () => {
+
+    const products = useSelector((state) => state.products);
 
     return (
         <MerchStyled className='Merch inset'>
             <h1>Merchandise</h1>
-            <Products />
+            <Products products={ products } />
         </MerchStyled>
     );
 }

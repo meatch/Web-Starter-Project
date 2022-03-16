@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 
 import Product from './Product.jsx';
 
-const Products = () => {
-
-    const products = useSelector((state) => state.products);
+const Products = ({products}) => {
 
     return (
         <ProductsStyled className='Products'>

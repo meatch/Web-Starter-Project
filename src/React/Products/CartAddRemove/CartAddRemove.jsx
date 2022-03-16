@@ -33,7 +33,11 @@ const CartAddRemoveStyled = styled.div`
         padding: 10px 20px;
         cursor: pointer;
 
-        &:hover {
+        &:hover, &:focus {
+            background-color: #037979;
+        }
+
+        &:active {
             background-color: #014444;
         }
 
@@ -43,6 +47,14 @@ const CartAddRemoveStyled = styled.div`
 
         &.Remove {
             background-color: maroon;
+
+            &:hover, &:focus {
+                background-color: #c60101;
+            }
+
+            &:active {
+                background-color: maroon;
+            }
         }
     }
 `;
