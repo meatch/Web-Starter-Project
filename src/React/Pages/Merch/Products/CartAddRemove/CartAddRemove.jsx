@@ -25,5 +25,24 @@ const CartAddRemove = ({ product }) => {
 export default CartAddRemove;
 
 const CartAddRemoveStyled = styled.div`
+    button {
+        background-color: #014444;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
 
+        &:hover {
+            background-color: #014444;
+        }
+
+        .cart-icon {
+            margin-right: 5px;
+        }
+
+        &.Remove {
+            background-color: maroon;
+        }
+    }
 `;
