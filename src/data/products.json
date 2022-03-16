@@ -1,51 +1,58 @@
 [
     {
-        "prodType": "Tops",
-        "title": "Red Hoodie",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/red-hoody.jpg",
-        "price": 4500
+        "prodType": "Sweatshirt",
+        "gender": "Male",
+        "title": "CrossFit Decimate - 100 - Standard - Gildan - Heavy Blend Crewneck Sweatshirt",
+        "description": "<ul> <li>8.0 oz., pre-shrunk 50/50 cotton/polyester</li> <li>Reduced pilling and softer air-jet spun yarn</li> <li>1x1 athletic rib knit collar, cuffs and waistband, with spandex</li> <li>Double-needle stitched cuffs and waistband</li> <li>Safety Green is compliant with ANSI/ISEA 107 High Visibility standards</li> <li>Satin label</li> </ul>",
+        "image": "/assets/img/merch/Baseball-Sweatshirt-Long-Sleeve-Mens.jpg",
+        "price": 4700
     },
     {
-        "prodType": "Tops",
-        "title": "Gray T-Shirt",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/gray-t-shirt.jpg",
-        "price": 3500
+        "prodType": "Shirt",
+        "gender": "Male",
+        "title": "CrossFit Decimate - 100 - Standard - Bella + Canvas 3501 - Men's Long Sleeve Jersey Tee",
+        "description": "<ul> <li>4.2 oz., 100% combed and ringspun cotton, 30 singles</li> <li>Ash is 99/1 combed and ringspun cotton/polyester</li> <li>Athletic Heather and Black Heather are 90/10 combed and ringspun cotton/polyester</li> <li>Alternate Heather colors are 52/48 combed and ringspun cotton/polyester</li> <li>Triblends are 3.8 oz., 50/25/25 polyester/combed and ringspun cotton/rayon, 40 singles</li> <li>Side seams, retail fit</li> <li>Coverstitched collar</li> <li>2” rib cuffs</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/Baseball-T-Shirt-Long-Sleeve-Mens.jpg",
+        "price": 3000
     },
     {
-        "prodType": "Tops",
-        "title": "Sports Jacket",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/sports-jacket.jpg",
-        "price": 5500
+        "prodType": "Shirt",
+        "gender": "Male",
+        "title": "CrossFit Decimate - 100 - Standard - Bella + Canvas - Men's Three-Quarter Sleeve Baseball T-Shirt",
+        "description": "<ul> <li>Triblends are 3.8 oz., 50/25/25 polyester/combed and ringspun cotton/rayon, 40 singles</li> <li>Black Heather is 90/10 combed and cotton ringspun cotton/polyester</li> <li>Marbles are 4.0 oz., 91/9 polyester/combed and ringspun cotton, 30 singles</li> <li>All other colors are 3.6 oz., 52/48 combed and ringspun cotton/polyester, 40 singles</li> <li>Contrast raglan sleeves and neck trim</li> <li>Retail fit, side seams</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/Baseball-T-Shirt-Three-Quarter-Sleeve-Mens.jpg",
+        "price": 3000
     },
     {
-        "prodType": "Hat",
-        "title": "Red Baseball Cap",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/red-baseball-cap.jpg",
+        "prodType": "Shirt",
+        "gender": "Female",
+        "title": "CrossFit Decimate - 100 - Standard - Bella + Canvas - Women's The Favorite Te",
+        "description": "<ul> <li>4.2 oz., 100% combed and ringspun cotton, 30 singles</li> <li>Ash is 99/1 combed and ringspun cotton/polyester</li> <li>Athletic Heather and Black Heather are 90/10 combed and ringspun cotton/polyester</li> <li>Alternate Heather CVC colors are 52/48 combed and ringspun cotton/polyester</li> <li>Side seams, slim fit</li> <li>Longer body length</li> <li>Shoulder-to-shoulder taping</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/Favorite-T-Shirt-Womens.jpeg",
         "price": 2500
     },
     {
-        "prodType": "Hat",
-        "title": "Black Baseball Cap",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/black-baseball-cap.jpg",
+        "prodType": "Shirt",
+        "gender": "Male",
+        "title": "CrossFit Decimate - 100 - Standard - Bella + Canvas - Men's Short Sleeve Jersey Tee",
+        "description": "<ul> <li>4.2 oz., 100% combed and ringspun cotton, 30 singles</li> <li>Athletic Heather and Black Heather are 90/10 combed and ringspun cotton/polyester</li> <li>Ash is 99/1 combed and ringspun cotton/polyester</li> <li>Alternate Heather CVC colors are 52/48 combed and ringspun cotton/polyester</li> <li>Side seams, retail fit</li> <li>Shoulder to shoulder taping</li> <li>Unisex sizing</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/Jersey-T-Shirt-Short-Sleeve-Mens.jpg",
         "price": 2500
     },
     {
-        "prodType": "Decal",
-        "title": "Black Logo Decal",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/black-logo-decal.jpg",
-        "price": 1000
+        "prodType": "Shirt",
+        "gender": "Female",
+        "title": "CrossFit Decimate - 100 - Standard - Next Level - Women's Ideal Racerback Tank",
+        "description": "<ul> <li>Fabric laundered, 3.9 oz., 60/40 combed ringspun cotton/polyester, 30 singles</li> <li>Self-fabric binding</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/Racerback-T-Shirt-Short-Sleeve-Womens.jpg",
+        "price": 2500
     },
     {
-        "prodType": "Decal",
-        "title": "Red Logo Decal",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam porttitor lectus sed scelerisque. Vestibulum efficitur rhoncus lacus, non finibus nulla consequat et. Maecenas eu aliquet enim. Morbi pellentesque mauris mi, in faucibus ligula fringilla eu. Aliquam quis ipsum in nibh scelerisque efficitur.",
-        "image": "/assets/img/merch/tops/red-logo-decal.jpg",
+        "prodType": "Shirt",
+        "gender": "Female",
+        "title": "CrossFit Decimate - 100 - Standard - Bella + Canvas - Women's Short Sleeve Jersey V-Neck Tee",
+        "description": "<ul> <li>4.2 oz., 100% combed and ringspun cotton, 30 singles</li> <li>Athletic Heather is 90/10 combed and ringspun cotton/polyester</li> <li>Dark Grey Heather is 52/48 combed and ringspun cotton/polyester</li> <li>Side seams, slim fit</li> <li>Set-in coverstitched v-neck</li> <li>Tearaway label</li> </ul>",
+        "image": "/assets/img/merch/VNeck-Tank-Top-Womens.jpeg",
         "price": 1000
     }
 ]
