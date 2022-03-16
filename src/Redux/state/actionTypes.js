@@ -11,12 +11,8 @@ export const ActionTypes = {
     PRODUCTS_UPDATE: 'Products: productsUpdate',
 
     /*---------------------------
-    | Cart Items
-    ---------------------------*/
-    CART_ITEMS_UPDATE: 'Cart Items: cartItemsUpdate',
-
-    /*---------------------------
     | Orders
     ---------------------------*/
-    ORDERS_UPDATE: 'Orders: ordersUpdate',
+    ORDERS_ADD: 'Orders: ordersAdd',
+    ORDERS_REMOVE: 'Orders: ordersRemove',
 };

@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Product = ({ product }) => {
+import CartAddRemove from './CartAddRemove/CartAddRemove.jsx';
 
-    console.log('product', product);
+const Product = ({ product }) => {
 
     return (
         <ProductStyled className='Product'>
             <img src={ product.image } alt={ product.title } />
             <h3>{ product.title }</h3>
+            <CartAddRemove product={ product } />
         </ProductStyled>
     );
 }
