@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 /* Components ---------------------------*/
-import AuthSublinks from './AuthSublinks.jsx';
 import User from './User/User.jsx';
 import Checkout from './Checkout/Checkout.jsx';
 
@@ -21,8 +20,6 @@ const Authenticated = () => {
 
     return (
         <AuthenticatedStyled className='Authenticated inset'>
-            <h1>Authenticated</h1>
-            <AuthSublinks />
             <Switch>
                 <Route path='/auth/user'>
                     <User />

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Update = () => {
     return (
         <UpdateStyled className='Update'>
-            <h2>Update</h2>
+            <h1>Update</h1>
         </UpdateStyled>
     );
 }
