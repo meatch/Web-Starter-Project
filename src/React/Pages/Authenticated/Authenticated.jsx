@@ -6,6 +6,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 /* Components ---------------------------*/
 import AuthSublinks from './AuthSublinks.jsx';
 import User from './User/User.jsx';
+import Checkout from './Checkout/Checkout.jsx';
 
 const Authenticated = () => {
 
@@ -25,6 +26,9 @@ const Authenticated = () => {
             <Switch>
                 <Route path='/auth/user'>
                     <User />
+                </Route>
+                <Route path='/auth/checkout'>
+                    <Checkout />
                 </Route>
             </Switch>
         </AuthenticatedStyled>
