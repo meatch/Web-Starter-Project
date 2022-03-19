@@ -7,6 +7,7 @@ import Home from '../Pages/Home/Home.jsx';
 import Staff from '../Pages/Staff/Staff.jsx';
 import Contact from '../Pages/Contact/Contact.jsx';
 import Merch from '../Pages/Merch/Merch.jsx';
+import Cart from '../Pages/Cart/Cart.jsx';
 
 import Access from '../Pages/Access/Access.jsx';
 import Authenticated from '../Pages/Authenticated/Authenticated.jsx';
@@ -28,6 +29,9 @@ const Main = () => {
                 </Route>
                 <Route path='/merch'>
                     <Merch />
+                </Route>
+                <Route path='/cart'>
+                    <Cart />
                 </Route>
                 <Route path='/access'>
                     <Access />

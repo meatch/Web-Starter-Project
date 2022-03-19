@@ -20,11 +20,11 @@ const UserMenu = () => {
                     !user.loggedIn
                         ?   <NavLink to={ '/access/login' }>Login</NavLink>
                         :   <>
-                                <NavLink to={ '/auth/cart' }>Cart{orderCount}</NavLink>
                                 <NavLink to={ '/auth/user/update' }>Account</NavLink>
                                 <NavLink to={ '/access/logout' }>Logout</NavLink>
                             </>
                 }
+                <NavLink to={ '/cart' }>Cart{orderCount}</NavLink>
         </UserMenuStyled>
     );
 }

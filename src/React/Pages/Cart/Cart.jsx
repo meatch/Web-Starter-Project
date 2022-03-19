@@ -10,7 +10,7 @@ const Cart = () => {
     const products = orders.map((o) => o.product);
 
     return (
-        <CartStyled className='Cart'>
+        <CartStyled className='Cart inset'>
             <h2>Cart</h2>
             <Products products={ products } />
         </CartStyled>
