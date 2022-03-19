@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
+import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
 import Products from 'React/Products/Products.jsx';
 
 const Cart = () => {
 
     const orders = useSelector((state) => state.orders);
     const products = orders.map((o) => o.product);
+    const history = useHistory();
+
+    useEffect(() => {
+        if (orders.length < 1) {
+            history.push('/merch');
+        }
+    }, [orders]);
 
     return (
         <CartStyled className='Cart inset'>
-            <h2>Cart</h2>
+            <CheckOutHeader>
+                <h1>Cart</h1>
+            </CheckOutHeader>
             <Products products={ products } />
         </CartStyled>
     );

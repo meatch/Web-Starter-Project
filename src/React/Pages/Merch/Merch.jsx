@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
+import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
 import Products from 'React/Products/Products.jsx';
 
 const Merch = () => {
@@ -10,7 +11,9 @@ const Merch = () => {
 
     return (
         <MerchStyled className='Merch inset'>
-            <h1>Merchandise</h1>
+            <CheckOutHeader>
+                <h1>Merchandise</h1>
+            </CheckOutHeader>
             <Products products={ products } />
         </MerchStyled>
     );
