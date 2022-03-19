@@ -17,7 +17,7 @@ export const preloadState = () => {
         // console.log('loadedState', loadedState);
 
         if (serverStatus === 200 && apiSuccess) {
-            dispatch(Products.productsUpdate(loadedState.products));
+            dispatch(Products.set(loadedState.products));
         }
     }
 }

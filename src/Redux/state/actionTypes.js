@@ -8,7 +8,7 @@ export const ActionTypes = {
     /*---------------------------
     | Products
     ---------------------------*/
-    PRODUCTS_UPDATE: 'Products: productsUpdate',
+    PRODUCTS_SET: 'Products: set',
 
     /*---------------------------
     | Orders

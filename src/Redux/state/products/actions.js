@@ -1,14 +1,8 @@
 import { ActionTypes } from '../actionTypes';
 
-export const productsUpdate = (products) => {
+export const set = (products) => {
     return ({
-        type: ActionTypes.PRODUCTS_UPDATE,
+        type: ActionTypes.PRODUCTS_SET,
         products: products
     });
-}
-
-export const sampleDispatch = () => {
-    return (dispatch, getState) => {
-        dispatch(productsUpdate([]));
-    }
 }
