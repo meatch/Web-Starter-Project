@@ -7,15 +7,15 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case ActionTypes.USER_PROFILE_UPDATE:
+        case ActionTypes.USER_LOGIN:
             return {
-                ...state,
+                loggedIn: true,
                 profile: action.profile
             };
-        case ActionTypes.USER_LOGGED_IN_UPDATE:
+        case ActionTypes.USER_LOGOUT:
             return {
-                ...state,
-                loggedIn: action.loggedIn
+                loggedIn: false,
+                profile: {}
             };
         default:
             return state;

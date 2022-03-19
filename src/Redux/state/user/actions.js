@@ -1,15 +1,14 @@
 import { ActionTypes } from '../actionTypes';
 
-export const userProfileUpdate = (profile) => {
+export const login = (profile) => {
     return ({
-        type: ActionTypes.USER_PROFILE_UPDATE,
+        type: ActionTypes.USER_LOGIN,
         profile: profile
     });
 }
 
-export const userLoggedInUpdate = (loggedIn) => {
+export const logOut = () => {
     return ({
-        type: ActionTypes.USER_LOGGED_IN_UPDATE,
-        loggedIn: loggedIn
+        type: ActionTypes.USER_LOGOUT
     });
 }

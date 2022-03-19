@@ -5,9 +5,10 @@ import { Redirect } from 'react-router-dom';
 import api from 'React/common/api.js';
 
 /* Scripts ---------------------------*/
-import { userProfileUpdate, userLoggedInUpdate } from 'Redux/state/user/actions.js';
+import * as UserActions from 'Redux/state/user/actions.js';
 
 const Logout = () => {
+
     const [isLoggedOut, isLoggedOutUpdate] = useState(false);
 
     const dispatch = useDispatch();
@@ -16,8 +17,7 @@ const Logout = () => {
         api.get('/logout')
             .then((resp) => {
                 console.log('resp', resp);
-                dispatch(userProfileUpdate({}));
-                dispatch(userLoggedInUpdate(false));
+                dispatch(UserActions.logOut());
                 isLoggedOutUpdate(true);
             });
     }, []);

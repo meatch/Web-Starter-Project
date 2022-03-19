@@ -1,9 +1,9 @@
-import Reac from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { userProfileUpdate, userLoggedInUpdate } from 'Redux/state/user/actions.js';
+import * as UserActions from 'Redux/state/user/actions.js';
 
 /* Universal Form ---------------------------*/
 import UniversalForm, { Input, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
@@ -15,8 +15,7 @@ const Login = () => {
     const handleOnSubmit = ({response}) => {
         console.log('Handling resp', response);
         if (response.success) {
-            dispatch(userProfileUpdate(response.payload));
-            dispatch(userLoggedInUpdate(true));
+            dispatch(UserActions.login(response.payload));
         }
     }
 
