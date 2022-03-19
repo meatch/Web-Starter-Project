@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Review = () => {
     return (
         <ReviewStyled className='Review'>
-            Review
+            <h1>Review</h1>
         </ReviewStyled>
     );
 }

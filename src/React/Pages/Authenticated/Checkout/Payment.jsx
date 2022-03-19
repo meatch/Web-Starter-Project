@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Payment = () => {
     return (
         <PaymentStyled className='Payment'>
-            Payment
+            <h1>Payment</h1>
         </PaymentStyled>
     );
 }
