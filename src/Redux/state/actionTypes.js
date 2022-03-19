@@ -13,6 +13,8 @@ export const ActionTypes = {
     /*---------------------------
     | Orders
     ---------------------------*/
-    ORDERS_ADD: 'Orders: ordersAdd',
-    ORDERS_REMOVE: 'Orders: ordersRemove',
+    ORDERS_ADD: 'Orders: add',
+    ORDERS_REMOVE: 'Orders: remove',
+    ORDER_QUANTITY_INCR: 'Orders: quantityIncr',
+    ORDER_QUANTITY_DECR: 'Orders: quantityDecr',
 };

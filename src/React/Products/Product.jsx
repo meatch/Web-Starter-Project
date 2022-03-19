@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
 import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
-
 import { centsToDollars } from 'React/common/utilities.js';
 
 /* Components ---------------------------*/
 import CartAddRemove from './CartAddRemove/CartAddRemove.jsx';
+import Qty from './Qty/Qty.jsx';
 
 const Product = ({ product }) => {
 
@@ -21,6 +21,7 @@ const Product = ({ product }) => {
                 </div>
             </div>
             <CartAddRemove product={ product } />
+            <Qty product={ product } />
         </ProductStyled>
     );
 }

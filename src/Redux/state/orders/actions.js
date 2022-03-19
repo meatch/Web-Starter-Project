@@ -1,40 +1,29 @@
 import { ActionTypes } from '../actionTypes';
 
-export const ordersAdd = (product) => {
-    return (dispatch, getState) => {
-
-        const state = getState();
-
-        const orders = [ ...state.orders ];
-
-        const productExists = orders.find((o) => o.product._id === product._id );
-
-        if (!productExists) {
-            orders.push({
-                product: product,
-                qty: 1,
-            });
-            return dispatch({
-                type: ActionTypes.ORDERS_ADD,
-                orders: orders
-            });
-        }
-
-        return false;
-    }
+export const add = (product) => {
+    return {
+        type: ActionTypes.ORDERS_ADD,
+        product: product
+    };
 }
 
-export const ordersRemove = (product) => {
-    return (dispatch, getState) => {
+export const remove = (product) => {
+    return {
+        type: ActionTypes.ORDERS_REMOVE,
+        product: product
+    };
+}
 
-        const state = getState();
+export const quantityIncr = (order) => {
+    return {
+        type: ActionTypes.ORDER_QUANTITY_INCR,
+        order: order
+    };
+}
 
-        const orders = state.orders.filter((o) => o.product._id !== product._id);
-
-        return dispatch({
-            type: ActionTypes.ORDERS_REMOVE,
-            orders: orders
-        });
-
-    }
+export const quantityDecr = (order) => {
+    return {
+        type: ActionTypes.ORDER_QUANTITY_DECR,
+        order: order
+    };
 }

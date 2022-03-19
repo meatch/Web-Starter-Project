@@ -7,14 +7,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 /* Scripts ---------------------------*/
-import { ordersRemove } from 'Redux/state/orders/actions.js';
+import * as OrderActions from 'Redux/state/orders/actions.js';
 
 const Remove = ({product}) => {
 
     const dispatch = useDispatch();
 
     const handleOnClick = () => {
-        dispatch(ordersRemove(product));
+        dispatch(OrderActions.remove(product));
     }
 
     return (
