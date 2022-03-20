@@ -1,4 +1,4 @@
-import api from 'React/common/api.js';
+import { axios } from 'common/axios.js';
 
 import * as Products from './state/products/actions.js';
 
@@ -12,7 +12,7 @@ export const preloadState = () => {
                 success: apiSuccess,
                 payload: loadedState,
             }
-        } = await api.get('/preloadState');
+        } = await axios.get('/preloadState');
 
         // console.log('loadedState', loadedState);
 

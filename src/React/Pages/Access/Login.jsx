@@ -5,16 +5,21 @@ import UniversalForm, { Input, SubmitButton } from '@enspyred/universal-form';
 
 /* Scripts ---------------------------*/
 import * as UserActions from 'Redux/state/user/actions.js';
+import { reqResp } from 'common/axios.js';
 
 const Login = () => {
 
     const dispatch = useDispatch();
 
-    const handleOnSubmit = ({response}) => {
-        console.log('Handling resp', response);
-        if (response.success) {
-            dispatch(UserActions.login(response.payload));
+    const handleOnSubmit = async (uformData) => {
+
+        const axiosResp = await reqResp('post', '/login', uformData.requestObject);
+
+        if (axiosResp.success) {
+            dispatch(UserActions.login(axiosResp.payload));
         }
+
+        return axiosResp;
     }
 
     return (
@@ -23,8 +28,6 @@ const Login = () => {
 
             <UniversalForm
                 displayName='Login Form'
-                method='post'
-                apiUrl='/login'
                 onSubmit={ handleOnSubmit }
             >
                 <Input

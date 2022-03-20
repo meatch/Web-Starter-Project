@@ -3,15 +3,22 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyred/universal-form';
 
+/* scripts ---------------------------*/
+import { reqResp } from 'common/axios.js';
+
 const Payment = () => {
 
     const { user } = useSelector(state => state);
 
-    const handleOnSubmit = (resp) => {
-        console.log('Handling resp', resp);
-        return {
-            success: true
+    const handleOnSubmit = async (uformData) => {
+        console.log('Handling uformData', uformData);
+        const axiosResp = await reqResp.post('post', '/checkout/payment', uformData.requestObject);
+
+        if (axiosResp.success) {
+            console.log('axiosResp.payload', axiosResp.payload);
         }
+
+        return axiosResp;
     }
 
     const ccProps = {
@@ -20,11 +27,11 @@ const Payment = () => {
         ccCvv: { defaultValue: '123' },
     }
     const addrProps = {
-        addr1: { defaultValue: '123 Anywhere Street' },
-        addr2: { defaultValue: 'Apt G' },
-        city: { defaultValue: 'Colorado Springs' },
-        state: { defaultValue: 'CO' },
-        zip: { defaultValue: '80922' },
+        addr1:  { defaultValue: '123 Anywhere Street' },
+        addr2:  { defaultValue: 'Apt G' },
+        city:   { defaultValue: 'Colorado Springs' },
+        state:  { defaultValue: 'CO' },
+        zip:    { defaultValue: '80922' },
     }
 
     return (
@@ -33,8 +40,6 @@ const Payment = () => {
 
             <UniversalForm
                 displayName='Checkout Payment Form'
-                method='post'
-                apiUrl='/checkout/payment'
                 onSubmit={ handleOnSubmit }
             >
                 <div className="name">
