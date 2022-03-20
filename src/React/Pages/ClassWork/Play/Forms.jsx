@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-/* Universal Form ---------------------------*/
-import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, RadioGroup, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
+import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, RadioGroup, SubmitButton } from '@enspyred/universal-form';
 
 const Forms = () => {
 

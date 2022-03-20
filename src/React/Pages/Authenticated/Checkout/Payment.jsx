@@ -1,9 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-
-/* Universal Form ---------------------------*/
-import UniversalForm, { Input, CreditCard, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
+import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyred/universal-form';
 
 const Payment = () => {
 
@@ -11,12 +9,22 @@ const Payment = () => {
 
     const handleOnSubmit = (resp) => {
         console.log('Handling resp', resp);
+        return {
+            success: true
+        }
     }
 
     const ccProps = {
         ccNum: { defaultValue: '4111111111111111' },
         ccExp: { defaultValue: '11/24' },
         ccCvv: { defaultValue: '123' },
+    }
+    const addrProps = {
+        addr1: { defaultValue: '123 Anywhere Street' },
+        addr2: { defaultValue: 'Apt G' },
+        city: { defaultValue: 'Colorado Springs' },
+        state: { defaultValue: 'CO' },
+        zip: { defaultValue: '80922' },
     }
 
     return (
@@ -49,6 +57,7 @@ const Payment = () => {
                 </div>
 
                 <CreditCard {...ccProps} />
+                <Address title='Billing Address' {...addrProps} />
 
                 {/* <Address /> */}
                 <SubmitButton>Add Payment</SubmitButton>

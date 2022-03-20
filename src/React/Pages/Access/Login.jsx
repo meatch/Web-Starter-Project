@@ -1,12 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import UniversalForm, { Input, SubmitButton } from '@enspyred/universal-form';
 
 /* Scripts ---------------------------*/
 import * as UserActions from 'Redux/state/user/actions.js';
-
-/* Universal Form ---------------------------*/
-import UniversalForm, { Input, SubmitButton } from 'React/common/UniversalForm/UniversalForm.jsx';
 
 const Login = () => {
 
