@@ -15,6 +15,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const cors = require('cors');
 
 /*---------------------------
 | Mongoose
@@ -65,11 +66,16 @@ app.use(express.static(path.join(__dirname, 'build')));
 ---------------------------*/
 if (process.env.NODE_ENV === 'development') {
     console.log('Bypassing CORS for Local Development.');
-    app.use((request, response, next) => {
-        response.header("Access-Control-Allow-Origin", "*");
-        response.header("Access-Control-Allow-Headers", "Content-Type");
-        next();
-    });
+
+    const appUrl = process.env.REACT_APP;
+
+    const corsOptions = {
+        origin: appUrl,  //Your Client, do not write '*'
+        credentials: true,
+    };
+
+    console.log('corsOptions', corsOptions);
+    app.use(cors(corsOptions));
 }
 
 /*---------------------------
