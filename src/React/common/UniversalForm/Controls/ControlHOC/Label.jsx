@@ -15,9 +15,7 @@ const Label = ({id, label}) => {
 export default Label;
 
 const LabelStyled = styled.div`
-    border: solid 1px #eee;
-    padding: 10px;
-    text-align: right;
+    padding: 5px 0px;
 
     label {
         font-size: 20px;

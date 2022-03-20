@@ -26,7 +26,7 @@ const Login = () => {
             <UniversalForm
                 displayName='Login Form'
                 method='post'
-                apiUrl='http://localhost:5099/login'
+                apiUrl='/login'
                 onSubmit={ handleOnSubmit }
             >
                 <Input

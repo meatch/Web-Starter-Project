@@ -7,7 +7,7 @@ const Control = ({children, id}) => {
 
     return (
         <ControlStyled className='Control'>
-            { children } 
+            { children }
             <ControlFeedback id={ id } />
         </ControlStyled>
     );
@@ -16,6 +16,4 @@ const Control = ({children, id}) => {
 export default Control;
 
 const ControlStyled = styled.div`
-    border: solid 1px #eee;
-    padding: 10px;
 `;

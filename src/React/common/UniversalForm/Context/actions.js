@@ -102,12 +102,9 @@ const validateForm = (newState) => {
                     }
                     break;
                 case 'match':
-
                     const fieldToMatch = newState.fields.find((f) => {
                         return f.id === ruleOption
                     });
-
-                    console.log('fieldToMatch', fieldToMatch);
 
                     if (fieldToMatch.value !== field.value) {
                         newState.feedback.show = true;

@@ -8,7 +8,7 @@ import {
 
 
 /* Components ---------------------------*/
-import ControlHOC from './ControlHOC.jsx';
+import ControlHOC from './ControlHOC/ControlHOC.jsx';
 
 const SelectMenu = ({onChange, id, value='', options=[]}) => {
 

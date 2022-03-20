@@ -17,6 +17,12 @@ export { default as Checkbox } from './Controls/Checkbox.jsx';
 export { default as RadioGroup } from './Controls/RadioGroup.jsx';
 export { default as SubmitButton } from './Controls/SubmitButton.jsx';
 
+// Form Elements
+export { default as Fieldset } from './Fieldset.jsx';
+
+// Templates
+export { default as CreditCard } from './Templates/CreditCard.jsx';
+
 const UniversalForm = ({children, method='post', apiUrl, onSubmit=() => {}, displayName='Universal Form'}) => {
 
     const defaultFormData = {

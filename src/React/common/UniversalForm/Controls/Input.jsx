@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Components ---------------------------*/
-import ControlHOC from './ControlHOC.jsx';
+import ControlHOC from './ControlHOC/ControlHOC.jsx';
 
-const Input = ({onChange, id, placeholder, value='', type='text'}) => {
+const Input = ({onChange, id, placeholder, value='', type='text', maxLength=524288}) => {
 
     const handleOnchange = (e) => {
         onChange({ newValue: e.target.value, e: e });
@@ -18,6 +18,7 @@ const Input = ({onChange, id, placeholder, value='', type='text'}) => {
                 placeholder={ placeholder }
                 value={ value }
                 onChange={ handleOnchange }
+                maxLength={ maxLength }
             />
         </InputStyled>
     );

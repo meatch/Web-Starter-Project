@@ -18,7 +18,7 @@ const Create = () => {
             <UniversalForm
                 displayName='Create User Account Form'
                 method='post'
-                apiUrl='http://localhost:5099/users'
+                apiUrl='/users'
                 onSubmit={ handleOnSubmit }
             >
                 <Input

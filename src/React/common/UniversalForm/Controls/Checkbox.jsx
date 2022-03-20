@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Components ---------------------------*/
-import ControlHOC from './ControlHOC.jsx';
+import ControlHOC from './ControlHOC/ControlHOC.jsx';
 
 const Checkbox = ({onChange, id, value, displayText='Add Display Text' }) => {
 

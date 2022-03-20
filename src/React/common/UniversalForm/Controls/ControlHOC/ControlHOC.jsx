@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import classnames from 'classnames';
 
 /* Context ---------------------------*/
-import Context from '../Context/index.js';
-import { addField, updateField } from '../Context/actions.js';
+import Context from '../../Context/index.js';
+import { addField, updateField } from '../../Context/actions.js';
 
 /* Components ---------------------------*/
-import ControlGroup from './ControlGroup/ControlGroup.jsx';
+import Label from './Label.jsx';
+import Control from './Control.jsx';
 
 const ControlHOC = WrappedComponent => (props) => {
 
@@ -42,14 +43,16 @@ const ControlHOC = WrappedComponent => (props) => {
 
     const theClassName = classnames({
         'ControlHOC': true,
+        'ControlGroup': true,
         'error': thisField && !thisField.isValid,
     });
 
     return (
         <ControlHOCStyled className={ theClassName }>
-            <ControlGroup id={ id } label={ label }>
+            <Label id={ id } label={ label } />
+            <Control id={ id }>
                 <WrappedComponent value={ renderedValue } onChange={ handleOnChange } {...props} />
-            </ControlGroup>
+            </Control>
         </ControlHOCStyled>
     );
 }
