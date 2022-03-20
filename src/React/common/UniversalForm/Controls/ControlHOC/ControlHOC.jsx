@@ -60,6 +60,7 @@ const ControlHOC = WrappedComponent => (props) => {
 export default ControlHOC;
 
 const ControlHOCStyled = styled.div`
+    margin-bottom: 20px;
     &.error {
         input, textarea, select {
             border: solid 2px red;
