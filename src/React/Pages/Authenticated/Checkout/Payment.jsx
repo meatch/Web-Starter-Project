@@ -21,17 +21,19 @@ const Payment = () => {
         return axiosResp;
     }
 
-    const ccProps = {
-        ccNum: { defaultValue: '4111111111111111' },
-        ccExp: { defaultValue: '11/24' },
-        ccCvv: { defaultValue: '123' },
-    }
-    const addrProps = {
-        addr1:  { defaultValue: '123 Anywhere Street' },
-        addr2:  { defaultValue: 'Apt G' },
-        city:   { defaultValue: 'Colorado Springs' },
-        state:  { defaultValue: 'CO' },
-        zip:    { defaultValue: '80922' },
+    const defaultProps = {
+        cc: {
+            ccNum: { defaultValue: '4111111111111111' },
+            ccExp: { defaultValue: '11/24' },
+            ccCvv: { defaultValue: '123' },
+        },
+        address: {
+            addr1:  { defaultValue: '123 Anywhere Street' },
+            addr2:  { defaultValue: 'Apt G' },
+            city:   { defaultValue: 'Colorado Springs' },
+            state:  { defaultValue: 'CO' },
+            zip:    { defaultValue: '80922' },
+        },
     }
 
     return (
@@ -61,14 +63,12 @@ const Payment = () => {
                     />
                 </div>
 
-                <CreditCard {...ccProps} />
-                <Address title='Billing Address' {...addrProps} />
+                <CreditCard {...defaultProps.cc} />
+                <Address title='Billing Address' {...defaultProps.address} />
 
                 {/* <Address /> */}
                 <SubmitButton>Add Payment</SubmitButton>
             </UniversalForm>
-
-
 
         </PaymentStyled>
     );
