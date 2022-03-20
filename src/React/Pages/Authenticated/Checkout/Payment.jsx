@@ -1,24 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyred/universal-form';
+import { useHistory } from 'react-router-dom';
 
-/* scripts ---------------------------*/
-import { reqResp } from 'common/axios.js';
+/* redux ---------------------------*/
+import * as UserActions from 'Redux/state/user/actions.js';
+import * as CheckoutActions from 'Redux/state/checkout/actions.js';
 
 const Payment = () => {
 
     const { user } = useSelector(state => state);
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleOnSubmit = async (uformData) => {
-        console.log('Handling uformData.requestObject', uformData.requestObject);
-        const axiosResp = await reqResp('post', '/checkout/payment', uformData.requestObject);
-
-        if (axiosResp.success) {
-            console.log('axiosResp.payload', axiosResp.payload);
-        }
-
-        return axiosResp;
+        dispatch(UserActions.addPayment(uformData.requestObject));
+        dispatch(CheckoutActions.unlockStep(2));
+        history.push('/auth/checkout/review');
     }
 
     const defaultProps = {

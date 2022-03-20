@@ -8,8 +8,14 @@ const defaultState = [
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case ActionTypes.CHECKOUT_UPDATE:
-            return state;
+        case ActionTypes.CHECKOUT_UNLOCK_STEP:
+            return state.map((step) => {
+                if (step.step === action.step) {
+                    step.unlocked = true;
+                }
+
+                return step;
+            });
         default:
             return state;
     }

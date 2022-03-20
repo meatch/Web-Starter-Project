@@ -14,3 +14,12 @@ export const logOut = () => {
         dispatch({type: ActionTypes.USER_LOGOUT});
     }
 }
+
+export const addPayment = (payment) => {
+    return (dispatch) => {
+        dispatch({
+            type: ActionTypes.USER_ADD_PAYMENT,
+            payment: payment,
+        });
+    }
+}

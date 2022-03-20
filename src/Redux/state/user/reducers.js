@@ -3,6 +3,7 @@ import { ActionTypes } from '../actionTypes';
 const defaultState = {
     loggedIn: false,
     profile: {},
+    payment: {},
 };
 
 export default (state = defaultState, action) => {
@@ -16,6 +17,11 @@ export default (state = defaultState, action) => {
             return {
                 loggedIn: false,
                 profile: {}
+            };
+        case ActionTypes.USER_ADD_PAYMENT:
+            return {
+                ...state,
+                payment: action.payment,
             };
         default:
             return state;

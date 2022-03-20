@@ -4,6 +4,7 @@ export const ActionTypes = {
     ---------------------------*/
     USER_LOGIN: 'User: login',
     USER_LOGOUT: 'User: logOut',
+    USER_ADD_PAYMENT: 'User: addPayment',
 
     /*---------------------------
     | Products
@@ -22,5 +23,5 @@ export const ActionTypes = {
     /*---------------------------
     | Checout
     ---------------------------*/
-    CHECKOUT_UPDATE: 'Checkout: update',
+    CHECKOUT_UNLOCK_STEP: 'Checkout: unlockStep',
 };
