@@ -37,6 +37,13 @@ const routeCollections = {
             ],
         },
         {
+            resource: '/users',
+            controller: Controllers.UserController,
+            routes: [
+                { method: "post",    handler: "create",                 path: `/`,                 },
+            ],
+        },
+        {
             resource: '/products',
             controller: Controllers.ProductController,
             routes: [
@@ -51,7 +58,6 @@ const routeCollections = {
             controller: Controllers.UserController,
             routes: [
                 { method: "get",     handler: "all",                    path: `/`,                 },
-                { method: "post",    handler: "create",                 path: `/`,                 },
                 { method: "get",     handler: "byID",                   path: `/:id`,              },
                 { method: "patch",   handler: "update",                 path: `/:id`,              },
                 { method: "patch",   handler: "updatePassword",         path: `/:id/password`,     },

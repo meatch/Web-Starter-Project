@@ -1,12 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import UniversalForm, { Input, SubmitButton } from '@enspyred/universal-form';
 
+/* Scripts ---------------------------*/
+import * as UserActions from 'Redux/state/user/actions.js';
+import { reqResp } from 'common/axios.js';
 
 const Create = () => {
 
-    const handleOnSubmit = (resp) => {
-        console.log('Handling resp', resp);
+    const dispatch = useDispatch();
+
+    const handleOnSubmit = async (uformData) => {
+
+        const axiosResp = await reqResp('post', '/users', uformData.requestObject);
+
+        if (axiosResp.success) {
+            dispatch(UserActions.login(axiosResp.payload));
+        }
+
+        return axiosResp;
     }
 
     return (
@@ -15,8 +28,6 @@ const Create = () => {
 
             <UniversalForm
                 displayName='Create User Account Form'
-                method='post'
-                apiUrl='/users'
                 onSubmit={ handleOnSubmit }
             >
                 <Input
@@ -54,7 +65,7 @@ const Create = () => {
                     label='Confirm Password'
                     id='password-confirmation'
                     type='text'
-                    defaultValue='654321'
+                    defaultValue='123456'
                     rules={ [ 'required' ] }
                 />
                 <SubmitButton>Create Account</SubmitButton>
