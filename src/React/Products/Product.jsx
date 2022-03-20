@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
 import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
-import { centsToDollars } from 'React/common/utilities.js';
+import { centsToDollars } from 'common/utilities.js';
 
 /* Components ---------------------------*/
 import CartAddRemove from './CartAddRemove/CartAddRemove.jsx';
