@@ -7,10 +7,8 @@ const schemaOptions = {
 };
 
 const OrderSchema = new Schema({
-    product: { type: Schema.Types.ObjectId, ref: "Product" },
     user: { type: Schema.Types.ObjectId, ref: "User" },
-    qty: { type: Number, required: 'Order qty is required', },
-    purchased: { type: Boolean, default: false, },
+    details: { type: Object, required: 'Order details is required', },
 }, schemaOptions);
 
 // Remove sensitive data in responses.

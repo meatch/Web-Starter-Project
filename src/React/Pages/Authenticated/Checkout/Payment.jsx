@@ -11,8 +11,8 @@ const Payment = () => {
     const { user } = useSelector(state => state);
 
     const handleOnSubmit = async (uformData) => {
-        console.log('Handling uformData', uformData);
-        const axiosResp = await reqResp.post('post', '/checkout/payment', uformData.requestObject);
+        console.log('Handling uformData.requestObject', uformData.requestObject);
+        const axiosResp = await reqResp('post', '/checkout/payment', uformData.requestObject);
 
         if (axiosResp.success) {
             console.log('axiosResp.payload', axiosResp.payload);

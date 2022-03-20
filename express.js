@@ -54,7 +54,10 @@ app.use(session({
     secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: oneDay },
+    cookie: {
+        expires: oneDay,
+        maxAge: oneDay,
+    },
 }));
 
 /* Serve the static files from the React app ---------------------------*/

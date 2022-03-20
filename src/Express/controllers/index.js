@@ -8,5 +8,4 @@ module.exports = {
     LoginController: require('../controllers/LoginController.js'),
     UserController: require('../controllers/UserController.js'),
     OrderController: require('../controllers/OrderController.js'),
-    CheckoutController: require('../controllers/CheckoutController.js'),
 };

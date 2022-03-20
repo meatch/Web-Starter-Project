@@ -64,20 +64,11 @@ const routeCollections = {
             ],
         },
         {
-            resource: '/checkout',
-            controller: Controllers.CheckoutController,
-            routes: [
-                { method: "post",     handler: "payment",               path: `/payment`,               },
-                { method: "post",     handler: "review",                path: `/review`,                },
-            ],
-        },
-        {
             resource: '/orders',
             controller: Controllers.OrderController,
             routes: [
-                { method: "post",     handler: "create",                path: `/`,                      },
-                { method: "get",      handler: "getCart",               path: `/:userID`,               },
-                { method: "patch",    handler: "purchase",              path: `/purchase/:userID`,      },
+                { method: "post",     handler: "placeOrder",            path: `/placeOrder`,    },
+                { method: "get",      handler: "getOrderHistory",       path: `/getOrderHistory/:userID`,               },
             ],
         },
     ],
