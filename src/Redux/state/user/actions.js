@@ -1,4 +1,5 @@
 import { ActionTypes } from '../actionTypes';
+import * as OrderActions from '../orders/actions.js';
 
 export const login = (profile) => {
     return ({
@@ -8,7 +9,8 @@ export const login = (profile) => {
 }
 
 export const logOut = () => {
-    return ({
-        type: ActionTypes.USER_LOGOUT
-    });
+    return (dispatch) => {
+        dispatch(OrderActions.clear());
+        dispatch({type: ActionTypes.USER_LOGOUT});
+    }
 }

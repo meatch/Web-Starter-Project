@@ -28,6 +28,10 @@ export default (state = defaultState, action) => {
 
         }
 
+        case ActionTypes.ORDERS_CLEAR: {
+            return [];
+        }
+
         case ActionTypes.ORDER_QUANTITY_INCR: {
             const order = action.order;
             const qty = order.qty + 1;

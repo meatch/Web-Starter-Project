@@ -14,6 +14,12 @@ export const remove = (product) => {
     };
 }
 
+export const clear = () => {
+    return {
+        type: ActionTypes.ORDERS_CLEAR,
+    };
+}
+
 export const quantityIncr = (order) => {
     return {
         type: ActionTypes.ORDER_QUANTITY_INCR,
