@@ -19,6 +19,28 @@
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
 
+
+## State
+
+```js
+{
+    user: {
+        loggedIn: true,
+        profile: {},
+    },
+    products: [],
+    cart: {
+        items: [{qty, product}]
+        payment: {},
+        checkout: {
+            steps: [],
+            orderPlaced: false,
+        }
+    }
+}
+
+```
+
 ## Session Management
 
 1. User Logs in
