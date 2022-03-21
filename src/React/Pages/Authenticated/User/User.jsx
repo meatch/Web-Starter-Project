@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import UserSublinks from './UserSublinks.jsx';
 import Update from './Update.jsx';
 import UpdatePassword from './UpdatePassword.jsx';
+import OrderHistory from './OrderHistory/OrderHistory.jsx';
 
 const User = () => {
 
@@ -16,8 +17,11 @@ const User = () => {
                 <Route path='/auth/user' exact>
                     <Update />
                 </Route>
-                <Route path='/auth/user/password' exact>
+                <Route path='/auth/user/password'>
                     <UpdatePassword />
+                </Route>
+                <Route path='/auth/user/order-history'>
+                    <OrderHistory />
                 </Route>
             </Switch>
         </UserStyled>

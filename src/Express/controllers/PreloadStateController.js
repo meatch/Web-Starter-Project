@@ -1,5 +1,6 @@
 require('../common/mongoose.conn.js');
 const Product = require('../models/Product.js');
+const Order = require('../models/Order.js');
 const reqResp = require('../common/reqResp.js');
 
 const PreloadStateController = () => {

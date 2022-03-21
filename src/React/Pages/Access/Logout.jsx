@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
-import { axios } from 'common/axios.js';
 
 /* Scripts ---------------------------*/
+import { axios } from 'common/axios.js';
 import * as UserActions from 'Redux/state/user/actions.js';
 
 const Logout = () => {

@@ -13,7 +13,10 @@
         - [x] Authentication/Session
         - [x] UniversalForm handle API calls
         - [x] Redux Preloaded State
-        - [ ] Order Flow
+        - [x] Order Flow
+        - [x] Date Time on Order History
+        - [ ] Order Flow: Flag Order Placed, Clear Cart Items, Show Thank You Page, disable Payment and Review.
+        - [ ] User Account Update and Password Update
         - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests
 

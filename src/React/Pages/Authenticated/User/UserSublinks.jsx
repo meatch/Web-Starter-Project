@@ -6,8 +6,9 @@ const UserSublinks = () => {
 
     return (
         <UserSublinksStyled className='UserSublinks sublinks'>
-            <NavLink to="/auth/user">Update</NavLink>
+            <NavLink to="/auth/user" exact>Update</NavLink>
             <NavLink to="/auth/user/password">Update Password</NavLink>
+            <NavLink to="/auth/user/order-history">Order History</NavLink>
         </UserSublinksStyled>
     );
 }

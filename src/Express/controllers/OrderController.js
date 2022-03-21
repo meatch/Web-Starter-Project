@@ -31,6 +31,7 @@ const OrderController = () => {
     const getOrderHistory = reqResp(({reqParams, handleResponse, handleError}) => {
         if (reqParams.userID) {
             Order.find({ "user": reqParams.userID, purchased: false })
+                .sort({'created_at': -1})
                 .populate('user')
                 .exec((err, dbOrders) => {
                     if (err) handleError(err);
