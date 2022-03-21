@@ -2,8 +2,6 @@ module.exports = function (req, res, next) {
     //Do your session checking...
     const session = req.session;
 
-    console.log('session', session);
-
     if (!session.userid) {
         console.log('User Logged Out - access denied');
         res.json({

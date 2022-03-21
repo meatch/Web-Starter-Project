@@ -56,7 +56,6 @@ export default (state = cloneDeep(defaultState), action) => {
 
             // Add cap here
             if (qty > 20) {
-                console.log('Exceeded TOP Cap', qty);
                 return state;
             }
 
@@ -71,7 +70,6 @@ export default (state = cloneDeep(defaultState), action) => {
 
             // Add cap here
             if (qty < 1) {
-                console.log('Exceeded BOTTOM Cap', qty);
                 return state;
             }
 

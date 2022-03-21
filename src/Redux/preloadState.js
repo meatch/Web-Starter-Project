@@ -14,8 +14,6 @@ export const preloadState = () => {
             }
         } = await axios.get('/preloadState');
 
-        // console.log('loadedState', loadedState);
-
         if (serverStatus === 200 && apiSuccess) {
             dispatch(Products.set(loadedState.products));
         }

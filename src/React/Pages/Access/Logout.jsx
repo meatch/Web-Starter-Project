@@ -17,7 +17,6 @@ const Logout = () => {
     useEffect(() => {
         axios.get('/logout')
             .then((resp) => {
-                console.log('resp', resp);
                 dispatch(UserActions.logOut());
                 isLoggedOutUpdate(true);
             });

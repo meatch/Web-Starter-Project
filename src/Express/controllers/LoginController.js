@@ -17,7 +17,6 @@ const LoginController = () => {
 
                         const session = expReq.session;
                         session.userid = dbUser._id.toString();
-                        // console.log(expReq.session);
 
                         handleResponse(dbUser, 'Login Success.');
                     } else {
@@ -34,7 +33,6 @@ const LoginController = () => {
     const logout = reqResp(({expReq, handleResponse}) => {
         const session = expReq.session;
         session.destroy();
-        // console.log(expReq.session);
         handleResponse([], 'Logout Success.');
     });
 

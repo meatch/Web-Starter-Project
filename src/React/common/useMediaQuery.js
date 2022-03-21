@@ -57,9 +57,7 @@ export const MediaQueryProvider = ({children, mediaQueries=defaultMediaQueries})
             let newMediaState = {...mediaState};
 
             Object.keys(mediaQueries).forEach((mediaQueryKey) => {
-                // console.log('mediaQueries[mediaQueryKey]', mediaQueries[mediaQueryKey]);
                 const mediaResponse = window.matchMedia(mediaQueries[mediaQueryKey]);
-                // console.log('mediaResponse', mediaResponse);
                 newMediaState.media[mediaQueryKey] = mediaResponse.matches;
             });
 
