@@ -12,3 +12,9 @@ export const centsToDollars = (cents) => {
     });
     return dollars;
 }
+
+export const getTotalCostOfOrders = (orders) => {
+    return orders.reduce((previousValue, order) => {
+        return previousValue + (order.qty * order.product.price);
+    }, 0);
+}

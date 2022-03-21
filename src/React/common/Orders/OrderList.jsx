@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { centsToDollars } from 'common/utilities.js';
+import { centsToDollars, getTotalCostOfOrders } from 'common/utilities.js';
 
 /* Components ---------------------------*/
 import Order from './Order.jsx';
@@ -11,10 +11,7 @@ import Order from './Order.jsx';
 const OrderList = () => {
 
     const { orders } = useSelector(state => state);
-
-    const grandTotal = orders.reduce((previousValue, order) => {
-        return previousValue + (order.qty * order.product.price);
-    }, 0);
+    const grandTotal = getTotalCostOfOrders(orders);
 
     return (
         <OrderListStyled className='OrderList'>
@@ -37,7 +34,7 @@ const OrderList = () => {
             </tbody>
             <tfoot>
                 <tr>
-                    <th colspan="5">Total Cost</th>
+                    <th colSpan="5">Total Cost</th>
                     <td className='grandTotal'>{ centsToDollars(grandTotal) }</td>
                 </tr>
             </tfoot>

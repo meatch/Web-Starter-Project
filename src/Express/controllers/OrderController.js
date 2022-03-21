@@ -7,6 +7,12 @@ const OrderController = () => {
 
     /* Order: Place ---------------------------*/
     const placeOrder = reqResp(({reqBody, handleResponse, handleError}) => {
+
+        // 1. Process Faux Payment
+        console.log('Process reqBody.payment', reqBody.payment);
+
+
+        // 2. Record Order
         const order = new Order();
 
         order.user = reqBody.userID;
@@ -14,6 +20,9 @@ const OrderController = () => {
 
         order.save((err, dbOrder) => {
             if (err) handleError(err);
+            // 3. Email receipt
+
+            // 4.Send Response to App
             handleResponse(dbOrder, 'Added Order Item.');
         });
     });

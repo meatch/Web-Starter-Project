@@ -5,15 +5,36 @@ import { useHistory } from 'react-router-dom';
 import UniversalForm, { SubmitButton } from '@enspyred/universal-form';
 import OrderList from 'React/common/Orders/OrderList.jsx';
 
+/* Scripts ---------------------------*/
+import { getTotalCostOfOrders } from 'common/utilities.js';
+import { reqResp } from 'common/axios.js';
+
 const Review = () => {
 
-    const { checkout } = useSelector(state => state);
+    const { checkout, orders, user } = useSelector(state => state);
     const history = useHistory();
 
     const step = checkout.find((step) => step.step === 2);
 
-    const handleOnSubmit = async (uformData) => {
-        console.log('Handle uformData', uformData);
+    const handleOnSubmit = async () => {
+        console.log('Place Order');
+
+        const details = {
+            totalCost: getTotalCostOfOrders(orders),
+            orders: orders,
+        }
+
+        const axiosResp = await reqResp('post', '/orders/placeOrder', {
+            userID: user.profile._id,
+            payment: user.profile.payment,
+            details: details,
+        });
+
+        // if (axiosResp.success) {
+        //     dispatch(UserActions.login(axiosResp.payload));
+        // }
+
+        return axiosResp;
     }
 
     useEffect(() => {
