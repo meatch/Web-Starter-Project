@@ -1,9 +1,9 @@
 import { ActionTypes } from '../actionTypes';
+import cloneDeep from 'lodash/cloneDeep';
 
 const defaultState = {
     items: [],
     payment: {},
-    orderPlaced: false,
     flow: [
         { step: 1,      title: 'Payment',    unlocked: true,    url: '/auth/checkout/payment'   },
         { step: 2,      title: 'Review',     unlocked: false,   url: '/auth/checkout/review'    },
@@ -11,7 +11,7 @@ const defaultState = {
     ],
 };
 
-export default (state = defaultState, action) => {
+export default (state = cloneDeep(defaultState), action) => {
     switch (action.type) {
         case ActionTypes.CART_ADD_ITEM: {
 
@@ -80,10 +80,10 @@ export default (state = defaultState, action) => {
             return updateItem(state, item);
         }
 
-        case ActionTypes.CART_FLOW_UNLOCK_STEP:
+        case ActionTypes.CART_FLOW_UNLOCK_REVIEW: {
 
             const flow = state.flow.map((step) => {
-                if (step.step === action.step) {
+                if (step.step === 2) {
                     step.unlocked = true;
                 }
 
@@ -94,12 +94,39 @@ export default (state = defaultState, action) => {
                 ...state,
                 flow: flow,
             }
+        }
 
-        case ActionTypes.CART_ADD_PAYMENT:
+        case ActionTypes.CART_FLOW_UNLOCK_THANK_YOU: {
+
+            const flow = state.flow.map((step) => {
+                // Lock Payment, and Review
+                if ([1,2].includes(step.step)) {
+                    step.unlocked = false;
+                } else {
+                    step.unlocked = true;
+                }
+
+                return step;
+            });
+
+            return {
+                ...state,
+                payment: {},
+                items: [],
+                flow: flow,
+            }
+        }
+
+        case ActionTypes.CART_RESET: {
+            return cloneDeep(defaultState);
+        }
+
+        case ActionTypes.CART_ADD_PAYMENT: {
             return {
                 ...state,
                 payment: action.payment,
             };
+        }
         default:
             return state;
     }

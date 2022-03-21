@@ -27,6 +27,9 @@ export const ActionTypes = {
 
     CART_ADD_PAYMENT: 'Cart: addPayment',
 
-    CART_FLOW_UNLOCK_STEP: 'Checkout: flowUnlockStep',
+    CART_FLOW_UNLOCK_REVIEW: 'Checkout: flowUnlockReview',
+    CART_FLOW_UNLOCK_THANK_YOU: 'Checkout: flowUnlockThankYou',
+
+    CART_RESET: 'Checkout: reset',
 
 };

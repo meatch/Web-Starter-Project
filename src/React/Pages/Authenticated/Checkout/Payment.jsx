@@ -15,7 +15,7 @@ const Payment = () => {
 
     const handleOnSubmit = async (uformData) => {
         dispatch(CartActions.addPayment(uformData.requestObject));
-        dispatch(CartActions.flowUnlockStep(2));
+        dispatch(CartActions.flowUnlockReview());
         history.push('/auth/checkout/review');
     }
 

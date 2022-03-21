@@ -13,10 +13,9 @@ import { MediaQueryProvider } from 'React/common/useMediaQuery.js';
 import Loader from './common/Loader.jsx';
 import Layout from './Layout/Layout.jsx';
 
+const { store, persistor } = configureStore();
+
 const App = () => {
-
-    const { store, persistor } = configureStore();
-
     return (
         <Provider store={store}>
             <PersistGate loading={<Loader />} persistor={persistor}>

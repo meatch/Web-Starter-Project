@@ -1,18 +1,27 @@
 import React, { useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
+/* Scripts ---------------------------*/
+import * as CartActions from 'Redux/state/cart/actions.js';
+
 const Thanks = () => {
 
-    const { checkout } = useSelector(state => state);
+    const { cart } = useSelector(state => state);
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const step = checkout.find((step) => step.step === 3);
+    const step = cart.flow.find((step) => step.step === 3);
 
     useEffect(() => {
         if (!step.unlocked) {
             history.push('/auth/checkout/review');
+        } else {
+            // Dismount - reset cart
+            return () => {
+                dispatch(CartActions.reset());
+            }
         }
     }, [step]);
 

@@ -34,19 +34,28 @@ export const quantityDecr = (item) => {
     };
 }
 
-export const flowUnlockStep = (step) => {
+export const flowUnlockReview = () => {
     return ({
-        type: ActionTypes.CART_FLOW_UNLOCK_STEP,
-        step: step,
+        type: ActionTypes.CART_FLOW_UNLOCK_REVIEW
+    });
+}
+
+export const flowUnlockThankYou = () => {
+    return ({
+        type: ActionTypes.CART_FLOW_UNLOCK_THANK_YOU
+    });
+}
+
+export const reset = () => {
+    return ({
+        type: ActionTypes.CART_RESET,
     });
 }
 
 export const addPayment = (payment) => {
-    return (dispatch) => {
-        dispatch({
-            type: ActionTypes.CART_ADD_PAYMENT,
-            payment: payment,
-        });
-    }
+    return ({
+        type: ActionTypes.CART_ADD_PAYMENT,
+        payment: payment,
+    });
 }
 

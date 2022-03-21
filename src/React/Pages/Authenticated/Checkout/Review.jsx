@@ -1,24 +1,25 @@
-import React, { useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import UniversalForm, { SubmitButton } from '@enspyred/universal-form';
 import ItemList from 'React/common/Cart/ItemList.jsx';
 
 /* Scripts ---------------------------*/
+import * as CartActions from 'Redux/state/cart/actions.js';
 import { getTotalCostOfItems } from 'common/utilities.js';
 import { reqResp } from 'common/axios.js';
 
 const Review = () => {
 
     const { cart, user } = useSelector(state => state);
+    const dispatch = useDispatch();
+
     const history = useHistory();
 
     const step = cart.flow.find((step) => step.step === 2);
 
     const handleOnSubmit = async () => {
-        console.log('Place Order');
-
         const details = {
             totalCost: getTotalCostOfItems(cart.items),
             items: cart.items,
@@ -30,11 +31,12 @@ const Review = () => {
             details: details,
         });
 
-        // if (axiosResp.success) {
-        //     dispatch(UserActions.login(axiosResp.payload));
-        // }
+        if (axiosResp.success) {
+            dispatch(CartActions.flowUnlockThankYou());
+            history.push('/auth/checkout/thanks');
+        }
 
-        return axiosResp;
+        // return axiosResp;
     }
 
     useEffect(() => {
