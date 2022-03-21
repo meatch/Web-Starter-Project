@@ -17,6 +17,11 @@ export default (state = defaultState, action) => {
                 loggedIn: false,
                 profile: {}
             };
+        case ActionTypes.USER_UPDATE:
+            return {
+                loggedIn: true,
+                profile: action.profile
+            };
         default:
             return state;
     }

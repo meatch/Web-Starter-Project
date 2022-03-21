@@ -16,7 +16,9 @@
         - [x] Order Flow
         - [x] Date Time on Order History
         - [x] Order Flow: Flag Order Placed, Clear Cart Items, Show Thank You Page, disable Payment and Review.
-        - [ ] User Account Update and Password Update
+        - [x] User Account Update and Password Update
+        - [ ] User Periodic Access Check - logout actions
+        - [ ] Test Sample Data for Forms
         - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests
 

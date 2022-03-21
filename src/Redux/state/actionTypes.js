@@ -4,6 +4,7 @@ export const ActionTypes = {
     ---------------------------*/
     USER_LOGIN: 'User: login',
     USER_LOGOUT: 'User: logOut',
+    USER_UPDATE: 'User: update',
 
     /*---------------------------
     | Products

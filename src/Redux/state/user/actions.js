@@ -14,3 +14,10 @@ export const logOut = () => {
         dispatch({type: ActionTypes.USER_LOGOUT});
     }
 }
+
+export const update = (profile) => {
+    return({
+        type: ActionTypes.USER_UPDATE,
+        profile: profile
+    });
+}
