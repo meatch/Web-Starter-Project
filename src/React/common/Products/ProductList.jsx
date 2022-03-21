@@ -3,22 +3,22 @@ import styled from 'styled-components';
 
 import Product from './Product.jsx';
 
-const Products = ({products}) => {
+const ProductList = ({products}) => {
 
     return (
-        <ProductsStyled className='Products'>
+        <ProductListStyled className='ProductList'>
             {
                 products.map((product, idx) => {
                     return <Product key={ idx} product={ product } />
                 })
             }
-        </ProductsStyled>
+        </ProductListStyled>
     );
 }
 
-export default Products;
+export default ProductList;
 
-const ProductsStyled = styled.div`
+const ProductListStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

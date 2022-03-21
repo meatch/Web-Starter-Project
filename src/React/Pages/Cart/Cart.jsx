@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
-import Products from 'React/Products/Products.jsx';
 
 const Cart = () => {
 
@@ -23,7 +22,6 @@ const Cart = () => {
             <CheckOutHeader>
                 <h1>Cart</h1>
             </CheckOutHeader>
-            <Products products={ products } />
         </CartStyled>
     );
 }
