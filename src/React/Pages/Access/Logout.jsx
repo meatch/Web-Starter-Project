@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 /* Scripts ---------------------------*/
 import { axios } from 'common/axios.js';
@@ -10,6 +10,7 @@ import * as UserActions from 'Redux/state/user/actions.js';
 const Logout = () => {
 
     const [isLoggedOut, isLoggedOutUpdate] = useState(false);
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -22,9 +23,13 @@ const Logout = () => {
             });
     }, []);
 
-    return (isLoggedOut)
-        ? <Redirect to="/" />
-        : <LogoutStyled>Logging Out...</LogoutStyled>;
+    useEffect(() => {
+        if (isLoggedOut) {
+            history.pushState('/');
+        }
+    }, [isLoggedOut]);
+
+    return <LogoutStyled>Logging Out...</LogoutStyled>;
 }
 
 export default Logout;

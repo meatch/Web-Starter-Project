@@ -27,7 +27,7 @@ const Thanks = () => {
 
     return (
         <ThanksStyled className='Thanks'>
-            <h1>Thanks</h1>
+            <h1>Thanks for Your Order</h1>
         </ThanksStyled>
     );
 }
@@ -35,5 +35,8 @@ const Thanks = () => {
 export default Thanks;
 
 const ThanksStyled = styled.div`
-
+    h1 {
+        padding: 50px;
+        text-align: center;
+    }
 `;

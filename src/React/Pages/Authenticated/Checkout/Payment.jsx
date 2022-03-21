@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyred/universal-form';
@@ -9,7 +9,7 @@ import * as CartActions from 'Redux/state/cart/actions.js';
 
 const Payment = () => {
 
-    const { user } = useSelector(state => state);
+    const { user, cart } = useSelector(state => state);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -18,6 +18,12 @@ const Payment = () => {
         dispatch(CartActions.flowUnlockReview());
         history.push('/auth/checkout/review');
     }
+
+    useEffect(() => {
+        if (cart.items.length < 1) {
+            history.push('/merch');
+        }
+    }, [cart.items]);
 
     const defaultProps = {
         cc: {
