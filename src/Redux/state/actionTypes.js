@@ -4,7 +4,6 @@ export const ActionTypes = {
     ---------------------------*/
     USER_LOGIN: 'User: login',
     USER_LOGOUT: 'User: logOut',
-    USER_ADD_PAYMENT: 'User: addPayment',
 
     /*---------------------------
     | Products
@@ -12,16 +11,22 @@ export const ActionTypes = {
     PRODUCTS_SET: 'Products: set',
 
     /*---------------------------
-    | Orders
+    | OrderHistory
     ---------------------------*/
-    ORDERS_ADD: 'Orders: add',
-    ORDERS_REMOVE: 'Orders: remove',
-    ORDERS_CLEAR: 'Orders: clear',
-    ORDER_QUANTITY_INCR: 'Orders: quantityIncr',
-    ORDER_QUANTITY_DECR: 'Orders: quantityDecr',
+    ORDER_HISTORY_SET: 'Order History: set',
 
     /*---------------------------
-    | Checout
+    | Cart
     ---------------------------*/
-    CHECKOUT_UNLOCK_STEP: 'Checkout: unlockStep',
+    CART_ADD_ITEM: 'Cart: addItem',
+    CART_REMOVE_ITEM: 'Cart: removeItem',
+    CART_CLEAR_ITEMS: 'Cart: clearItems',
+
+    CART_QUANTITY_INCR: 'Cart: quantityIncr',
+    CART_QUANTITY_DECR: 'Cart: quantityDecr',
+
+    CART_ADD_PAYMENT: 'Cart: addPayment',
+
+    CART_FLOW_UNLOCK_STEP: 'Checkout: flowUnlockStep',
+
 };

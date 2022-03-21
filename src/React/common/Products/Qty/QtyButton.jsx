@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
 /* Scripts ---------------------------*/
-import * as OrderActions from 'Redux/state/orders/actions.js';
+import * as CartActions from 'Redux/state/cart/actions.js';
 
-const QtyButton = ({stepDirection, order, children}) => {
+const QtyButton = ({stepDirection, item, children}) => {
 
     const dispatch = useDispatch();
 
     const handleOnClick = () => {
         if (stepDirection === 'incr') {
-            return dispatch(OrderActions.quantityIncr(order));
+            return dispatch(CartActions.quantityIncr(item));
         }
 
-        return dispatch(OrderActions.quantityDecr(order));
+        return dispatch(CartActions.quantityDecr(item));
     }
 
     return (

@@ -8,31 +8,31 @@ import {
 
 
 /* Scripts ---------------------------*/
-import * as OrderActions from 'Redux/state/orders/actions.js';
+import * as CartActions from 'Redux/state/cart/actions.js';
 import { centsToDollars } from 'common/utilities.js';
 
 /* Components ---------------------------*/
 import Qty from 'React/common/Products/Qty/Qty.jsx';
 
 
-const Order = ({num, order, showControls}) => {
+const Item = ({num, item, showControls}) => {
 
     const dispatch = useDispatch();
 
     const handleRemove = () => {
-        dispatch(OrderActions.remove(order.product));
+        dispatch(CartActions.removeItem(item.product));
     }
 
     return (
-        <OrderStyled className='Order'>
+        <ItemStyled className='Item'>
             <td className='num'>{ num }</td>
             <td className='title'>
                 <div className="row">
                     <div className="image">
-                        <img src={ order.product.image } alt={ order.product.title } />
+                        <img src={ item.product.image } alt={ item.product.title } />
                     </div>
                     <div className="text">
-                        { order.product.title }
+                        { item.product.title }
                     </div>
                 </div>
             </td>
@@ -43,19 +43,19 @@ const Order = ({num, order, showControls}) => {
             <td className='qty'>
                 {
                     showControls
-                    ? <Qty product={ order.product } />
-                    : order.qty
+                    ? <Qty product={ item.product } />
+                    : item.qty
                 }
             </td>
-            <td className='price'>{ centsToDollars(order.product.price) }</td>
-            <td className='total'>{ centsToDollars(order.product.price * order.qty) }</td>
-        </OrderStyled>
+            <td className='price'>{ centsToDollars(item.product.price) }</td>
+            <td className='total'>{ centsToDollars(item.product.price * item.qty) }</td>
+        </ItemStyled>
     );
 }
 
-export default Order;
+export default Item;
 
-const OrderStyled = styled.tr`
+const ItemStyled = styled.tr`
     .row {
         display: flex;
         align-items: center;

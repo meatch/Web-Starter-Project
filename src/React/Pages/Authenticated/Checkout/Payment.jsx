@@ -5,8 +5,7 @@ import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyr
 import { useHistory } from 'react-router-dom';
 
 /* redux ---------------------------*/
-import * as UserActions from 'Redux/state/user/actions.js';
-import * as CheckoutActions from 'Redux/state/checkout/actions.js';
+import * as CartActions from 'Redux/state/cart/actions.js';
 
 const Payment = () => {
 
@@ -15,8 +14,8 @@ const Payment = () => {
     const history = useHistory();
 
     const handleOnSubmit = async (uformData) => {
-        dispatch(UserActions.addPayment(uformData.requestObject));
-        dispatch(CheckoutActions.unlockStep(2));
+        dispatch(CartActions.addPayment(uformData.requestObject));
+        dispatch(CartActions.flowUnlockStep(2));
         history.push('/auth/checkout/review');
     }
 

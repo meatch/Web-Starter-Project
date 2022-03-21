@@ -3,30 +3,30 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import UniversalForm, { SubmitButton } from '@enspyred/universal-form';
-import OrderList from 'React/common/Orders/OrderList.jsx';
+import ItemList from 'React/common/Cart/ItemList.jsx';
 
 /* Scripts ---------------------------*/
-import { getTotalCostOfOrders } from 'common/utilities.js';
+import { getTotalCostOfItems } from 'common/utilities.js';
 import { reqResp } from 'common/axios.js';
 
 const Review = () => {
 
-    const { checkout, orders, user } = useSelector(state => state);
+    const { cart, user } = useSelector(state => state);
     const history = useHistory();
 
-    const step = checkout.find((step) => step.step === 2);
+    const step = cart.flow.find((step) => step.step === 2);
 
     const handleOnSubmit = async () => {
         console.log('Place Order');
 
         const details = {
-            totalCost: getTotalCostOfOrders(orders),
-            orders: orders,
+            totalCost: getTotalCostOfItems(cart.items),
+            items: cart.items,
         }
 
         const axiosResp = await reqResp('post', '/orders/placeOrder', {
             userID: user.profile._id,
-            payment: user.profile.payment,
+            payment: cart.payment,
             details: details,
         });
 
@@ -47,7 +47,7 @@ const Review = () => {
         <ReviewStyled className='Review'>
             <h1>Review</h1>
 
-            <OrderList orders={ orders } />
+            <ItemList items={ cart.items } showControls />
 
             <UniversalForm
                 displayName='Checkout Review Form'

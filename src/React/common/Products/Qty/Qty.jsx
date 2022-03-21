@@ -12,21 +12,21 @@ import QtyButton from './QtyButton.jsx';
 
 const Qty = ({ product }) => {
 
-    const { orders } = useSelector((state) => state);
-    const order = orders.find((o) => o.product._id === product._id );
+    const { cart } = useSelector(state => state);
+    const item = cart.items.find((item) => item.product._id === product._id );
 
-    if (!order) { return ''; }
+    if (!item) { return ''; }
 
     return (
         <QtyStyled className='Qty'>
             <div className="buttonLeft">
-                <QtyButton order={ order } stepDirection='decr' >
+                <QtyButton item={ item } stepDirection='decr' >
                     <FontAwesomeIcon icon={ faMinusCircle } />
                 </QtyButton>
             </div>
-            <div className="counter">{ order.qty }</div>
+            <div className="counter">{ item.qty }</div>
             <div className="buttonRight">
-                <QtyButton order={ order } stepDirection='incr'>
+                <QtyButton item={ item } stepDirection='incr'>
                     <FontAwesomeIcon icon={ faPlusCircle } />
                 </QtyButton>
             </div>

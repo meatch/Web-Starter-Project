@@ -1,5 +1,5 @@
 import { ActionTypes } from '../actionTypes';
-import * as OrderActions from '../orders/actions.js';
+import * as CartActions from '../cart/actions.js';
 
 export const login = (profile) => {
     return ({
@@ -10,16 +10,7 @@ export const login = (profile) => {
 
 export const logOut = () => {
     return (dispatch) => {
-        dispatch(OrderActions.clear());
+        dispatch(CartActions.clearItems());
         dispatch({type: ActionTypes.USER_LOGOUT});
-    }
-}
-
-export const addPayment = (payment) => {
-    return (dispatch) => {
-        dispatch({
-            type: ActionTypes.USER_ADD_PAYMENT,
-            payment: payment,
-        });
     }
 }

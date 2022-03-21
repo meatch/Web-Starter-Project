@@ -4,26 +4,25 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
-import OrderList from 'React/common/Orders/OrderList.jsx';
-
+import ItemList from 'React/common/Cart/ItemList.jsx';
 
 const Cart = () => {
 
-    const orders = useSelector((state) => state.orders);
+    const { cart } = useSelector(state => state);
     const history = useHistory();
 
     useEffect(() => {
-        if (orders.length < 1) {
+        if (cart.items.length < 1) {
             history.push('/merch');
         }
-    }, [orders]);
+    }, [cart.items]);
 
     return (
         <CartStyled className='Cart inset'>
             <CheckOutHeader>
                 <h1>Cart</h1>
             </CheckOutHeader>
-            <OrderList orders={ orders } showControls />
+            <ItemList items={ cart.items } showControls />
         </CartStyled>
     );
 }

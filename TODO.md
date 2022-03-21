@@ -32,10 +32,8 @@
     cart: {
         items: [{qty, product}]
         payment: {},
-        checkout: {
-            steps: [],
-            orderPlaced: false,
-        }
+        orderPlaced: false,
+        flow: [],
     }
 }
 

@@ -8,10 +8,10 @@ import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 const UserMenu = () => {
 
-    const { orders } = useSelector((state) => state);
+    const { cart } = useSelector((state) => state);
     const { user } = useSelector((state) => state);
 
-    const orderCount = orders.length > 0 ? ` (${orders.length})` : '';
+    const itemCount = cart.items.length > 0 ? ` (${cart.items.length})` : '';
 
     return (
         <UserMenuStyled className='UserMenu'>
@@ -24,7 +24,7 @@ const UserMenu = () => {
                                 <NavLink to={ '/access/logout' }>Logout</NavLink>
                             </>
                 }
-                <NavLink to={ '/cart' }>Cart{orderCount}</NavLink>
+                <NavLink to={ '/cart' }>Cart{itemCount}</NavLink>
         </UserMenuStyled>
     );
 }

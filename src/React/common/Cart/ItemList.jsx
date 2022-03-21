@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { centsToDollars, getTotalCostOfOrders } from 'common/utilities.js';
+import { centsToDollars, getTotalCostOfItems } from 'common/utilities.js';
 
 /* Components ---------------------------*/
-import Order from './Order.jsx';
+import Item from './Item.jsx';
 
-const OrderList = ({orders, showControls=false}) => {
+const ItemList = ({items, showControls=false}) => {
 
-    const grandTotal = getTotalCostOfOrders(orders);
+    const grandTotal = getTotalCostOfItems(items);
 
     return (
-        <OrderListStyled className='OrderList'>
+        <ItemListStyled className='ItemList'>
             <thead>
                 <tr>
                     <th className='num'>#</th>
@@ -25,8 +25,8 @@ const OrderList = ({orders, showControls=false}) => {
             </thead>
             <tbody>
                 {
-                    orders.map((order,idx) => {
-                        return <Order key={ idx } showControls={ showControls } num={ idx+1 } order={ order }/>
+                    items.map((item,idx) => {
+                        return <Item key={ idx } showControls={ showControls } num={ idx+1 } item={ item }/>
                     })
                 }
             </tbody>
@@ -36,13 +36,13 @@ const OrderList = ({orders, showControls=false}) => {
                     <td className='grandTotal'>{ centsToDollars(grandTotal) }</td>
                 </tr>
             </tfoot>
-        </OrderListStyled>
+        </ItemListStyled>
     );
 }
 
-export default OrderList;
+export default ItemList;
 
-const OrderListStyled = styled.table`
+const ItemListStyled = styled.table`
     border-collapse: collapse;
     border: solid 1px #ccc;
     width: 100%;

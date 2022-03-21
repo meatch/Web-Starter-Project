@@ -6,12 +6,12 @@ import Breadcrumb from './Breadcrumb.jsx';
 
 const BreadcrumbList = () => {
 
-    const { checkout } = useSelector((state) => state);
+    const { cart } = useSelector((state) => state);
 
     return (
         <BreadcrumbListStyled className='BreadcrumbList'>
             {
-                checkout.map((step, idx) => {
+                cart.flow.map((step, idx) => {
                     return <Breadcrumb key={ idx } step={ step } />
                 })
             }

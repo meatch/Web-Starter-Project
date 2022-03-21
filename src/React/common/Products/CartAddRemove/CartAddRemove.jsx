@@ -8,8 +8,8 @@ import Remove from './Remove.jsx';
 
 const CartAddRemove = ({ product }) => {
 
-    const { orders } = useSelector((state) => state);
-    const productExists = orders.find((o) => o.product._id === product._id );
+    const { cart } = useSelector(state => state);
+    const productExists = cart.items.find((item) => item.product._id === product._id );
 
     return (
         <CartAddRemoveStyled className='CartAddRemove'>

@@ -13,8 +13,8 @@ export const centsToDollars = (cents) => {
     return dollars;
 }
 
-export const getTotalCostOfOrders = (orders) => {
-    return orders.reduce((previousValue, order) => {
-        return previousValue + (order.qty * order.product.price);
+export const getTotalCostOfItems = (items) => {
+    return items.reduce((previousValue, item) => {
+        return previousValue + (item.qty * item.product.price);
     }, 0);
 }

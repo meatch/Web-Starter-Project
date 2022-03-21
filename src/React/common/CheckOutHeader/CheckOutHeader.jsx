@@ -6,7 +6,7 @@ import CheckoutLink from './CheckoutLink.jsx';
 
 const CheckoutHeader = ({children}) => {
 
-    const orders = useSelector((state) => state.orders);
+    const { cart } = useSelector(state => state);
 
     return (
         <CheckoutHeaderStyled className='CheckoutHeader'>
@@ -14,7 +14,7 @@ const CheckoutHeader = ({children}) => {
                 { children }
             </div>
             {
-                orders.length > 0 &&
+                cart.items.length > 0 &&
                 <div className="col2">
                     <CheckoutLink />
                 </div>
