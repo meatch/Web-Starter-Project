@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import UniversalForm, { SubmitButton } from '@enspyred/universal-form';
+import OrderList from 'React/common/Orders/OrderList.jsx';
 
 const Review = () => {
 
@@ -24,6 +25,8 @@ const Review = () => {
     return (
         <ReviewStyled className='Review'>
             <h1>Review</h1>
+
+            <OrderList />
 
             <UniversalForm
                 displayName='Checkout Review Form'

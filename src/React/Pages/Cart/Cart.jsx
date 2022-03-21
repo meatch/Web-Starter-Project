@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
+import OrderList from 'React/common/Orders/OrderList.jsx';
+
 
 const Cart = () => {
 
     const orders = useSelector((state) => state.orders);
-    const products = orders.map((o) => o.product);
     const history = useHistory();
 
     useEffect(() => {
@@ -22,6 +23,7 @@ const Cart = () => {
             <CheckOutHeader>
                 <h1>Cart</h1>
             </CheckOutHeader>
+            <OrderList />
         </CartStyled>
     );
 }
