@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
@@ -8,9 +7,8 @@ import { centsToDollars, getTotalCostOfOrders } from 'common/utilities.js';
 /* Components ---------------------------*/
 import Order from './Order.jsx';
 
-const OrderList = () => {
+const OrderList = ({orders, showControls=false}) => {
 
-    const { orders } = useSelector(state => state);
     const grandTotal = getTotalCostOfOrders(orders);
 
     return (
@@ -19,7 +17,7 @@ const OrderList = () => {
                 <tr>
                     <th className='num'>#</th>
                     <th className='title'>Title</th>
-                    <th className='rmv'>Rmv</th>
+                    { showControls && <th className='rmv'>Rmv</th>}
                     <th className='qty'>Qty</th>
                     <th className='price'>Price</th>
                     <th className='total'>Total</th>
@@ -28,13 +26,13 @@ const OrderList = () => {
             <tbody>
                 {
                     orders.map((order,idx) => {
-                        return <Order key={ idx } num={ idx+1 } order={ order }/>
+                        return <Order key={ idx } showControls={ showControls } num={ idx+1 } order={ order }/>
                     })
                 }
             </tbody>
             <tfoot>
                 <tr>
-                    <th colSpan="5">Total Cost</th>
+                    <th colSpan={ showControls ? 5:4 }>Total Cost</th>
                     <td className='grandTotal'>{ centsToDollars(grandTotal) }</td>
                 </tr>
             </tfoot>

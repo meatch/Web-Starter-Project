@@ -23,7 +23,7 @@ const Cart = () => {
             <CheckOutHeader>
                 <h1>Cart</h1>
             </CheckOutHeader>
-            <OrderList />
+            <OrderList orders={ orders } showControls />
         </CartStyled>
     );
 }

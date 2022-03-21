@@ -15,7 +15,7 @@ import { centsToDollars } from 'common/utilities.js';
 import Qty from 'React/common/Products/Qty/Qty.jsx';
 
 
-const Order = ({num, order}) => {
+const Order = ({num, order, showControls}) => {
 
     const dispatch = useDispatch();
 
@@ -36,8 +36,17 @@ const Order = ({num, order}) => {
                     </div>
                 </div>
             </td>
-            <td className="rmv"><button onClick={ handleRemove }><FontAwesomeIcon icon={ faTrash } /></button></td>
-            <td className='qty'><Qty product={ order.product } /></td>
+            {
+                showControls &&
+                <td className="rmv"><button onClick={ handleRemove }><FontAwesomeIcon icon={ faTrash } /></button></td>
+            }
+            <td className='qty'>
+                {
+                    showControls
+                    ? <Qty product={ order.product } />
+                    : order.qty
+                }
+            </td>
             <td className='price'>{ centsToDollars(order.product.price) }</td>
             <td className='total'>{ centsToDollars(order.product.price * order.qty) }</td>
         </OrderStyled>

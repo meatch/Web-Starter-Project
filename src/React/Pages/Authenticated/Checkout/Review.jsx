@@ -47,7 +47,7 @@ const Review = () => {
         <ReviewStyled className='Review'>
             <h1>Review</h1>
 
-            <OrderList />
+            <OrderList orders={ orders } />
 
             <UniversalForm
                 displayName='Checkout Review Form'
