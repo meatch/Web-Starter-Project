@@ -4,35 +4,42 @@ const reqResp = require('../common/reqResp.js');
 const AuthController = () => {
 
     /* Authenticate ---------------------------*/
-    const authenticate = reqResp(({expReq, reqBody, handleResponse, handleError}) => {
+    const authenticate = reqResp(({expReq, reqBody, handleResponse}) => {
+        console.log('Authenticate');
+        const session = expReq.session;
+        session.accessToken = reqBody.accessToken;
+        session.idToken = reqBody.idToken;
         handleResponse({}, 'authenticate Success.');
-        // const session = expReq.session;
-        // session.userid = dbUser._id.toString();
-        // handleResponse(dbUser, 'Login Success.');
     });
 
     /* See If User is Authenticated ---------------------------*/
-    const isAuthenticated = reqResp(({expReq, reqBody, handleResponse, handleError}) => {
-        handleResponse({}, 'isAuthenticated Success.');
-        // const session = expReq.session;
-        // session.userid = dbUser._id.toString();
-        // handleResponse(dbUser, 'Login Success.');
+    const isAuthenticated = reqResp(({expReq, handleResponse}) => {
+        const session = expReq.session;
+        const isAuthenticated = !!(session.idToken && session.accessToken);
+
+        if (isAuthenticated) {
+            handleResponse({isAuthenticated: isAuthenticated}, 'isAuthenticated Success.');
+        } else {
+            handleResponse({}, 'isAuthenticated Failed.', false);
+        }
     });
 
     /* Get Express auth0 Session Token ---------------------------*/
-    const getAccessToken = reqResp(({expReq, reqBody, handleResponse, handleError}) => {
-        handleResponse({}, 'getAccessToken Success.');
-        // const session = expReq.session;
-        // session.userid = dbUser._id.toString();
-        // handleResponse(dbUser, 'Login Success.');
+    const getAccessToken = reqResp(({expReq, handleResponse}) => {
+        console.log('Get Access Token');
+        const session = expReq.session;
+        handleResponse({
+            accessToken: session.accessToken
+        }, 'getAccessToken Success.');
     });
 
     /* Disavow :: Clear Session, log out user. ---------------------------*/
-    const disavow = reqResp(({expReq, reqBody, handleResponse, handleError}) => {
+    const disavow = reqResp(({expReq, handleResponse}) => {
+        console.log('Get Access Token');
+        const session = expReq.session;
+        session.accessToken = null;
+        session.idToken = null;
         handleResponse({}, 'disavow Success.');
-        // const session = expReq.session;
-        // session.userid = dbUser._id.toString();
-        // handleResponse(dbUser, 'Login Success.');
     });
 
     return {

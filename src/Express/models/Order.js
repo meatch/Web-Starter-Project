@@ -7,7 +7,8 @@ const schemaOptions = {
 };
 
 const OrderSchema = new Schema({
-    user: { type: Schema.Types.ObjectId, ref: "User" },
+    userID: { type: String, required: 'Order userID is required', },
+    userProfile: { type: Object, required: 'Order userProfile is required', },
     details: { type: Object, required: 'Order details is required', },
 }, schemaOptions);
 

@@ -9,7 +9,7 @@ import Contact from '../Pages/Contact/Contact.jsx';
 import Merch from '../Pages/Merch/Merch.jsx';
 import Cart from '../Pages/Cart/Cart.jsx';
 
-import Access from '../Pages/Access/Access.jsx';
+import Auth0 from '../Pages/Auth0/Auth0.jsx';
 import Authenticated from '../Pages/Authenticated/Authenticated.jsx';
 
 import ClassWork from '../Pages/ClassWork/ClassWork.jsx';
@@ -33,8 +33,8 @@ const Main = () => {
                 <Route path='/cart'>
                     <Cart />
                 </Route>
-                <Route path='/access'>
-                    <Access />
+                <Route path='/auth0'>
+                    <Auth0 />
                 </Route>
 
                 {/* Authenticated */}

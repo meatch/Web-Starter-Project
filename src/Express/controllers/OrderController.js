@@ -15,7 +15,8 @@ const OrderController = () => {
         // 2. Record Order
         const order = new Order();
 
-        order.user = reqBody.userID;
+        order.userID = reqBody.userProfile.sub;
+        order.userProfile = reqBody.userProfile;
         order.details = reqBody.details;
 
         order.save((err, dbOrder) => {
@@ -30,9 +31,8 @@ const OrderController = () => {
     /* Order: Retreive Order History by User ---------------------------*/
     const getOrderHistory = reqResp(({reqParams, handleResponse, handleError}) => {
         if (reqParams.userID) {
-            Order.find({ "user": reqParams.userID, purchased: false })
+            Order.find({ userID: reqParams.userID })
                 .sort({'created_at': -1})
-                .populate('user')
                 .exec((err, dbOrders) => {
                     if (err) handleError(err);
                     handleResponse(dbOrders, 'Orders In Cart Retrieved.');

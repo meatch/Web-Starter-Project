@@ -1,10 +1,11 @@
 export const ActionTypes = {
     /*---------------------------
-    | User
+    | Auth
     ---------------------------*/
-    USER_LOGIN: 'User: login',
-    USER_LOGOUT: 'User: logOut',
-    USER_UPDATE: 'User: update',
+    AUTH_LOGOUT: 'Auth: logout',
+    AUTH_AUTHENTICATE: 'Auth: authenticate',
+    AUTH_IS_AUTHENTICATED: 'Auth: isAuthenticated',
+    AUTH_USER_PROFILE_SET: 'Auth: setUserProfile',
 
     /*---------------------------
     | Products

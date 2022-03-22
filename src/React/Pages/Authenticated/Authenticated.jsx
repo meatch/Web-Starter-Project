@@ -4,25 +4,25 @@ import styled from 'styled-components';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 /* Components ---------------------------*/
-import User from './User/User.jsx';
+import OrderHistory from './OrderHistory/OrderHistory.jsx';
 import Checkout from './Checkout/Checkout.jsx';
 
 const Authenticated = () => {
 
     const history = useHistory();
-    const { user } = useSelector((state) => state);
+    const { auth } = useSelector((state) => state);
 
     useEffect(() => {
-        if (!user.loggedIn) {
-            history.push('/access/login');
+        if (!auth.isAuthenticated) {
+            history.push('/');
         }
-    }, [user]);
+    }, [auth.isAuthenticated]);
 
     return (
         <AuthenticatedStyled className='Authenticated inset'>
             <Switch>
-                <Route path='/auth/user'>
-                    <User />
+                <Route path='/auth/orderHistory'>
+                    <OrderHistory />
                 </Route>
                 <Route path='/auth/checkout'>
                     <Checkout />

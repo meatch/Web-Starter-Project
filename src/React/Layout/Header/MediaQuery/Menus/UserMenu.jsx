@@ -1,29 +1,25 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 /* Scripts ---------------------------*/
 import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
+import * as AuthActions from 'Redux/state/auth/actions.js';
 
 const UserMenu = () => {
 
-    const { cart, user } = useSelector((state) => state);
+    const { cart, auth } = useSelector((state) => state);
+    const dispatch = useDispatch();
     const itemCount = cart.items.length > 0 ? ` (${cart.items.length})` : '';
-
-    const auth = (window.app.auth) ? window.app.auth : false;
-    if (!auth) { return ''; }
 
     return (
         <UserMenuStyled className='UserMenu'>
             <h2>User Menu</h2>
                 {
-                    !user.loggedIn
-                        ?   <a href="#" onClick={ auth.login }>Login</a>
-                        :   <>
-                                <NavLink to={ '/auth/user' }>Account</NavLink>
-                                <NavLink to={ '/access/logout' }>Logout</NavLink>
-                            </>
+                    !auth.isAuthenticated
+                        ?   <a href="#" onClick={ () => dispatch(AuthActions.login()) }>Login</a>
+                        :   <a href="#" onClick={ () => dispatch(AuthActions.logout()) }>Logout</a>
                 }
                 <NavLink to={ '/cart' }>Cart{itemCount}</NavLink>
         </UserMenuStyled>

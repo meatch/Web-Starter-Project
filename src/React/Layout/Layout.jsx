@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { useHistory, useLocation } from 'react-router-dom';
 
 /* Scripts ---------------------------*/
-import Authenticator from 'common/Authenticator.js';
 import { preloadState } from 'Redux/preloadState.js';
+import * as AuthActions from 'Redux/state/auth/actions.js';
 
 /* Components ---------------------------*/
 import Header from './Header/Header.jsx';
@@ -15,15 +14,20 @@ import Footer from './Footer/Footer.jsx';
 const Layout = () => {
 
     const dispatch = useDispatch();
-    const history = useHistory();
-    const location = useLocation();
-
-    window.app = {
-        auth: new Authenticator(history, location),
-    }
+    const authIntervalCheck = AuthActions.authIntervalCheck(dispatch);
 
     useEffect(() => {
+        // Mount
         dispatch(preloadState());
+
+        // ...then check on intervals
+        authIntervalCheck.start();
+
+        // Dismount - should never really dismount, unless user closes browser.
+        return () => {
+            authIntervalCheck.end();
+        }
+
     }, []);
 
     return (
