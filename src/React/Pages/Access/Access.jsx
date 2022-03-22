@@ -5,9 +5,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 
 /* Components ---------------------------*/
 import AccessSublinks from './AccessSublinks.jsx';
-import Login from './Login.jsx';
-import Logout from './Logout.jsx';
-import Create from './Create.jsx';
+import CallBack from './CallBack.jsx';
 
 const Access = () => {
 
@@ -25,14 +23,8 @@ const Access = () => {
             <h1>Access</h1>
             <AccessSublinks />
             <Switch>
-                <Route path='/access/login'>
-                    <Login />
-                </Route>
-                <Route path='/access/create'>
-                    <Create />
-                </Route>
-                <Route path='/access/logout'>
-                    <Logout />
+                <Route path='/access/callback'>
+                    <CallBack />
                 </Route>
             </Switch>
         </AccessStyled>
