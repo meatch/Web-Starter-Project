@@ -37,6 +37,16 @@ const routeCollections = {
             ],
         },
         {
+            resource: '/auth0',
+            controller: Controllers.AuthController,
+            routes: [
+                { method: "post",     handler: "authenticate",          path: `/authenticate`,          },
+                { method: "get",      handler: "isAuthenticated",       path: `/isAuthenticated`,       },
+                { method: "get",      handler: "getAccessToken",        path: `/getAccessToken`,        },
+                { method: "get",      handler: "disavow",               path: `/disavow`,               },
+            ],
+        },
+        {
             resource: '/users',
             controller: Controllers.UserController,
             routes: [

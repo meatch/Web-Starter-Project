@@ -8,17 +8,18 @@ import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 const UserMenu = () => {
 
-    const { cart } = useSelector((state) => state);
-    const { user } = useSelector((state) => state);
-
+    const { cart, user } = useSelector((state) => state);
     const itemCount = cart.items.length > 0 ? ` (${cart.items.length})` : '';
+
+    const auth = (window.app.auth) ? window.app.auth : false;
+    if (!auth) { return ''; }
 
     return (
         <UserMenuStyled className='UserMenu'>
             <h2>User Menu</h2>
                 {
                     !user.loggedIn
-                        ?   <NavLink to={ '/access/login' }>Login</NavLink>
+                        ?   <a href="#" onClick={ auth.login }>Login</a>
                         :   <>
                                 <NavLink to={ '/auth/user' }>Account</NavLink>
                                 <NavLink to={ '/access/logout' }>Logout</NavLink>
