@@ -23,20 +23,6 @@ const routeCollections = {
             ],
         },
         {
-            resource: '/login',
-            controller: Controllers.LoginController,
-            routes: [
-                { method: "post",     handler: "login",                 path: `/`,                      },
-            ],
-        },
-        {
-            resource: '/logout',
-            controller: Controllers.LoginController,
-            routes: [
-                { method: "get",      handler: "logout",                path: `/`,                      },
-            ],
-        },
-        {
             resource: '/auth0',
             controller: Controllers.AuthController,
             routes: [
@@ -44,13 +30,6 @@ const routeCollections = {
                 { method: "get",      handler: "isAuthenticated",       path: `/isAuthenticated`,       },
                 { method: "get",      handler: "getAccessToken",        path: `/getAccessToken`,        },
                 { method: "get",      handler: "disavow",               path: `/disavow`,               },
-            ],
-        },
-        {
-            resource: '/users',
-            controller: Controllers.UserController,
-            routes: [
-                { method: "post",    handler: "create",                 path: `/`,                      },
             ],
         },
         {
@@ -63,16 +42,6 @@ const routeCollections = {
         },
     ],
     authenticated: [
-        {
-            resource: '/users',
-            controller: Controllers.UserController,
-            routes: [
-                { method: "get",     handler: "all",                    path: `/`,                      },
-                { method: "get",     handler: "byID",                   path: `/:id`,                   },
-                { method: "patch",   handler: "update",                 path: `/:id`,                   },
-                { method: "patch",   handler: "updatePassword",         path: `/:id/password`,          },
-            ],
-        },
         {
             resource: '/orders',
             controller: Controllers.OrderController,
