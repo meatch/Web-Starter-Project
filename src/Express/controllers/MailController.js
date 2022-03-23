@@ -5,12 +5,14 @@ const striptags = require('striptags');
 
 const MailController = () => {
 
+    console.log('process.env.PORT', process.env.PORT);
+
     const transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.MAILTRAP_HOST,
+        port: process.env.MAILTRAP_PORT,
         auth: {
-            user: "f886de0ee5bd82",
-            pass: "dd42f8ca92abf7"
+            user: process.env.MAILTRAP_USER,
+            pass: process.env.MAILTRAP_PASS
         }
     });
 
@@ -18,17 +20,17 @@ const MailController = () => {
         if (error) {
             console.log(error);
         } else {
-            console.log('Server is ready to take our messages');
+            console.log('Mail Server is ready to take our emails.');
         }
     });
 
     /* Template Email ---------------------------*/
-    const sendEmail = ({to='Mitch Gohman <meatch@me.com>', replyTo, message, subject}, callback) => {
+    const sendEmail = ({to=`${process.env.MAIL_TO_DEFAULT}`, replyTo, message, subject}, callback) => {
         const mailOptions = {
-            from: 'Enspyred <enspyred2019@gmail.com>',
+            from: process.env.MAIL_FROM,
             to: to,
             replyTo: replyTo,
-            subject: `CrossFit Decimate: ${subject}`,
+            subject: `${process.env.MAIL_COMPANY} ${subject}`,
             text: striptags(message),
             html: message,
         };
@@ -68,11 +70,13 @@ const MailController = () => {
         const message = `
             <p>Hello ${reqBody.userProfile.given_name},</p>
 
-            <p>Thank you for your order. We will process and ship your order with the next 3 business days.</p>
+            <p>Thank you for your order.</p>
+
+            <p>We will process and ship your order with the next 3 business days.</p>
 
             <p>
                 Cheers, <br />
-                CrossFit Decimate
+                ${process.env.MAIL_COMPANY}
             </p>
         `;
 
@@ -82,7 +86,7 @@ const MailController = () => {
             subject: "Thank You For Your Order",
             to: emailTo,
             message: message,
-            replyTo: "Enspyred <enspyred2019@gmail.com>",
+            replyTo: process.env.MAIL_TO_DEFAULT,
         }, (error, info) => {
             if (error) {
                 return handleResponse(error, 'Order Thank You Failed.', false);
