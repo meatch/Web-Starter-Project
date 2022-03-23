@@ -12,7 +12,7 @@ import { reqResp } from 'common/axios.js';
 
 const Review = () => {
 
-    const { cart, auth } = useSelector(state => state);
+    const { cart, user } = useSelector(state => state);
     const dispatch = useDispatch();
 
     const history = useHistory();
@@ -26,7 +26,7 @@ const Review = () => {
         }
 
         const axiosResp = await reqResp('post', '/orders/placeOrder', {
-            userProfile: auth.userProfile,
+            userProfile: user.profile,
             payment: cart.payment,
             details: details,
         });

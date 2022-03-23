@@ -1,11 +1,9 @@
 export const ActionTypes = {
     /*---------------------------
-    | Auth
+    | User
     ---------------------------*/
-    AUTH_LOGOUT: 'Auth: logout',
-    AUTH_AUTHENTICATE: 'Auth: authenticate',
-    AUTH_IS_AUTHENTICATED: 'Auth: isAuthenticated',
-    AUTH_USER_PROFILE_SET: 'Auth: setUserProfile',
+    USER_PROFILE_SET: 'User: profileSet',
+    USER_IS_AUTHENTICATED_SET: 'User: isAuthenticatedSet',
 
     /*---------------------------
     | Products

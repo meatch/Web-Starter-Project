@@ -6,7 +6,7 @@ import combinedReducers from './combinedReducers.js';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['products'], // only products will be persisted
+    whitelist: ['products', 'user'], // only products and user will be persisted
 }
 
 const persistedReducer = persistReducer(persistConfig, combinedReducers);

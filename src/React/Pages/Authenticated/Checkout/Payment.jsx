@@ -9,7 +9,7 @@ import * as CartActions from 'Redux/state/cart/actions.js';
 
 const Payment = () => {
 
-    const { auth, cart } = useSelector(state => state);
+    const { user, cart } = useSelector(state => state);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -54,7 +54,7 @@ const Payment = () => {
                         id='first'
                         type='text'
                         placeholder='First name'
-                        defaultValue={ auth.userProfile.given_name }
+                        defaultValue={ user.profile.given_name }
                         rules={ [ 'required' ] }
                     />
                     <Input
@@ -62,7 +62,7 @@ const Payment = () => {
                         id='last'
                         type='text'
                         placeholder='Last name'
-                        defaultValue={ auth.userProfile.family_name }
+                        defaultValue={ user.profile.family_name }
                         rules={ [ 'required' ] }
                     />
                 </div>

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 /* Scripts ---------------------------*/
 import { axios } from 'common/axios.js';
 
-
+/* Components ---------------------------*/
 import OrderList from './OrderList.jsx';
 
 const OrderHistory = () => {
@@ -16,7 +16,7 @@ const OrderHistory = () => {
     const [pastOrders, pastOrdersUpdate] = useState([]);
 
     useEffect(() => {
-        axios.get(`/orders/getOrderHistory/${user.profile._id}`)
+        axios.get(`/orders/getOrderHistory/${user.profile.sub}`)
             .then((resp) => {
                 pastOrdersUpdate(resp.data.payload);
                 loadedUpdate(true);

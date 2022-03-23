@@ -1,8 +1,9 @@
 module.exports = function (req, res, next) {
     //Do your session checking...
     const session = req.session;
+    const isAuthenticated = !!(session.idToken && session.accessToken);
 
-    if (!session.userid) {
+    if (!isAuthenticated) {
         console.log('User Logged Out - access denied');
         res.json({
             response: {

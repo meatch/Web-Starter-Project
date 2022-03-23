@@ -9,7 +9,7 @@ import * as AuthActions from 'Redux/state/auth/actions.js';
 
 const UserMenu = () => {
 
-    const { cart, auth } = useSelector((state) => state);
+    const { cart, user } = useSelector((state) => state);
     const dispatch = useDispatch();
     const itemCount = cart.items.length > 0 ? ` (${cart.items.length})` : '';
 
@@ -17,9 +17,12 @@ const UserMenu = () => {
         <UserMenuStyled className='UserMenu'>
             <h2>User Menu</h2>
                 {
-                    !auth.isAuthenticated
+                    !user.isAuthenticated
                         ?   <a href="#" onClick={ () => dispatch(AuthActions.login()) }>Login</a>
-                        :   <a href="#" onClick={ () => dispatch(AuthActions.logout()) }>Logout</a>
+                        :   <>
+                                <NavLink to='/auth/user'>Account</NavLink>
+                                <a href="#" onClick={ () => dispatch(AuthActions.logout()) }>Logout</a>
+                            </>
                 }
                 <NavLink to={ '/cart' }>Cart{itemCount}</NavLink>
         </UserMenuStyled>

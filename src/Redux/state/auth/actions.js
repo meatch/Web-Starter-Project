@@ -1,6 +1,6 @@
-import { ActionTypes } from '../actionTypes';
 import { reqResp } from 'common/axios.js';
 import config from './config.js';
+import * as UserActions from '../user/actions.js';
 
 /**
  * authenticate: Captures auth0 callback JWT, adds to Express session, redirects
@@ -19,19 +19,13 @@ export const authenticate = () => {
 
                 const resp = await reqResp('post', '/auth0/authenticate', authData);
 
-                dispatch({
-                    type: ActionTypes.AUTH_AUTHENTICATE,
-                    isAuthenticated: resp.success
-                });
+                dispatch(UserActions.isAuthenticatedSet(resp.success));
                 dispatch(setUserProfile());
 
             } else if (err) {
                 console.log('err', err);
 
-                dispatch({
-                    type: ActionTypes.AUTH_AUTHENTICATE,
-                    isAuthenticated: false,
-                });
+                dispatch(UserActions.isAuthenticatedSet(false));
             }
         });
     }
@@ -65,11 +59,8 @@ export const logout = () => {
         });
 
         // 3. Reset Redux State
-        dispatch({
-            type: ActionTypes.AUTH_LOGOUT,
-            userProfile: {},
-            isAuthenticated: false,
-        });
+        dispatch(UserActions.isAuthenticatedSet(false));
+        dispatch(UserActions.profileSet({}));
     }
 }
 
@@ -80,10 +71,7 @@ export const isAuthenticated = () => {
     return (dispatch) => {
         reqResp('get', '/auth0/isAuthenticated')
             .then((resp) => {
-                dispatch({
-                    type: ActionTypes.AUTH_IS_AUTHENTICATED,
-                    isAuthenticated: resp.success
-                });
+                dispatch(UserActions.isAuthenticatedSet(resp.success));
             });
     }
 }
@@ -146,10 +134,7 @@ export const setUserProfile = () => {
             // Get profile from auth0
             auth0API.client.userInfo(accessToken, (err, userProfile) => {
                 if (userProfile) {
-                    dispatch({
-                        type: ActionTypes.AUTH_USER_PROFILE_SET,
-                        userProfile: userProfile
-                    });
+                    dispatch(UserActions.profileSet(userProfile));
                 } else {
                     console.log('Error', err);
                 }
