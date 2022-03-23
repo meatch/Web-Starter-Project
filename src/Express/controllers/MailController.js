@@ -2,6 +2,8 @@ require('../common/mongoose.conn.js');
 const reqResp = require('../common/reqResp.js');
 const nodemailer = require('nodemailer');
 const striptags = require('striptags');
+const path = require('path');
+const ejs = require('ejs');
 
 const MailController = () => {
 
@@ -25,38 +27,44 @@ const MailController = () => {
     });
 
     /* Template Email ---------------------------*/
-    const sendEmail = ({to=`${process.env.MAIL_TO_DEFAULT}`, replyTo, message, subject}, callback) => {
-        const mailOptions = {
-            from: process.env.MAIL_FROM,
-            to: to,
-            replyTo: replyTo,
-            subject: `${process.env.MAIL_COMPANY} ${subject}`,
-            text: striptags(message),
-            html: message,
-        };
+    const sendEmail = ({to=`${process.env.MAIL_TO_DEFAULT}`, view, replyTo, message, subject}, callback) => {
+        ejs.renderFile(path.join(__dirname, `../views${view.file}`), view.props)
+            .then((emailTemplate) => {
+                const mailOptions = {
+                    from: process.env.MAIL_FROM,
+                    to: to,
+                    replyTo: replyTo,
+                    subject: `${process.env.MAIL_COMPANY} ${subject}`,
+                    text: striptags(emailTemplate),
+                    html: emailTemplate,
+                };
+                transport.sendMail(mailOptions, callback);
+            })
+            .catch((error) => {
+                callback({
+                    error: error,
+                    message: 'Building View Failed.'
+                })
+            });
 
-        transport.sendMail(mailOptions, callback);
     }
 
     /* Contact ---------------------------*/
     const contact = reqResp(({reqBody, handleResponse}) => {
 
-        const message = `
-            <p>Hello Mitch,</p>
+        const config = {
+            subject: "Contact Form",
+            view: {
+                file: '/contact.ejs',
+                props: {
+                    name: reqBody.name,
+                    message: reqBody.message,
+                },
+            },
+            replyTo: reqBody.email
+        }
 
-            <p>${reqBody.name} has emailed you from your website contact form.</p>
-
-            <p><b>Message:</b></p>
-
-            <p>${reqBody.message}</p>
-
-            <p>
-                Cheers, <br />
-                Your Web Team
-            </p>
-        `;
-
-        sendEmail({ subject: "Contact Form", message: message, replyTo: reqBody.email}, (error, info) => {
+        sendEmail(config, (error, info) => {
             if (error) {
                 return handleResponse(error, 'Contact Failed.', false);
             }
@@ -67,27 +75,22 @@ const MailController = () => {
     /* Purchase ---------------------------*/
     const purchaseThanks = reqResp(({reqBody, handleResponse}) => {
 
-        const message = `
-            <p>Hello ${reqBody.userProfile.given_name},</p>
-
-            <p>Thank you for your order.</p>
-
-            <p>We will process and ship your order with the next 3 business days.</p>
-
-            <p>
-                Cheers, <br />
-                ${process.env.MAIL_COMPANY}
-            </p>
-        `;
-
         const emailTo = `${reqBody.userProfile.name} <${reqBody.userProfile.email}>`;
 
-        sendEmail({
+        const config = {
             subject: "Thank You For Your Order",
             to: emailTo,
-            message: message,
+            view: {
+                file: '/purchaseThanks.ejs',
+                props: {
+                    firstName: reqBody.userProfile.given_name,
+                    companyName: process.env.MAIL_COMPANY,
+                },
+            },
             replyTo: process.env.MAIL_TO_DEFAULT,
-        }, (error, info) => {
+        }
+
+        sendEmail(config, (error, info) => {
             if (error) {
                 return handleResponse(error, 'Order Thank You Failed.', false);
             }
