@@ -18,9 +18,9 @@
         - [x] Order Flow: Flag Order Placed, Clear Cart Items, Show Thank You Page, disable Payment and Review.
         - [x] User Account Update and Password Update
         - [x] User Periodic Access Check - logout actions
-        - [ ] Remove persist, not really using it
+        - [x] Mailtrap: Contact and Purchase Thanks Forms
+        - [ ] Mail: Add Order Receipts Table in EJS View Temaplate
         - [ ] Test Sample Data for Forms
-        - [ ] Mailtrap: Contact Form
         - [ ] Unit Tests
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
