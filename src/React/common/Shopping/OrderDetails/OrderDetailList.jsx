@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import { centsToDollars, getTotalCostOfItems } from 'common/utilities.js';
 
 /* Components ---------------------------*/
-import Item from './Item.jsx';
+import OrderDetail from './OrderDetail.jsx';
 
-const ItemList = ({items, showControls=false}) => {
+const OrderDetailList = ({items, showControls=false}) => {
 
     const grandTotal = getTotalCostOfItems(items);
 
     return (
-        <ItemListStyled className='ItemList'>
+        <OrderDetailListStyled className='OrderDetailList'>
             <thead>
                 <tr>
                     <th className='num'>#</th>
@@ -26,7 +26,7 @@ const ItemList = ({items, showControls=false}) => {
             <tbody>
                 {
                     items.map((item,idx) => {
-                        return <Item key={ idx } showControls={ showControls } num={ idx+1 } item={ item }/>
+                        return <OrderDetail key={ idx } showControls={ showControls } num={ idx+1 } item={ item }/>
                     })
                 }
             </tbody>
@@ -36,13 +36,13 @@ const ItemList = ({items, showControls=false}) => {
                     <td className='grandTotal'>{ centsToDollars(grandTotal) }</td>
                 </tr>
             </tfoot>
-        </ItemListStyled>
+        </OrderDetailListStyled>
     );
 }
 
-export default ItemList;
+export default OrderDetailList;
 
-const ItemListStyled = styled.table`
+const OrderDetailListStyled = styled.table`
     border-collapse: collapse;
     border: solid 1px #ccc;
     width: 100%;

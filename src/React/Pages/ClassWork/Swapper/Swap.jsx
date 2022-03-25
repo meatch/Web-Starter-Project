@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const SwapSingle = ({swap}) => {
+const Swap = ({swap}) => {
 
     const {
         title,
@@ -25,7 +25,7 @@ const SwapSingle = ({swap}) => {
     }
 
     return (
-        <SwapSingleStyled className='SwapSingle' bgColor={ bgColor }>
+        <SwapStyled className='Swap' bgColor={ bgColor }>
             <h3>{ title }</h3>
 
             <img
@@ -36,13 +36,13 @@ const SwapSingle = ({swap}) => {
             />
 
             <p>{ theDesc }</p>
-        </SwapSingleStyled>
+        </SwapStyled>
     );
 }
 
-export default SwapSingle;
+export default Swap;
 
-const SwapSingleStyled = styled.div`
+const SwapStyled = styled.div`
     background-color: ${({bgColor}) => bgColor};
     text-align: center;
     padding: 20px;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { swapperData } from 'data/swapperData.js';
 
 /* Components ---------------------------*/
-import SwapSingle from './SwapSingle.jsx';
+import Swap from './Swap.jsx';
 
 
 const SwapList = () => {
@@ -15,7 +15,7 @@ const SwapList = () => {
             <div className="list">
                 {
                     swapperData.map((swap, idx) => {
-                        return <SwapSingle key={ idx } swap={ swap } />
+                        return <Swap key={ idx } swap={ swap } />
                     })
                 }
             </div>
@@ -31,7 +31,7 @@ const SwapListStyled = styled.div`
         flex-wrap: wrap;
     }
 
-    .Swapper {
+    .Swap {
         flex: 1;
         min-width: 330px;
     }

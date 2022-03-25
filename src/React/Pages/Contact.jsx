@@ -13,11 +13,7 @@ const Contact = () => {
     // Component Logic
     const handleOnSubmit = async (uFormData) => {
 
-        console.log('uFormData', uFormData);
-
         const servResp = await reqResp('post', '/email/contact', uFormData.requestObject);
-
-        console.log('servResp', servResp);
 
         return servResp;
     }

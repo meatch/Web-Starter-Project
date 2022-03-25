@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import CheckOutHeader from 'React/common/Cart/CheckOutHeader/CheckOutHeader.jsx';
-import ItemList from 'React/common/Cart/ItemList.jsx';
+import CheckOutHeader from 'React/common/Shopping/CheckOutHeader/CheckOutHeader.jsx';
+import OrderDetails from 'React/common/Shopping/OrderDetails/OrderDetails.jsx';
 
 const Cart = () => {
 
@@ -22,7 +22,7 @@ const Cart = () => {
             <CheckOutHeader>
                 <h1>Cart</h1>
             </CheckOutHeader>
-            <ItemList items={ cart.items } showControls />
+            <OrderDetails items={ cart.items } showControls />
         </CartStyled>
     );
 }

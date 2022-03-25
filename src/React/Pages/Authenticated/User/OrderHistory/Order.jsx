@@ -6,7 +6,7 @@ import moment from 'moment';
 import { centsToDollars } from 'common/utilities.js';
 
 /* Components ---------------------------*/
-import ItemList from 'React/common/Cart/ItemList.jsx';
+import OrderDetails from 'React/common/Shopping/OrderDetails/OrderDetails.jsx';
 
 const Order = ({order}) => {
 
@@ -17,7 +17,7 @@ const Order = ({order}) => {
             <h2>{ theDate }</h2>
             <div className=''>Order Id: {order._id}</div>
             <div className='total'>Total: { centsToDollars(order.details.totalCost) }</div>
-            <ItemList items={ order.details.items } />
+            <OrderDetails items={ order.details.items } />
         </OrderStyled>
     );
 }

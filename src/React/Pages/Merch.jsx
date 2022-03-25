@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
-import CheckOutHeader from 'React/common/Cart/CheckOutHeader/CheckOutHeader.jsx';
+import CheckOutHeader from 'React/common/Shopping/CheckOutHeader/CheckOutHeader.jsx';
 import Products from 'React/common/Products/ProductList.jsx';
 
 const Merch = () => {

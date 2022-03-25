@@ -15,7 +15,7 @@ import { centsToDollars } from 'common/utilities.js';
 import Qty from 'React/common/Products/Qty/Qty.jsx';
 
 
-const Item = ({num, item, showControls}) => {
+const OrderDetail = ({num, item, showControls}) => {
 
     const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const Item = ({num, item, showControls}) => {
     }
 
     return (
-        <ItemStyled className='Item'>
+        <OrderDetailStyled className='OrderDetail'>
             <td className='num'>{ num }</td>
             <td className='title'>
                 <div className="row">
@@ -49,13 +49,13 @@ const Item = ({num, item, showControls}) => {
             </td>
             <td className='price'>{ centsToDollars(item.product.price) }</td>
             <td className='total'>{ centsToDollars(item.product.price * item.qty) }</td>
-        </ItemStyled>
+        </OrderDetailStyled>
     );
 }
 
-export default Item;
+export default OrderDetail;
 
-const ItemStyled = styled.tr`
+const OrderDetailStyled = styled.tr`
     .row {
         display: flex;
         align-items: center;

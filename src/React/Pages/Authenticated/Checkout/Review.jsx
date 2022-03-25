@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import UniversalForm, { SubmitButton } from '@enspyred/universal-form';
-import ItemList from 'React/common/Cart/ItemList.jsx';
+import OrderDetails from 'React/common/Shopping/OrderDetails/OrderDetails.jsx';
 
 /* Scripts ---------------------------*/
 import * as CartActions from 'Redux/state/cart/actions.js';
@@ -49,7 +49,7 @@ const Review = () => {
         <ReviewStyled className='Review'>
             <h1>Review</h1>
 
-            <ItemList items={ cart.items } showControls />
+            <OrderDetails items={ cart.items } showControls />
 
             <UniversalForm
                 displayName='Checkout Review Form'
