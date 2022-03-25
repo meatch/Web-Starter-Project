@@ -7,10 +7,10 @@ import { staffData } from './staffData.js';
 /* Components ---------------------------*/
 import StaffMember from './StaffMember.jsx';
 
-const StaffProfiles = () => {
+const StaffList = () => {
 
     return (
-        <StaffProfilesStyled className='StaffProfiles'>
+        <StaffListStyled className='StaffList'>
             <div className="wrapper">
                 {
                     staffData.map((member, idx) => {
@@ -18,13 +18,13 @@ const StaffProfiles = () => {
                     })
                 }
             </div>
-        </StaffProfilesStyled>
+        </StaffListStyled>
     );
 }
 
-export default StaffProfiles;
+export default StaffList;
 
-const StaffProfilesStyled = styled.div`
+const StaffListStyled = styled.div`
     background-color: teal;
     padding: 20px;
     margin: 20px 0px;

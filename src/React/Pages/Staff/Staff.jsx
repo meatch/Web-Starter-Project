@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import StaffProfiles from './StaffProfiles/StaffProfiles.jsx';
+import StaffList from './StaffList/StaffList.jsx';
 
 const Staff = () => {
     return (
         <StaffStyled className='Staff inset'>
             <h1>Staff</h1>
-            <StaffProfiles />
+            <StaffList />
         </StaffStyled>
     );
 }
