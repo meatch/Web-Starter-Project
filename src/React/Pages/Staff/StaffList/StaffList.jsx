@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { staffData } from './staffData.js';
+import { staffData } from 'data/staffData.js';
 
 /* Components ---------------------------*/
 import StaffMember from './StaffMember.jsx';

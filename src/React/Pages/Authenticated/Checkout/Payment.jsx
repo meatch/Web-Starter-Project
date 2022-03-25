@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 /* Scripts ---------------------------*/
 import * as CartActions from 'Redux/state/cart/actions.js';
-import sampleFormData from 'React/common/sampleFormData/sampleFormData.js';
+import sampleFormData from 'data/sampleFormData/sampleFormData.js';
 
 const Payment = () => {
 

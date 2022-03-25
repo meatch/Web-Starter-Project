@@ -2,30 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { swapperData } from './swapperData.js';
+import { swapperData } from 'data/swapperData.js';
 
 /* Components ---------------------------*/
-import Swapper from './Swapper.jsx';
+import SwapSingle from './SwapSingle.jsx';
 
 
-const SwapperList = () => {
+const SwapList = () => {
     return (
-        <SwapperListStyled className='SwapperList'>
+        <SwapListStyled className='SwapList'>
             <h2>Swapping Content</h2>
             <div className="list">
                 {
                     swapperData.map((swap, idx) => {
-                        return <Swapper key={ idx } swap={ swap } />
+                        return <SwapSingle key={ idx } swap={ swap } />
                     })
                 }
             </div>
-        </SwapperListStyled>
+        </SwapListStyled>
     );
 }
 
-export default SwapperList;
+export default SwapList;
 
-const SwapperListStyled = styled.div`
+const SwapListStyled = styled.div`
     .list {
         display: flex;
         flex-wrap: wrap;

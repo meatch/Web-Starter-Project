@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { tabbedData } from './tabbedData.js';
+import { tabbedData } from 'data/tabbedData.js';
 
 /* Components ---------------------------*/
 import TabbedMenu from './TabbedMenu/TabbedMenu.jsx';
@@ -23,5 +23,5 @@ const Tabbed = () => {
 export default Tabbed;
 
 const TabbedStyled = styled.div`
-    
+
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import UniversalForm, { Input, Textarea, SubmitButton } from '@enspyred/universal-form';
 
 /* Scripts ---------------------------*/
-import sampleFormData from 'React/common/sampleFormData/sampleFormData.js';
+import sampleFormData from 'data/sampleFormData/sampleFormData.js';
 import { reqResp } from 'common/axios.js';
 
 const Contact = () => {
