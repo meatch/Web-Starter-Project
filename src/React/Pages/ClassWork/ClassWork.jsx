@@ -5,7 +5,7 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 /* Components ---------------------------*/
 import Homework from './Homework/Homework.jsx';
 import Preloader from 'React/common/Preloader/Preloader.jsx';
-import SunAndMoon from './SunAndMoon.jsx';
+import SwapperList from './Swapper/SwapperList.jsx';
 import Forms from './Forms.jsx';
 
 const ClassWork = () => {
@@ -15,7 +15,7 @@ const ClassWork = () => {
 
             <nav className='sublinks'>
                 <NavLink to='/class' exact>Homework</NavLink>
-                <NavLink to='/class/SunAndMoon'>Sun And Moon</NavLink>
+                <NavLink to='/class/Swapper'>Swapper</NavLink>
                 <NavLink to='/class/Preloader'>Preloader</NavLink>
                 <NavLink to='/class/Forms'>Forms</NavLink>
             </nav>
@@ -24,8 +24,8 @@ const ClassWork = () => {
                 <Route path='/class' exact>
                     <Homework />
                 </Route>
-                <Route path='/class/SunAndMoon'>
-                    <SunAndMoon />
+                <Route path='/class/Swapper'>
+                    <SwapperList />
                 </Route>
                 <Route path='/class/Preloader'>
                     <Preloader />
