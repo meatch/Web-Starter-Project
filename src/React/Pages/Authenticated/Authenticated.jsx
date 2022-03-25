@@ -7,6 +7,7 @@ import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
 import * as RoutingActions from 'Redux/state/routing/actions.js';
 
 /* Components ---------------------------*/
+import Preloader from 'React/common/Preloader/Preloader.jsx';
 import User from './User/User.jsx';
 import Checkout from './Checkout/Checkout.jsx';
 
@@ -29,7 +30,7 @@ const Authenticated = () => {
         }
     }, []);
 
-    if (!isReady) { return 'Loading...'; }
+    if (!isReady) { return <Preloader />; }
 
     return (
         <AuthenticatedStyled className='Authenticated inset'>

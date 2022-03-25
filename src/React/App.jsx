@@ -10,7 +10,7 @@ import configureStore from '../Redux/store/index.js';
 import { MediaQueryProvider } from 'React/common/useMediaQuery.js';
 
 /* Components ---------------------------*/
-import Loader from './common/Loader.jsx';
+import Preloader from 'React/common/Preloader/Preloader.jsx';
 import Layout from './Layout/Layout.jsx';
 
 const { store, persistor } = configureStore();
@@ -18,7 +18,7 @@ const { store, persistor } = configureStore();
 const App = () => {
     return (
         <Provider store={store}>
-            <PersistGate loading={<Loader />} persistor={persistor}>
+            <PersistGate loading={<Preloader />} persistor={persistor}>
                 <MediaQueryProvider>
                     <BrowserRouter>
                         <Layout />

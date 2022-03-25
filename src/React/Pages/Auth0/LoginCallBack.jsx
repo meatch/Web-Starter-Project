@@ -5,6 +5,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 /* Scripts ---------------------------*/
 import * as AuthActions from 'Redux/state/auth/actions.js';
 
+/* Components ---------------------------*/
+import Preloader from 'React/common/Preloader/Preloader.jsx';
+
 const LoginCallBack = () => {
 
     const { routing, user } = useSelector((state) => state);
@@ -29,10 +32,9 @@ const LoginCallBack = () => {
         }
     }, [user.isAuthenticated]);
 
-    // @Max: Do I need to return JSX here? Is there another way? I am leveraging hooks.
     return (
         <div className='LoginCallBack'>
-            Auth0 Call Back Page
+            <Preloader />
         </div>
     );
 }

@@ -7,6 +7,7 @@ import _ from 'lodash';
 import { axios } from 'common/axios.js';
 
 /* Components ---------------------------*/
+import Preloader from 'React/common/Preloader/Preloader.jsx';
 import OrderList from './OrderList.jsx';
 
 const OrderHistory = () => {
@@ -26,7 +27,7 @@ const OrderHistory = () => {
         }
     }, [user.profile]);
 
-    if (!_.has(user,'profile.sub') || !loaded) { return 'Loading...'; }
+    if (!_.has(user,'profile.sub') || !loaded) { return <Preloader />; }
 
     return (
         <OrderHistoryStyled className='OrderHistory'>
