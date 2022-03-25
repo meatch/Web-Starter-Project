@@ -23,6 +23,8 @@
         - [x] Sun And Moon refactor to Binary
         - [x] Test Sample Data for Forms
         - [x] Contact Form
+        - [ ] Reorganize Layout and Pages, etc
+        - [ ] Expand on Lightbox - make it more flexible for staff and products - responsive
         - [ ] Universal Forms - Fix Error handling
         - [ ] Universal Forms - Publish and Yarn Add
         - [ ] Unit Tests

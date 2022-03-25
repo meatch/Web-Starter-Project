@@ -12,6 +12,7 @@ import { MediaQueryProvider } from 'React/common/useMediaQuery.js';
 /* Components ---------------------------*/
 import Preloader from 'React/common/Preloader/Preloader.jsx';
 import Layout from './Layout/Layout.jsx';
+import Pages from './Pages/Pages.jsx';
 
 const { store, persistor } = configureStore();
 
@@ -21,7 +22,9 @@ const App = () => {
             <PersistGate loading={<Preloader />} persistor={persistor}>
                 <MediaQueryProvider>
                     <BrowserRouter>
-                        <Layout />
+                        <Layout>
+                            <Pages />
+                        </Layout>
                     </BrowserRouter>
                 </MediaQueryProvider>
             </PersistGate>

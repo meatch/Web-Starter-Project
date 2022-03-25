@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 /* Components ---------------------------*/
-import Home from '../Pages/Home/Home.jsx';
-import Staff from '../Pages/Staff/Staff.jsx';
-import Contact from '../Pages/Contact/Contact.jsx';
-import Merch from '../Pages/Merch/Merch.jsx';
-import Cart from '../Pages/Cart/Cart.jsx';
+import Home from './Home/Home.jsx';
+import Staff from './Staff/Staff.jsx';
+import Contact from './Contact.jsx';
+import Merch from './Merch.jsx';
+import Cart from './Cart.jsx';
 
-import Auth0 from '../Pages/Auth0/Auth0.jsx';
-import Authenticated from '../Pages/Authenticated/Authenticated.jsx';
+import Auth0 from './Auth0/Auth0.jsx';
+import Authenticated from './Authenticated/Authenticated.jsx';
 
-import ClassWork from '../Pages/ClassWork/ClassWork.jsx';
+import ClassWork from './ClassWork/ClassWork.jsx';
 
 const Main = () => {
     return (
