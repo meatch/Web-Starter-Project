@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import CheckOutHeader from 'React/common/CheckOutHeader/CheckOutHeader.jsx';
+import CheckOutHeader from 'React/common/Cart/CheckOutHeader/CheckOutHeader.jsx';
 import ItemList from 'React/common/Cart/ItemList.jsx';
 
 const Cart = () => {
