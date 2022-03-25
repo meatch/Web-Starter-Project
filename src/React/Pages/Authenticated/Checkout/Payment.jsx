@@ -25,8 +25,8 @@ const Payment = () => {
 
 
     // Component Logic
-    const handleOnSubmit = async (uformData) => {
-        dispatch(CartActions.addPayment(uformData.requestObject));
+    const handleOnSubmit = async (uFormData) => {
+        dispatch(CartActions.addPayment(uFormData.requestObject));
         dispatch(CartActions.flowUnlockReview());
         history.push('/auth/checkout/review');
     }

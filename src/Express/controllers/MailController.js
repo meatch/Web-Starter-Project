@@ -66,9 +66,9 @@ const MailController = () => {
 
         sendEmail(config, (error, info) => {
             if (error) {
-                return handleResponse(error, 'Contact Failed.', false);
+                return handleResponse(error, 'Mailserver error, unable to send message.', false);
             }
-            handleResponse(info, 'Contact Success.');
+            handleResponse(info, 'Message sent successfully.');
         });
     });
 

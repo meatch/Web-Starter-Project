@@ -22,6 +22,9 @@
         - [x] Redirect to user chosen page when authenticating
         - [x] Sun And Moon refactor to Binary
         - [x] Test Sample Data for Forms
+        - [x] Contact Form
+        - [ ] Universal Forms - Fix Error handling
+        - [ ] Universal Forms - Publish and Yarn Add
         - [ ] Unit Tests
         - [ ] Mail: Wire up to SendGrid for live emails - FREE version
 
