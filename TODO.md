@@ -21,8 +21,7 @@
         - [x] Mailtrap: Contact and Purchase Thanks Forms
         - [x] Redirect to user chosen page when authenticating
         - [x] Sun And Moon refactor to Binary
-        - [ ] Mail: Add Order Receipts Table in EJS View Temaplate
-        - [ ] Test Sample Data for Forms
+        - [x] Test Sample Data for Forms
         - [ ] Unit Tests
         - [ ] Mail: Wire up to SendGrid for live emails - FREE version
 

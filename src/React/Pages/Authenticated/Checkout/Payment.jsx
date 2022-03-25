@@ -4,39 +4,45 @@ import styled from 'styled-components';
 import UniversalForm, { Input, CreditCard, Address, SubmitButton } from '@enspyred/universal-form';
 import { useHistory } from 'react-router-dom';
 
-/* redux ---------------------------*/
+/* Scripts ---------------------------*/
 import * as CartActions from 'Redux/state/cart/actions.js';
+import sampleFormData from 'React/common/sampleFormData/sampleFormData.js';
 
 const Payment = () => {
 
+    // Hooks
     const { user, cart } = useSelector(state => state);
     const dispatch = useDispatch();
     const history = useHistory();
+    const formData = sampleFormData(true); //pass true to force sample data
 
-    const handleOnSubmit = async (uformData) => {
-        dispatch(CartActions.addPayment(uformData.requestObject));
-        dispatch(CartActions.flowUnlockReview());
-        history.push('/auth/checkout/review');
-    }
-
+    // Lifecycle
     useEffect(() => {
         if (cart.items.length < 1) {
             history.push('/merch');
         }
     }, [cart.items]);
 
+
+    // Component Logic
+    const handleOnSubmit = async (uformData) => {
+        dispatch(CartActions.addPayment(uformData.requestObject));
+        dispatch(CartActions.flowUnlockReview());
+        history.push('/auth/checkout/review');
+    }
+
     const defaultProps = {
         cc: {
-            ccNum: { defaultValue: '4111111111111111' },
-            ccExp: { defaultValue: '11/24' },
-            ccCvv: { defaultValue: '123' },
+            ccNum: { defaultValue: formData.render('ccNum') },
+            ccExp: { defaultValue: formData.render('ccExp') },
+            ccCvv: { defaultValue: formData.render('ccCvv') },
         },
         address: {
-            addr1:  { defaultValue: '123 Anywhere Street' },
-            addr2:  { defaultValue: 'Apt G' },
-            city:   { defaultValue: 'Colorado Springs' },
-            state:  { defaultValue: 'CO' },
-            zip:    { defaultValue: '80922' },
+            addr1:  { defaultValue: formData.render('addr1') },
+            addr2:  { defaultValue: formData.render('addr2') },
+            city:   { defaultValue: formData.render('city') },
+            state:  { defaultValue: formData.render('state') },
+            zip:    { defaultValue: formData.render('zip') },
         },
     }
 
