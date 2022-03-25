@@ -7,7 +7,7 @@ import * as AuthActions from 'Redux/state/auth/actions.js';
 
 const LoginCallBack = () => {
 
-    const { auth } = useSelector((state) => state);
+    const { routing, user } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const location = useLocation();
@@ -17,12 +17,19 @@ const LoginCallBack = () => {
         // Check URL for expected auth0 params.
         if (/access_token|id_token|error/.test(location.hash)) {
             dispatch(AuthActions.authenticate());
-            history.push(auth.config.app.redirects.loginSuccess);
+        } else {
+            // They should not be here if they did not use auth0
+            history.push("/");
         }
-        // They should not be here if they did not use auth0
-        history.push("/");
     }, []);
 
+    useEffect(() => {
+        if (user.isAuthenticated) {
+            return history.push(routing.redirectAfterLogin);
+        }
+    }, [user.isAuthenticated]);
+
+    // @Max: Do I need to return JSX here? Is there another way? I am leveraging hooks.
     return (
         <div className='LoginCallBack'>
             Auth0 Call Back Page

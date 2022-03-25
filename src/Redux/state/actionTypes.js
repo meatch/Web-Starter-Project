@@ -1,5 +1,10 @@
 export const ActionTypes = {
     /*---------------------------
+    | Routing
+    ---------------------------*/
+    ROUTING_REDIRECT_AFTER_LOGIN_SET: 'Routing: redirectAfterLoginSet',
+
+    /*---------------------------
     | User
     ---------------------------*/
     USER_PROFILE_SET: 'User: profileSet',

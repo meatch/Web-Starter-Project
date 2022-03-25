@@ -1,6 +1,5 @@
 
-import { ActionTypes } from '../actionTypes';
-import config from './config.js';
+import config from '../config.js';
 import auth0API from './auth0API.js';
 
 const defaultState =  {

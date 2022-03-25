@@ -1,5 +1,5 @@
 import Auth0API from 'auth0-js';
-import config from './config.js';
+import config from '../config.js';
 
 const webAuthConfig = {
     domain: config.auth0.domain,

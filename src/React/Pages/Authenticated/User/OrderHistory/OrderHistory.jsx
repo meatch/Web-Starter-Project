@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import _ from 'lodash';
 
 /* Scripts ---------------------------*/
 import { axios } from 'common/axios.js';
@@ -16,14 +17,16 @@ const OrderHistory = () => {
     const [pastOrders, pastOrdersUpdate] = useState([]);
 
     useEffect(() => {
-        axios.get(`/orders/getOrderHistory/${user.profile.sub}`)
-            .then((resp) => {
-                pastOrdersUpdate(resp.data.payload);
-                loadedUpdate(true);
-            });
-    }, []);
+        if ( _.has(user,'profile.sub') ) {
+            axios.get(`/orders/getOrderHistory/${user.profile.sub}`)
+                .then((resp) => {
+                    pastOrdersUpdate(resp.data.payload);
+                    loadedUpdate(true);
+                });
+        }
+    }, [user.profile]);
 
-    if (!loaded) { return 'Loading...'; }
+    if (!_.has(user,'profile.sub') || !loaded) { return 'Loading...'; }
 
     return (
         <OrderHistoryStyled className='OrderHistory'>

@@ -1,5 +1,5 @@
 import { reqResp } from 'common/axios.js';
-import config from './config.js';
+import config from '../config.js';
 import * as UserActions from '../user/actions.js';
 
 /**

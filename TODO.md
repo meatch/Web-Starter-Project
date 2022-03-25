@@ -19,9 +19,11 @@
         - [x] User Account Update and Password Update
         - [x] User Periodic Access Check - logout actions
         - [x] Mailtrap: Contact and Purchase Thanks Forms
+        - [x] Redirect to user chosen page when authenticating
         - [ ] Mail: Add Order Receipts Table in EJS View Temaplate
         - [ ] Test Sample Data for Forms
         - [ ] Unit Tests
+        - [ ] Mail: Wire up to SendGrid for live emails - FREE version
 
 - [ ] Comprehensive Hollowed Out Express Endpoints put into initial course setup
 

@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
+
+/* Scripts ---------------------------*/
+import * as RoutingActions from 'Redux/state/routing/actions.js';
 
 /* Components ---------------------------*/
 import User from './User/User.jsx';
@@ -10,13 +13,23 @@ import Checkout from './Checkout/Checkout.jsx';
 const Authenticated = () => {
 
     const history = useHistory();
+    const location = useLocation();
+
     const { user: { isAuthenticated } } = useSelector((state) => state);
+    const dispatch = useDispatch();
+
+    const [isReady, isreadyUpdate] = useState(false);
 
     useEffect(() => {
         if (!isAuthenticated) {
-            history.push('/');
+            dispatch(RoutingActions.redirectAfterLoginSet(location.pathname));
+            history.push('/auth0/login');
+        } else {
+            isreadyUpdate(true);
         }
     }, []);
+
+    if (!isReady) { return 'Loading...'; }
 
     return (
         <AuthenticatedStyled className='Authenticated inset'>
