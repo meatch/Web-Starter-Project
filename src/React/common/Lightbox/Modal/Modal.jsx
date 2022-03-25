@@ -44,5 +44,12 @@ const Modal = ({children}) => {
 export default Modal;
 
 const ModalStyled = styled.div`
-    border: solid 5px red;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+
+    z-index: 1000;
+
 `;
