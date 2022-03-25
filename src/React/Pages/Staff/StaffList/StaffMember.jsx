@@ -20,6 +20,15 @@ const StaffMember = ({member}) => {
                 </ActiveArea>
                 <Modal>
                     <img src={ member.image } alt={ member.name } />
+
+                    <p><b>Year Started:</b> { member.yearStarted }</p>
+                    <ul>
+                        {
+                            member.accolades.map((accolade, idx) => {
+                                return <li key={idx}>{accolade}</li>;
+                            })
+                        }
+                    </ul>
                 </Modal>
             </Lightbox>
         </StaffMemberStyled>

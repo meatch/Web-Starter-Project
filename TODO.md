@@ -23,8 +23,9 @@
         - [x] Sun And Moon refactor to Binary
         - [x] Test Sample Data for Forms
         - [x] Contact Form
-        - [ ] Reorganize Layout and Pages, etc
-        - [ ] Expand on Lightbox - make it more flexible for staff and products - responsive
+        - [x] Reorganize Layout and Pages, etc
+        - [x] Staff Lightbox: Add mroe details in pop up.
+        - [ ] Cart: Item Profile Page
         - [ ] Universal Forms - Fix Error handling
         - [ ] Universal Forms - Publish and Yarn Add
         - [ ] Unit Tests
