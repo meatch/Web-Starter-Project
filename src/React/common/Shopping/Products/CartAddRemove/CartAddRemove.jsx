@@ -25,6 +25,8 @@ const CartAddRemove = ({ product }) => {
 export default CartAddRemove;
 
 const CartAddRemoveStyled = styled.div`
+    text-align: center;
+
     button {
         background-color: #014444;
         color: white;

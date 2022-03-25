@@ -12,7 +12,7 @@ import * as CartActions from 'Redux/state/cart/actions.js';
 import { centsToDollars } from 'common/utilities.js';
 
 /* Components ---------------------------*/
-import Qty from 'React/common/Products/Qty/Qty.jsx';
+import Qty from 'React/common/Shopping/Products/Qty/Qty.jsx';
 
 
 const OrderDetail = ({num, item, showControls}) => {

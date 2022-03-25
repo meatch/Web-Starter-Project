@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 import Product from './Product.jsx';
 
-const ProductList = ({products}) => {
+const ProductList = ({products, profileUpdate}) => {
 
     return (
         <ProductListStyled className='ProductList'>
             {
                 products.map((product, idx) => {
-                    return <Product key={ idx} product={ product } />
+                    return <Product key={ idx} product={ product } profileUpdate={ profileUpdate }/>
                 })
             }
         </ProductListStyled>

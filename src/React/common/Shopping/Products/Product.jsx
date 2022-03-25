@@ -9,15 +9,25 @@ import { centsToDollars } from 'common/utilities.js';
 import CartAddRemove from './CartAddRemove/CartAddRemove.jsx';
 import Qty from './Qty/Qty.jsx';
 
-const Product = ({ product }) => {
+const Product = ({ product, profileUpdate }) => {
+
+    const {
+        image,
+        title,
+        price,
+    } = product;
+
+    const handleOnClick = () => {
+        profileUpdate(product);
+    }
 
     return (
         <ProductStyled className='Product'>
-            <div className="deets">
-                <img src={ product.image } alt={ product.title } />
-                <h3>{ product.title }</h3>
+            <div className="deets" onClick={ handleOnClick }>
+                <img src={ image } alt={ title } />
+                <h3>{ title }</h3>
                 <div className="price">
-                    <b>Price:</b> { centsToDollars(product.price) }
+                    <b>Price:</b> { centsToDollars(price) }
                 </div>
             </div>
             <CartAddRemove product={ product } />
@@ -56,9 +66,5 @@ const ProductStyled = styled.div`
 
     .price {
         margin-bottom: 10px;
-    }
-
-    .CartAddRemove {
-        text-align: center;
     }
 `;
