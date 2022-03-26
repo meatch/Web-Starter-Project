@@ -30,7 +30,7 @@ const CheckoutHeaderStyled = styled.header`
     justify-content: space-between;
 
     .col1 {
-        flex: 5;
+        flex: 3;
     }
     .col2 {
         flex: 1;
