@@ -11,6 +11,8 @@ import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 /* Components ---------------------------*/
 import UniversalButton from 'React/common/UniversalButton.jsx';
+import CartAddRemove from './CartAddRemove/CartAddRemove.jsx';
+import Qty from './Qty/Qty.jsx';
 
 
 const ProductProfile = ({profile, profileUpdate}) => {
@@ -36,6 +38,8 @@ const ProductProfile = ({profile, profileUpdate}) => {
             <div className='row'>
                 <div className="col1">
                     <img src={ image } alt={ title } />
+                    <CartAddRemove product={ profile } />
+                    <Qty product={ profile } />
                 </div>
                 <div className="col2">
                     <div className="price">
@@ -55,6 +59,8 @@ const ProductProfile = ({profile, profileUpdate}) => {
 export default ProductProfile;
 
 const ProductProfileStyled = styled.div`
+
+    margin-bottom: 50px;
 
     h2 {
         margin: 50px 0px;
