@@ -8,7 +8,7 @@ import { reqResp } from 'common/axios.js';
 
 const Contact = () => {
 
-    const formData = sampleFormData(true); // pass true to force sample data
+    const formData = sampleFormData(); // pass true to force sample data
 
     // Component Logic
     const handleOnSubmit = async (uFormData) => {
