@@ -10,7 +10,7 @@ const Forms = () => {
 
     return (
         <FormsStyled className='Forms'>
-            <h3>Playground Forms</h3>
+            <h3>Forms</h3>
 
             <h4>Form 1</h4>
             <UniversalForm
