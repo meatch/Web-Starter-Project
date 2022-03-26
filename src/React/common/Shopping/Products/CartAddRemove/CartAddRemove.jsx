@@ -1,23 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faShoppingCart,
+} from '@fortawesome/free-solid-svg-icons';
+
+/* Scripts ---------------------------*/
+import * as CartActions from 'Redux/state/cart/actions.js';
 
 /* Components ---------------------------*/
-import Add from './Add.jsx';
-import Remove from './Remove.jsx';
+import UniversalButton from 'React/common/UniversalButton.jsx';
 
 const CartAddRemove = ({ product }) => {
 
+    const dispatch = useDispatch();
     const { cart } = useSelector(state => state);
     const productExists = cart.items.find((item) => item.product._id === product._id );
 
+    const handleOnClick = () => {
+        if (productExists) {
+            return dispatch(CartActions.removeItem(product));
+        }
+        return dispatch(CartActions.addItem(product));
+    }
+
     return (
         <CartAddRemoveStyled className='CartAddRemove'>
-            {
-                productExists
-                    ? <Remove product={ product } />
-                    : <Add product={ product } />
-            }
+            <UniversalButton
+                onClick={ handleOnClick }
+                branding={ productExists ? 'remove' : 'primary' }
+            >
+                <FontAwesomeIcon className='cart-icon' icon={ faShoppingCart } />
+                { productExists ? 'Remove' : 'Add' }
+            </UniversalButton>
         </CartAddRemoveStyled>
     );
 }
@@ -28,35 +44,8 @@ const CartAddRemoveStyled = styled.div`
     text-align: center;
 
     button {
-        background-color: #014444;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-
-        &:hover, &:focus {
-            background-color: #037979;
-        }
-
-        &:active {
-            background-color: #014444;
-        }
-
         .cart-icon {
             margin-right: 5px;
-        }
-
-        &.Remove {
-            background-color: maroon;
-
-            &:hover, &:focus {
-                background-color: #c60101;
-            }
-
-            &:active {
-                background-color: maroon;
-            }
         }
     }
 `;
