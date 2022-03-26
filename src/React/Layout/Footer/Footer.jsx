@@ -20,4 +20,5 @@ const FooterStyled = styled.footer`
     background-color: #0a4643;
     text-align: center;
     padding: 20px 0px;
+    margin: 50px 0px 0px;
 `;
