@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-const Dark = ({closeModal}) => {
+/* Context ---------------------------*/
+import Context from '../Context/index.js';
+import { showModalUpdate } from '../Context/actions.js';
+
+const Dark = () => {
+
+    const { dispatch } = useContext(Context);
+
+    const handleOnClick = () => {
+        dispatch(showModalUpdate(false));
+    }
+
     return (
-        <DarkStyled className='Dark' onClick={ closeModal }>
-            Dark
-        </DarkStyled>
+        <DarkStyled className='Dark' onClick={ handleOnClick } />
     );
 }
 
