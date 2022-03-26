@@ -7,6 +7,7 @@ import {
 
 /* Scripts ---------------------------*/
 import { centsToDollars } from 'common/utilities.js';
+import { defaultMediaQueries } from 'React/common/useMediaQuery.js';
 
 /* Components ---------------------------*/
 import UniversalButton from 'React/common/UniversalButton.jsx';
@@ -58,12 +59,12 @@ const ProductProfileStyled = styled.div`
     h2 {
         margin: 50px 0px;
     }
-    .row {
-        display: flex;
-    }
 
-    .col1 { flex: 1; }
-    .col2 { flex: 3; }
+    @media ${defaultMediaQueries.mdUp} {
+        .row {  display: flex; }
+        .col1 { flex: 1; }
+        .col2 { flex: 3; }
+    }
 
     img {
         max-width: 100%;
