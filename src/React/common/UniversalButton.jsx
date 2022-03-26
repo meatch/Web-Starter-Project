@@ -29,22 +29,22 @@ const UniversalButtonStyled = styled.button`
     cursor: pointer;
 
     /* Primary / Default */
-    background-color: hsl(180deg 97% 14%);
-    &:hover, &:focus { background-color: hsl(180deg 97% 6%); }
-    &:active { background-color: hsl(180deg 97% 22%); }
+    background-color: #014646;
+    &:hover, &:focus { background-color: #001e1e; }
+    &:active { background-color: #026f6f; }
 
     /* Secondary */
     &.secondary {
-        background-color: hsl(19deg 89% 54%);
-        &:hover, &:focus { background-color: hsl(19deg 89% 46%); }
-        &:active { background-color: hsl(19deg 89% 62%); }
+        background-color: #f26321;
+        &:hover, &:focus { background-color: #de4f0d; }
+        &:active { background-color: #f47e48; }
     }
 
     /* Remove */
     &.remove {
-        background-color: hsl(0deg 87% 40%);
-        &:hover, &:focus { background-color: hsl(0deg 87% 32%); }
-        &:active { background-color: hsl(0deg 87% 48%); }
+        background-color: #bf0d0d;
+        &:hover, &:focus { background-color: #990b0b; }
+        &:active { background-color: #e51010; }
     }
 
 `;
