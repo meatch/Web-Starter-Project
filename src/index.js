@@ -8,14 +8,16 @@ import 'react-app-polyfill/stable';
 | React and 3rd Party Libraries
 ---------------------------*/
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 /*---------------------------
 | Components
 ---------------------------*/
-import App from './React/App.jsx';
+import App from './UI/App.jsx';
 
 /*---------------------------
 | Render to DOM
 ---------------------------*/
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);
