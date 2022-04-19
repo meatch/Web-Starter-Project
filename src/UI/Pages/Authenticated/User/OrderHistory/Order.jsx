@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { utc } from 'moment';
+import dayjs from 'dayjs';
 
 /* Scripts ---------------------------*/
 import { centsToDollars } from 'common/utilities.js';
@@ -10,7 +10,7 @@ import OrderDetails from 'UI/common/Shopping/OrderDetails/OrderDetails.jsx';
 
 const Order = ({order}) => {
 
-    const theDate = utc(order.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a");
+    const theDate = dayjs(order.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     return (
         <OrderStyled className='Order'>
