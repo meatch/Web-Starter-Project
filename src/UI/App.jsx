@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -12,7 +13,7 @@ import { MediaQueryProvider } from 'UI/common/useMediaQuery.js';
 /* Components ---------------------------*/
 import Preloader from 'UI/common/Preloader/Preloader.jsx';
 import Layout from './Layout/Layout.jsx';
-import Pages from './Pages/Pages.jsx';
+import Routing from './Routing.jsx';
 
 const { store, persistor } = configureStore();
 
@@ -23,7 +24,9 @@ const App = () => {
                 <MediaQueryProvider>
                     <BrowserRouter>
                         <Layout>
-                            <Pages />
+                            <MainStyled className='Main'>
+                                <Routing />
+                            </MainStyled>
                         </Layout>
                     </BrowserRouter>
                 </MediaQueryProvider>
@@ -33,3 +36,7 @@ const App = () => {
 }
 
 export default App;
+
+const MainStyled = styled.main`
+
+`;
