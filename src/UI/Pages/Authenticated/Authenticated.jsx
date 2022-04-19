@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 /* Scripts ---------------------------*/
 import * as RoutingActions from 'Redux/state/routing/actions.js';
 
 /* Components ---------------------------*/
 import Preloader from 'UI/common/Preloader/Preloader.jsx';
-import User from './User/User.jsx';
-import Checkout from './Checkout/Checkout.jsx';
 
 const Authenticated = () => {
 
@@ -34,10 +32,7 @@ const Authenticated = () => {
 
     return (
         <AuthenticatedStyled className='Authenticated inset'>
-            <Routes>
-                <Route element={ <User /> }path='/auth/user' />
-                <Route element={ <Checkout /> }path='/auth/checkout' />
-            </Routes>
+            <Outlet />
         </AuthenticatedStyled>
     );
 }

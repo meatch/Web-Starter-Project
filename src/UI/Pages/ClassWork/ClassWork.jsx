@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 /* Components ---------------------------*/
-import Homework from './Homework/Homework.jsx';
-import Preloader from 'UI/common/Preloader/Preloader.jsx';
-import Swapper from './Swapper/Swapper.jsx';
-import Branding from './Branding.jsx';
-import ControlledInput from './ControlledInput.jsx';
-import Forms from './Forms.jsx';
 
 const ClassWork = () => {
     return (
@@ -24,14 +18,7 @@ const ClassWork = () => {
                 <NavLink to='/class/Forms'>Forms</NavLink>
             </nav>
 
-            <Routes>
-                <Route element={ <Homework /> } path='/class' />
-                <Route element={ <Swapper /> } path='/class/Swapper' />
-                <Route element={ <Preloader /> } path='/class/Preloader' />
-                <Route element={ <Branding /> } path='/class/Branding' />
-                <Route element={ <ControlledInput /> } path='/class/ControlledInput' />
-                <Route element={ <Forms /> } path='/class/Forms' />
-            </Routes>
+            <Outlet />
         </ClassWorkStyled>
     );
 }
