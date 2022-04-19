@@ -8,6 +8,7 @@ import * as AuthActions from 'Redux/state/auth/actions.js';
 
 /* Components ---------------------------*/
 import Header from './Header/Header.jsx';
+import Main from './Main.jsx';
 import Footer from './Footer/Footer.jsx';
 
 const Layout = ({children}) => {
@@ -32,7 +33,9 @@ const Layout = ({children}) => {
     return (
         <LayoutStyled className='Layout'>
             <Header />
-            { children }
+            <Main>
+                { children }
+            </Main>
             <Footer />
         </LayoutStyled>
     );
