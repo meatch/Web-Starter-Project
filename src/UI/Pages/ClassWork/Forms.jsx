@@ -1,92 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
-import UniversalForm, { Input, Textarea, SelectMenu, Checkbox, RadioGroup, SubmitButton } from '@enspyred/universal-form';
+
+/* Components ---------------------------*/
+import UniversalForm, { Input, Textarea, SubmitButton } from 'UI/common/UniversalForm/UniversalForm.jsx';
 
 const Forms = () => {
 
     const handleOnSubmit = (resp) => {
         console.log('Handling resp', resp);
+        return {
+            success: true,
+            message: "Login successful.",
+        };
     }
 
     return (
         <FormsStyled className='Forms'>
             <h3>Forms</h3>
 
-            <h4>Form 1</h4>
             <UniversalForm
-                displayName='First Form'
-                apiURL='/resource/action'
+                displayName='Sample Universal Form'
+                method='post'
+                apiUrl='/user/profile'
                 onSubmit={ handleOnSubmit }
             >
                 <Input
-                    label='Name'
-                    id='name'
+                    label='First Name'
+                    id='firstname'
                     type='text'
-                    placeholder='Your Name'
+                    placeholder='First Name'
+                    defaultValue='Mitch'
+                    rules={ [ 'required' ] }
+                />
+                <Input
+                    label='Last Name'
+                    id='lastname'
+                    type='text'
+                    placeholder='Last Name'
+                    defaultValue='Gohman'
                     rules={ [ 'required' ] }
                 />
                 <Input
                     label='Email'
                     id='email'
                     type='text'
-                    placeholder='Your Email'
+                    placeholder='user@me.com'
+                    defaultValue='meatch@me.com'
                     rules={ [ 'required', 'email' ] }
                 />
                 <Textarea
-                    label='Message'
-                    id='message'
+                    label='Tell Us About Yourself'
+                    id='about'
                     type='text'
-                    placeholder='Your Message'
-                    rules={ [ 'required' ] }
-                />
-                <SelectMenu
-                    label='Credit Card Type'
-                    id='ccType'
-                    defaultValue='amex'
-                    options={ [
-                        { value: 'visa',    display: 'Visa' },
-                        { value: 'mc',      display: 'Mastercard' },
-                        { value: 'amex',    display: 'American Express' },
-                    ] }
+                    placeholder='All about you...'
+                    defaultValue='This is what a bio might look like if someone wrote something.'
                     rules={ [ 'required' ] }
                 />
                 <SubmitButton>Send</SubmitButton>
             </UniversalForm>
-
-            <h4>Form 2</h4>
-            <UniversalForm
-                displayName='Another Form'
-                apiURL='/resource/action'
-                onSubmit={ handleOnSubmit }
-            >
-                <Input
-                    label='Name'
-                    id='name'
-                    type='text'
-                    placeholder='Your Name'
-                    rules={ [ 'required' ] }
-                />
-                <Checkbox
-                    label='Email Subscription'
-                    id='subscribe'
-                    rules={ [ 'required' ] }
-                    displayText='Join Our Mailing List'
-                    defaultValue={ true }
-                />
-                <RadioGroup
-                    label='Favorite Color'
-                    id='favColor'
-                    defaultValue='blue'
-                    options={ [
-                        { value: 'red',     display: 'Red' },
-                        { value: 'green',   display: 'Green' },
-                        { value: 'blue',    display: 'Blue' },
-                    ] }
-                    rules={ [ 'required' ] }
-                />
-                <SubmitButton>Send</SubmitButton>
-            </UniversalForm>
-
         </FormsStyled>
     );
 }

@@ -1,55 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
-import UniversalForm, { Input, Textarea, SubmitButton } from '@enspyred/universal-form';
 
-/* Scripts ---------------------------*/
-import sampleFormData from 'data/sampleFormData/sampleFormData.js';
-import { reqResp } from 'common/axios.js';
+/* Components ---------------------------*/
+import UniversalForm, { Input, Textarea, SubmitButton } from 'UI/common/UniversalForm/UniversalForm.jsx';
 
 const Contact = () => {
 
-    const formData = sampleFormData(); // pass true to force sample data
-
-    // Component Logic
-    const handleOnSubmit = async (uFormData) => {
-
-        const servResp = await reqResp('post', '/email/contact', uFormData.requestObject);
-
-        return servResp;
+    const handleOnSubmit = (resp) => {
+        console.log('Handling resp', resp);
+        return {
+            success: true,
+            message: "Login successful.",
+        };
     }
 
     return (
         <ContactStyled className='Contact inset'>
             <h1>Contact</h1>
-
             <UniversalForm
-                displayName='Checkout Payment Form'
+                displayName='Contact Form'
+                method='post'
+                apiUrl='/emails/contact'
                 onSubmit={ handleOnSubmit }
             >
                 <Input
                     label='Name'
                     id='name'
                     type='text'
-                    placeholder='Your Name'
-                    defaultValue={ formData.render('name') }
+                    placeholder='Name'
+                    defaultValue='Mitch Gohman'
                     rules={ [ 'required' ] }
                 />
                 <Input
                     label='Email'
                     id='email'
-                    type='email'
-                    placeholder='username@me.com'
-                    defaultValue={ formData.render('email') }
+                    type='text'
+                    placeholder='user@me.com'
+                    defaultValue='meatch@me.com'
                     rules={ [ 'required', 'email' ] }
                 />
                 <Textarea
                     label='Message'
                     id='message'
-                    placeholder='Your Message'
-                    defaultValue={ formData.render('message') }
+                    type='text'
+                    placeholder='Message'
+                    defaultValue='A message for our email'
                     rules={ [ 'required' ] }
                 />
-                <SubmitButton>Send Email</SubmitButton>
+                <SubmitButton>Send</SubmitButton>
             </UniversalForm>
         </ContactStyled>
     );
