@@ -9,7 +9,7 @@ const MainMenu = () => {
             <NavLink to={ '/' }>Home</NavLink>
             <NavLink to={ '/staff' }>Staff</NavLink>
             <NavLink to={ '/contact' }>Contact</NavLink>
-            <NavLink to={ '/merch' }>Merch</NavLink>
+            <NavLink to={ '/login' }>Login</NavLink>
         </MainMenuStyled>
     );
 }

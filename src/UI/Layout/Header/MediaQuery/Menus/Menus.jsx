@@ -7,7 +7,6 @@ import { updateShowMobileMenu } from '../../Context/actions.js';
 
 /* Components ---------------------------*/
 import MainMenu from './MainMenu.jsx';
-import UserMenu from './UserMenu.jsx';
 import ClassMenu from './ClassMenu.jsx';
 
 const Menus = () => {
@@ -21,7 +20,6 @@ const Menus = () => {
     return (
         <MenusStyled className='Menus' onClick={ handleOnClick }>
             <MainMenu />
-            <UserMenu />
             <ClassMenu />
         </MenusStyled>
     );

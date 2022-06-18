@@ -70,20 +70,10 @@ const MediumLargeStyled = styled.div`
                 }
             }
 
-            .UserMenu {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-
-                a {
-                    font-size: 12px;
-                }
-            }
-
             .ClassMenu {
                 position: absolute;
                 right: 10px;
-                top: 40px;
+                top: 10px;
 
                 a {
                     font-size: 12px;
