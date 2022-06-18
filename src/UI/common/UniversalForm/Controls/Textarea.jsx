@@ -1,28 +1,60 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
+/* Context ---------------------------*/
+import Context from '../Context/index.js';
+import { addField, updateField } from '../Context/actions.js';
+
 /* Components ---------------------------*/
-import ControlHOC from './ControlHOC/ControlHOC.jsx';
+import FormGroup from './FormGroup/FormGroup.jsx';
 
-const Textarea = ({onChange, id, placeholder, value=''}) => {
+const Textarea = (props) => {
 
-    const handleOnchange = (e) => {
-        onChange({ newValue: e.target.value, e: e });
+    const {
+        id,
+        defaultValue='',
+        label,
+        rules=[],
+        placeholder,
+    } = props;
+
+
+    const { dispatch, state } = useContext(Context);
+
+    const thisField = state.fields.find((field) => field.id === id);
+
+    const renderedValue = thisField ? thisField.value : defaultValue;
+
+    /* Component Did Mount ---------------------------*/
+    useEffect(() => {
+        const theField = {
+            id: id,
+            label: label,
+            value: defaultValue,
+            rules: rules,
+        }
+        dispatch(addField(theField, state));
+    }, []);
+
+    const onChange = ({newValue, e}) => {
+        dispatch(updateField(id, newValue, state));
     }
 
     return (
-        <TextareaStyled className='Textarea'>
-            <textarea
-                id={ id }
-                placeholder={ placeholder }
-                value={ value }
-                onChange={ handleOnchange }
-            />
-        </TextareaStyled>
+        <FormGroup thisField={ thisField } id={ id } label={ label }>
+            <TextareaStyled className='Textarea'>
+                <textarea
+                    id={ id }
+                    placeholder={ placeholder }
+                    value={ renderedValue }
+                    onChange={ onChange }
+                />
+            </TextareaStyled>
+        </FormGroup>
     );
 }
 
-export default ControlHOC(Textarea);
+export default Textarea;
 
 const TextareaStyled = styled.div`
     textarea {

@@ -1,30 +1,64 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
+/* Context ---------------------------*/
+import Context from '../Context/index.js';
+import { addField, updateField } from '../Context/actions.js';
+
 /* Components ---------------------------*/
-import ControlHOC from './ControlHOC/ControlHOC.jsx';
+import FormGroup from './FormGroup/FormGroup.jsx';
 
-const Input = ({onChange, id, placeholder, value='', type='text', maxLength=524288}) => {
+const Input = (props) => {
 
-    const handleOnchange = (e) => {
-        onChange({ newValue: e.target.value, e: e });
+    const {
+        id,
+        defaultValue='',
+        label,
+        rules=[],
+        placeholder,
+        type='text',
+        maxLength=524288
+    } = props;
+
+
+    const { dispatch, state } = useContext(Context);
+
+    const thisField = state.fields.find((field) => field.id === id);
+
+    const renderedValue = thisField ? thisField.value : defaultValue;
+
+    /* Component Did Mount ---------------------------*/
+    useEffect(() => {
+        const theField = {
+            id: id,
+            label: label,
+            value: defaultValue,
+            rules: rules,
+        }
+        dispatch(addField(theField, state));
+    }, []);
+
+    const onChange = ({newValue, e}) => {
+        dispatch(updateField(id, newValue, state));
     }
 
     return (
-        <InputStyled className='Input'>
-            <input
-                id={ id }
-                type={ type }
-                placeholder={ placeholder }
-                value={ value }
-                onChange={ handleOnchange }
-                maxLength={ maxLength }
-            />
-        </InputStyled>
+        <FormGroup thisField={ thisField } id={ id } label={ label }>
+            <InputStyled className='Input'>
+                <input
+                    id={ id }
+                    type={ type }
+                    placeholder={ placeholder }
+                    value={ renderedValue }
+                    onChange={ onChange }
+                    maxLength={ maxLength }
+                />
+            </InputStyled>
+        </FormGroup>
     );
 }
 
-export default ControlHOC(Input);
+export default Input;
 
 const InputStyled = styled.div`
     input {

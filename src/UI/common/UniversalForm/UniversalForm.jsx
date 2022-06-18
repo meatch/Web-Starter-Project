@@ -12,7 +12,7 @@ import Feedback from './Feedback.jsx';
 /* Exposed Components ---------------------------*/
 export { default as Input } from './Controls/Input.jsx';
 export { default as Textarea } from './Controls/Textarea.jsx';
-export { default as SubmitButton } from './Controls/SubmitButton.jsx';
+export { default as SubmitButton } from './SubmitButton.jsx';
 
 const UniversalForm = ({children, onSubmit=() => {}, displayName='Universal Form'}) => {
 
