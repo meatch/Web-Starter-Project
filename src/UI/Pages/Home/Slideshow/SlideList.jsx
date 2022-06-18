@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 /* Scripts ---------------------------*/
-import { slidesData } from 'data/slidesData.js';
+import { slidesData } from 'UI/common/data/slidesData.js';
 
 /* Component ---------------------------*/
 import Slide from './Slide.jsx';

@@ -1,6 +1,5 @@
 import { actionTypes } from './actionTypes.js';
-import { isValidEmail } from 'common/utilities';
-// import api from '../common/api.js';
+import { isValidEmail } from 'UI/common/utilities';
 
 /*---------------------------
 | Actions (Action Creators)

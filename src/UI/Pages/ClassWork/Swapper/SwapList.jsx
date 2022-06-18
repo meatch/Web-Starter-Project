@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { swapperData } from 'data/swapperData.js';
+import { swapperData } from 'UI/common/data/swapperData.js';
 
 /* Components ---------------------------*/
 import Swap from './Swap.jsx';

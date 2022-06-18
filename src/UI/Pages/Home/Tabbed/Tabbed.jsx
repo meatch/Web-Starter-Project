@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 /* Scripts ---------------------------*/
-import { tabbedData } from 'data/tabbedData.js';
+import { tabbedData } from 'UI/common/data/tabbedData.js';
 
 /* Components ---------------------------*/
 import TabbedMenu from './TabbedMenu/TabbedMenu.jsx';
