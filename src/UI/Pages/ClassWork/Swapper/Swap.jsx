@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const Swap = ({swap}) => {
 
     const {
+        title,
+        bgColor,
         image1,
         image2,
     } = swap;
-
 
     const [theImage, theImageUpdate] = useState(image1);
 
@@ -22,13 +23,18 @@ const Swap = ({swap}) => {
     return (
         <SwapStyled
             className='Swap'
+            bgColor={ bgColor }
         >
-            <div
-                onMouseOver={ changeToImage2 }
-                onMouseOut={ changeToImage1 }
-            >
-                <img src={ theImage.path } alt={ theImage.title }/>
-                <p>{ theImage.title }</p>
+            <h3>{ title }</h3>
+            <div className="image-container">
+                <div
+                    className='image-inner'
+                    onMouseOver={ changeToImage2 }
+                    onMouseOut={ changeToImage1 }
+                >
+                    <img src={ theImage.path } alt={ theImage.title }/>
+                    <p>{ theImage.title }</p>
+                </div>
             </div>
         </SwapStyled>
     );
@@ -38,21 +44,34 @@ export default Swap;
 
 const SwapStyled = styled.div`
 
-    display: flex;
-    justify-content: center;
+    background-color: ${({bgColor}) => bgColor};
+    text-align: center;
+    padding: 20px;
+    margin: 25px 0px;
 
-    div {
-        max-width: 200px;
-    }
-
-    p {
+    h3 {
         color: teal;
-        font-size: 20px;
-        margin: 0px;
+        font-size: 50px;
+        margin: 0px 0px 10px;
     }
-    img {
-        border: solid 10px teal;
-        background-color: white;
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+
+        div.image-inner {
+            max-width: 200px;
+
+            p {
+                color: teal;
+                font-size: 20px;
+                margin: 0px;
+            }
+            img {
+                border: solid 10px teal;
+                background-color: white;
+            }
+        }
     }
 
 `;
