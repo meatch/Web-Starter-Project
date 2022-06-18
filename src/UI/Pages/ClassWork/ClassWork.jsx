@@ -12,8 +12,6 @@ const ClassWork = () => {
             <nav className='sublinks'>
                 <NavLink to='/class'>Homework</NavLink>
                 <NavLink to='/class/Swapper'>Swapper</NavLink>
-                <NavLink to='/class/Preloader'>Preloader</NavLink>
-                <NavLink to='/class/Branding'>Branding</NavLink>
                 <NavLink to='/class/ControlledInput'>ControlledInput</NavLink>
                 <NavLink to='/class/Forms'>Forms</NavLink>
             </nav>
