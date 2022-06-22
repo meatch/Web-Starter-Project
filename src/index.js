@@ -8,8 +8,6 @@ import 'react-app-polyfill/ie11';
 ---------------------------*/
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { MediaQueryProvider } from 'UI/common/useMediaQuery.js';
 
 /*---------------------------
 | Components
@@ -21,11 +19,7 @@ import UI from 'UI/UI.jsx';
 ---------------------------*/
 const App = () => {
     return (
-        <MediaQueryProvider>
-            <BrowserRouter>
-                <UI />
-            </BrowserRouter>
-        </MediaQueryProvider>
+        <UI />
     )
 }
 
