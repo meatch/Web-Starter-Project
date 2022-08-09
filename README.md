@@ -12,6 +12,5 @@ Intention is to be used for teaching web concepts.
 ## How to use
 
 ```
-yarn install && yarn dev
+npm install && npm run dev
 ```
- 
